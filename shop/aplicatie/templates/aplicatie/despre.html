@@ -1,0 +1,17 @@
+{% extends 'aplicatie/baza.html' %}
+{% load static %}
+
+{% block title %}Despre Noi{% endblock %}
+
+{% block content %}
+<section id="magazin">
+    <h2>Despre Magazin</h2>
+    <p>Magazinul nostru ofera o gama variata de ceasuri, de la cele elegante la cele sportive.</p>
+</section>
+
+<section id="echipa">
+    <h2>Echipa Noastra</h2>
+    <p>Suntem o echipa pasionata de tehnologie si design.</p>
+    <img src="{% static 'aplicatie/imagini/ECHIPA.png' %}" alt="Poza Echipa">
+</section>
+{% endblock %}

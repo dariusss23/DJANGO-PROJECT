@@ -1,0 +1,28 @@
+{% extends 'aplicatie/baza.html' %}
+{% load static %}
+
+{% block title %}Pagina Principala{% endblock %}
+
+{% block content %}
+<section id="prezentare">
+    <h2>Bine ati venit la WatchLux</h2>
+    <p>Proiectul este un magazin online de ceasuri, construit in Django, ce permite vizualizarea unui catalog diversificat de produse. Fiecare ceas este prezentat cu imagini clare si detalii complete: pret, model, caracteristici tehnice si material.
+        Platforma integreaza un cos de cumparaturi functional, procesul de comanda si gestionare automata a stocurilor. Utilizatorii beneficiaza de optiuni avansate de filtrare, cautare dupa brand, pret sau stil, iar sistemul de autentificare asigura securitatea datelor.
+        Pentru administrare, folosesc interfata Django Admin, oferind control total asupra produselor, comenzilor si utilizatorilor.</p>
+    <img src="{% static 'aplicatie/imagini/CEAS.png' %}" alt="Ceas elegant" width="250">
+</section>
+
+<section id="produse">
+    <h2>Produse Populare</h2>
+    <ul>
+        <li>Apple Smartwatch – 2399 lei</li>
+        <li>Ceas Rolex – 3499 lei</li>
+        <li>Ceas G-Shock – 650 lei</li>
+    </ul>
+</section>
+
+<section id="info">
+    <h2>Informatii utile</h2>
+    <p>Livrare gratuita la comenzile peste 300 lei!</p>
+</section>
+{% endblock %}

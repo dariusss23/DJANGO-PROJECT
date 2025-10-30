@@ -1,0 +1,25 @@
+{% extends 'aplicatie/baza.html' %}
+{% load static %}
+
+{% block titlu %}Pagina Info{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Informatii despre server</h1>
+
+        <section>
+            <h2>Data si ora</h2>
+            <p><b>{{ continut_data }}</b></p>
+        </section>
+
+        <section>
+            <h2>Parametri</h2>
+            {% if parametri %}
+                <p><b>Numar parametri:</b> {{ numar_param }}</p>
+                <p><b>Nume parametri:</b> {{ nume_param }}</p>
+            {% else %}
+                <p><i>Nu exista parametri</i></p>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

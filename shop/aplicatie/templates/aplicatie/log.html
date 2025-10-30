@@ -1,0 +1,90 @@
+{% extends 'aplicatie/baza.html' %}
+{% load static %}
+
+{% block titlu %}Pagina Log{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Log accesari</h1>
+
+        <h2>Toate accesarile:</h2>
+        <ul>
+            {% for elem in ACCESARI %}
+                <li>ID: {{ elem.id }}, IP: {{ elem.ip_client }}, Pagina: {{ elem.pagina }}, Data: {{ elem.data }}</li>
+            {% endfor %}
+        </ul>
+
+        {% if param_accesari == "nr" %}
+            <p><b>Numar total de accesari:</b> {{ total }}</p>
+        {% endif %}
+
+        {% if param_accesari == "detalii" %}
+            <h2>Detalii accesari:</h2>
+            <ul>
+                {% for a in ACCESARI %}
+                    <li>{{ a.data }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if param_tabel %}
+            <h2>Tabel accesari</h2>
+            <table>
+                <tr>
+                    {% for c in coloane %}
+                        <th>{{ c }}</th>
+                    {% endfor %}
+                </tr>
+                {% for a in ACCESARI %}
+                    <tr>
+                        {% for c in coloane %}
+                            {% if c == "id" %}
+                                <td>{{ a.id }}</td>
+                            {% elif c == "ip_client" %}
+                                <td>{{ a.ip_client }}</td>
+                            {% elif c == "url" %}
+                                <td>{{ a.url }}</td>
+                            {% elif c == "data" %}
+                                <td>{{ a.data }}</td>
+                            {% else %}
+                                <td><i>n/a</i></td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        {% if id_list %}
+            <h2>Accesari după ID-uri:</h2>
+            <ul>
+                {% for val in id_list %}
+                    {% for a in ACCESARI %}
+                        {% if a.id == val %}
+                            <li>ID: {{ a.id }}, IP: {{ a.ip_client }}, Pagina: {{ a.pagina }}, Data: {{ a.data }}</li>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if ultimele_accesari %}
+            <h2>Ultimele accesari:</h2>
+            <ul>
+                {% for elem in ultimele_accesari %}
+                    <li>ID: {{ elem.id }}, IP: {{ elem.ip_client }}, Pagina: {{ elem.pagina }}, Data: {{ elem.data }}</li>
+                {% endfor %}
+            </ul>
+            {% if n > total %}
+                <p><b>Exista doar {{ total }} accesari fata de {{ n }} cerute.</b></p>
+            {% endif %}
+        {% endif %}
+
+        {% if pagina_min and pagina_max %}
+            <h3>Statistici accesari</h3>
+            <p><b>Pagina cea mai putin accesata:</b> {{ pagina_min }} ({{ frecventa_min }} accesari)</p>
+            <p><b>Pagina cea mai mult accesata:</b> {{ pagina_max }} ({{ frecventa_max }} accesari)</p>
+        {% endif %}
+    </div>
+    
+{% endblock %}
