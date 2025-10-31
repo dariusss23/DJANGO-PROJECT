@@ -1,0 +1,17 @@
+{% extends 'aplicatie/baza.html' %}
+{% load static %}
+
+{% block title %}{{ ceas.model }} - Detalii{% endblock %}
+
+{% block content %}
+
+<div class="ceas-detalii">
+    <h1>{{ ceas.model }}</h1>
+    <p><strong>Pret:</strong> {{ ceas.pret }} RON</p>
+    <p><strong>Brand:</strong> {{ ceas.brand.nume }}</p>
+    <p><strong>Categorie:</strong> {{ ceas.categorie.stil_ceas }} - {{ ceas.categorie.tip_ceas }}</p>
+    <p><strong>Material:</strong> {{ ceas.material }}</p>
+    <p><strong>Disponibil online:</strong> {{ ceas.disponibil_online }}</p>
+    <a href="{% url 'produse' %}" class="buton-inapoi">Inapoi la produse</a>
+</div>
+{% endblock %}

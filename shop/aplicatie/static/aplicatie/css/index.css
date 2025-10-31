@@ -1,0 +1,56 @@
+/* ===== PAGINA PRINCIPALA ===== */
+#prezentare, #produse, #info {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#prezentare h2, #produse h2, #info h2 {
+    color: #111;
+    margin-bottom: 15px;
+    border-left: 5px solid #f5c518;
+    padding-left: 10px;
+}
+
+#prezentare p {
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+#prezentare img {
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#produse ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#produse li {
+    background-color: #f9f9f9;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#produse li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#info p {
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    background-color: #fffbea;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

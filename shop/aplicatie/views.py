@@ -14,6 +14,14 @@ def in_lucru(request):
     return render(request, "aplicatie/in_lucru.html", {"ip": get_ip(request)})
 
 
+def get_ip(request):
+    req_headers = request.META
+    str_lista_ip = request.META.get('HTTP_X_FORWARDED_FOR')
+    if str_lista_ip:
+        return str_lista_ip.split(',')[-1].strip()
+    else:
+        return request.META.get('REMOTE_ADDR') 
+
 ZILE = ["Luni","Marți","Miercuri","Joi","Vineri","Sâmbătă","Duminică"]
 LUNI = ["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August","Septembrie","Octombrie","Noiembrie","Decembrie"]
 
@@ -45,17 +53,10 @@ def info(request):
         "continut_data": continut_data,
         "parametri": parametri,
         "numar_param": len(parametri),
-        "nume_param": nume_param
+        "nume_param": nume_param,
+        "ip": get_ip(request)
     })
             
-
-def get_ip(request):
-    req_headers = request.META
-    str_lista_ip = request.META.get('HTTP_X_FORWARDED_FOR')
-    if str_lista_ip:
-        return str_lista_ip.split(',')[-1].strip()
-    else:
-        return request.META.get('REMOTE_ADDR') 
     
     
 class Accesare:
@@ -157,7 +158,8 @@ def log(request):
         "pagina_min": pagina_min,
         "pagina_max": pagina_max,
         "frecventa_min": frecvente.get(pagina_min),
-        "frecventa_max": frecvente.get(pagina_max)
+        "frecventa_max": frecvente.get(pagina_max),
+        "ip": get_ip(request)
     })
 
 
@@ -180,3 +182,84 @@ def afis_lucruri(request):
             "nr_locatii":len(locatii)
         }
     )
+    
+    
+from django.shortcuts import redirect
+from .forms import ContactForm
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():  
+            nume = form.cleaned_data['nume']
+            email = form.cleaned_data['email']
+            mesaj = form.cleaned_data['mesaj']
+            # procesarea datelor
+            return redirect('mesaj_trimis')
+    else:
+        form = ContactForm()
+    return render(request, 'aplicatie_exemplu/contact.html', {'form': form})
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .models import Ceas
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render
+from .models import Ceas
+
+from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .models import Ceas
+
+def afisare_ceasuri(request):
+    nrPagina = request.GET.get("pagina")
+    sortare = request.GET.get("sort", "a")
+
+    if sortare == "d":
+        produse = Ceas.objects.all().order_by("-pret")  # descrescător
+    else:
+        produse = Ceas.objects.all().order_by("pret")   # crescător
+
+    paginator = Paginator(produse, 5)
+    mesajEroare = None
+
+    try:
+        obPagina = paginator.page(nrPagina)
+    except PageNotAnInteger:
+        obPagina = paginator.page(1)
+    except EmptyPage:
+        obPagina = paginator.page(paginator.num_pages)
+        mesajEroare = "Nu mai sunt produse"
+
+    return render(request, 'aplicatie/produse.html', {
+        "pagina": obPagina,
+        "eroare": mesajEroare,
+        "categorii": Categorie.objects.all(),
+        "ip": get_ip(request)
+    })
+
+    
+from django.shortcuts import get_object_or_404
+
+def detalii_ceas(request, ceas_id):
+    ceas = get_object_or_404(Ceas, pk=ceas_id)
+    return render(request, 'aplicatie/detalii_ceas.html',
+        {
+            "ceas": ceas,
+            "ip": get_ip(request)
+        }
+    )
+    
+from .models import Categorie
+
+def afisare_categorie(request, nume_categorie):
+    categorie = get_object_or_404(Categorie, stil_ceas=nume_categorie)
+    produse = Ceas.objects.filter(categorie=categorie)
+    
+    return render(request, 'aplicatie/produse.html', {
+        "pagina": produse,  # folosim același template ca la produse
+        "eroare": None,
+        "categorie_selectata": categorie,
+        "categorii": Categorie.objects.all(),
+        "ip": get_ip(request)
+    })

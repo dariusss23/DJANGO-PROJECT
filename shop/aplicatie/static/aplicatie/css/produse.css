@@ -1,0 +1,84 @@
+/* ===== PAGINA PRODUSE ===== */
+
+h1 {
+    text-align: center;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.mesaj-eroare {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ---- CARD PRODUS ---- */
+.ceas-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ceas-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.ceas-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.ceas-card p {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.paginare {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.paginare a,
+.paginare span {
+    display: inline-block;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 14px;
+    margin: 0 5px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.paginare a:hover {
+    background-color: #f5c518;
+    color: #111;
+}
+
+.empty {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .ceas-card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .paginare a, .paginare span {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}

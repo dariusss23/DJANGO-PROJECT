@@ -1,0 +1,53 @@
+{% extends 'aplicatie/baza.html' %}
+{% load static %}
+
+{% block title %}Lista Ceasuri{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'aplicatie/css/produse.css' %}">
+
+<h1>Lista Ceasuri</h1>
+
+
+{% if eroare %}
+    <p class="mesaj-eroare">{{ eroare }}</p>
+{% endif %}
+
+{% if pagina %}
+    {% for ceas in pagina %}
+        <div class="ceas-card">
+            <h3>
+                <a href="{% url 'detalii_ceas' ceas.id_ceas %}" class="link-produs">{{ ceas.model }}</a>
+            </h3>
+            <p><strong>Pret:</strong> {{ ceas.pret }} RON</p>
+            <p><strong>Brand:</strong> {{ ceas.brand.nume }}</p>
+
+            <p class="categorie-afisaj">
+                <strong>Categorie:</strong>
+                <a href="{% url 'categorie' ceas.categorie.stil_ceas %}" class="link-categorie">
+                    {% if ceas.categorie.icon %}
+                        <i class="{{ ceas.categorie.icon }}"></i>
+                    {% endif %}
+                </a>
+            </p>
+
+        </div>
+    {% endfor %}
+
+    <div class="paginare">
+        {% if pagina.has_previous %}
+            <a href="?pagina=1">&laquo; Prima</a>
+            <a href="?pagina={{ pagina.previous_page_number }}">Anterior</a>
+        {% endif %}
+
+        <span>Pagina {{ pagina.number }} din {{ pagina.paginator.num_pages }}</span>
+
+        {% if pagina.has_next %}
+            <a href="?pagina={{ pagina.next_page_number }}">Urmatoarea</a>
+            <a href="?pagina={{ pagina.paginator.num_pages }}">Ultima &raquo;</a>
+        {% endif %}
+    </div>
+{% else %}
+    <p class="empty">Nu exista produse disponibile.</p>
+{% endif %}
+{% endblock %}

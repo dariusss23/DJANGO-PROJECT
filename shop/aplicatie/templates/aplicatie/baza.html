@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Site Ceasuri{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'aplicatie/css/style.css' %}" type="text/css" />
+
 </head>
 <body>
     <header>
         <nav class="meniu">
+            <div class="logo">WatchLux</div>
             <ul>
-                <li><a href="{% url 'index' %}">Acasă</a>
+                <li><a href="{% url 'index' %}">Acasa</a>
                     <ul>
                         <li><a href="{% url 'index' %}#prezentare">Prezentare</a></li>
                         <li><a href="{% url 'index' %}#produse">Produse Populare</a></li>
@@ -25,6 +28,15 @@
                     </ul>
                 </li>
                 <li><a href="{% url 'produse' %}">Produse</a></li>
+                <li>
+                    <a href="#">Categorii</a>
+                    <ul>
+                        {% for cat in categorii %}
+                            <li><a href="{% url 'categorie' cat.stil_ceas %}">{{ cat.stil_ceas|title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'cos' %}">Cos Virtual</a></li>
                 <li><a href="{% url 'info' %}">Info</a></li>

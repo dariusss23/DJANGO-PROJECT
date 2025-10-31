@@ -37,7 +37,7 @@ class Ceas(models.Model):
     categorie = models.ForeignKey('Categorie', on_delete=models.CASCADE, related_name='ceas_categorie')
     material = models.ForeignKey('Material', on_delete=models.CASCADE, related_name='ceas_material')
     depozit = models.ManyToManyField('Depozit', related_name='ceas_depozit')
-    promoti = models.ManyToManyField('Promotie', related_name='ceas_promitie')
+    promotii = models.ManyToManyField('Promotie', related_name='ceas_promitie', blank=True)
     
     def __str__(self):
         return f"{self.model} - {self.pret} RON"
@@ -70,8 +70,10 @@ class Categorie(models.Model):
     tip_ceas = models.CharField(max_length=15, choices=TIP_CEAS)
     descriere = models.TextField()
     
+    icon = models.CharField(max_length=80, blank=True, null=True)
+    
     def __str__(self):
-        return f"{self.stil_ceas} - {self.tip_ceas}"
+        return f"{self.stil_ceas}"
 
 class Material(models.Model):
     TIP_MATERIAL = [
