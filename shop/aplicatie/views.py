@@ -5,13 +5,28 @@ from datetime import datetime
 from .models import Locatie
 
 def index(request):
-    return render(request, "aplicatie/index.html", {"ip": get_ip(request)})
+    return render(request, "aplicatie/index.html", 
+        {
+            "ip": get_ip(request),
+            "categorii": Categorie.objects.all(),
+        }
+    )
 
 def despre(request):
-    return render(request, "aplicatie/despre.html", {"ip": get_ip(request)})
+    return render(request, "aplicatie/despre.html",
+        {
+            "ip": get_ip(request),
+            "categorii": Categorie.objects.all()
+        }
+    )
 
 def in_lucru(request):
-    return render(request, "aplicatie/in_lucru.html", {"ip": get_ip(request)})
+    return render(request, "aplicatie/in_lucru.html",
+        {
+            "ip": get_ip(request),
+            "categorii": Categorie.objects.all(),
+        }
+)
 
 
 def get_ip(request):
@@ -107,11 +122,11 @@ def log(request):
     accesari_formatate = []
     for a in ACCESARI:
         accesari_formatate.append({
-            'id': a.id,
-            'ip_client': a.ip_client,
-            'pagina': a.pagina(),
-            'url': a.url(),
-            'data': a.data('%Y-%m-%d %H:%M:%S')
+            "id": a.id,
+            "ip_client": a.ip_client,
+            "pagina": a.pagina(),
+            "url": a.url(),
+            "data": a.data('%Y-%m-%d %H:%M:%S')
         })
 
     # filtrare după ID-uri - SIMPLIFICAT
@@ -200,28 +215,169 @@ def contact_view(request):
         form = ContactForm()
     return render(request, 'aplicatie_exemplu/contact.html', {'form': form})
 
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Ceas
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
-from .models import Ceas
-
-from django.shortcuts import render, get_object_or_404
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Ceas
+from .models import Ceas, Categorie, Brand, Material
+from .forms import CeasFilterForm
 
 def afisare_ceasuri(request):
-    nrPagina = request.GET.get("pagina")
-    sortare = request.GET.get("sort", "a")
+    nrPagina=request.GET.get("pagina")
+    sortare=request.GET.get("sort", "a")
+    
+    produse=Ceas.objects.all()
+    form=CeasFilterForm(request.GET)
+    
+    elemente_pe_pagina=5
+    if form.is_valid():
+        data=form.cleaned_data
 
-    if sortare == "d":
-        produse = Ceas.objects.all().order_by("-pret")  # descrescător
-    else:
-        produse = Ceas.objects.all().order_by("pret")   # crescător
+        if data["model"]:
+            produse=produse.filter(model__icontains=data["model"])
+        if data["pret_min"] is not None:
+            produse=produse.filter(pret__gte=data["pret_min"])
+        if data["pret_max"] is not None:
+            produse=produse.filter(pret__lte=data["pret_max"])
+        if data["stoc_min"] is not None:
+            produse=produse.filter(stoc__gte=data["stoc_min"])
+        if data["stoc_max"] is not None:
+            produse=produse.filter(stoc__lte=data["stoc_max"])
+        if data["data_lansare_min"]:
+            produse=produse.filter(data_lansare__gte=data["data_lansare_min"])
+        if data["data_lansare_max"]:
+            produse=produse.filter(data_lansare__lte=data["data_lansare_max"])
+        if data["disponibil_online"] is True:
+            produse=produse.filter(disponibil_online=True)
+        if data["brand"]:
+            produse=produse.filter(brand=data["brand"])
+        if data["categorie"]:
+            produse=produse.filter(categorie=data["categorie"])
+        if data["material"]:
+            produse=produse.filter(material=data["material"])
+        if data["depozit"]:
+            produse=produse.filter(depozit=data["depozit"])
+        if data["promotii"]:
+            produse=produse.filter(promotii=data["promotii"])
+            
+        elemente_pe_pagina=int(data.get("elemente_pe_pagina") or 5)
 
-    paginator = Paginator(produse, 5)
+        mesaj_paginare=None
+        if request.GET.get("elemente_pe_pagina") and int(request.GET.get("elemente_pe_pagina")) != 5:
+            mesaj_paginare="In urma repaginarii e posibil sa fi sarit peste unele produse sau sa le vedeti din nou pe cele deja vizualizate."
+
+
+    produse=produse.order_by("-pret" if sortare=="d" else "pret")
+    
+
+
+    paginator=Paginator(produse, elemente_pe_pagina)
+    mesajEroare=None
+
+    try:
+        obPagina=paginator.page(nrPagina)
+    except PageNotAnInteger:
+        obPagina=paginator.page(1)
+    except EmptyPage:
+        obPagina=paginator.page(paginator.num_pages)
+        mesajEroare="Nu mai sunt produse"
+
+    object_list=obPagina.object_list
+
+    return render(request, "aplicatie/produse.html", {
+        "object_list": object_list,
+        "pagina": obPagina,
+        "eroare": mesajEroare,
+        "categorii": Categorie.objects.all(),
+        "ip": get_ip(request),
+        "form": form,
+        "mesaj_paginare": mesaj_paginare
+    })
+
+    
+
+def detalii_ceas(request, ceas_id):
+    try:
+        ceas = Ceas.objects.get(pk=ceas_id)
+        return render(request, "aplicatie/detalii_ceas.html", {
+            "ceas": ceas,
+            "ip": get_ip(request)
+        })
+    except Ceas.DoesNotExist:
+        return HttpResponse(f"Produsul cu ID-ul {ceas_id} nu exista.")
+    except Ceas.MultipleObjectsReturned:
+        return HttpResponse(f"Eroare: mai multe ceasuri cu ID-ul {ceas_id} in baza de date!")
+    except Exception as e:
+        return HttpResponse(f"Eroare neasteptata: {e}")
+
+
+from .models import Categorie
+
+def afisare_categorie(request, nume_categorie):
+    categorie = Categorie.objects.get(stil_ceas=nume_categorie)
+    produse = Ceas.objects.filter(categorie=categorie)
+    
+    get_params = request.GET.copy()
+    get_params["categorie"] = categorie.pk
+    
+    form = CeasFilterForm(get_params)
+    
+    elemente_pe_pagina = 5
     mesajEroare = None
+    mesaj_paginare = None
+    
+    categorie_din_form = request.GET.get("categorie")
+    if categorie_din_form:
+        try:
+            categorie_id_form = int(categorie_din_form)
+            if categorie_id_form != categorie.pk:
+                mesajEroare = "Categoria selectata nu corespunde cu pagina curenta. Filtrele au fost resetate."
+                # Resetează formularul fără categoria modificată
+                get_params = request.GET.copy()
+                get_params["categorie"] = categorie.pk
+                form = CeasFilterForm(get_params)
+        except (ValueError, TypeError):
+            mesajEroare = "Valoare invalida pentru categorie. Filtrele au fost resetate."
+            get_params = request.GET.copy()
+            get_params["categorie"] = categorie.pk
+            form = CeasFilterForm(get_params)
+    
+    # Aplică filtrele din formular doar dacă nu a fost eroare de validare categorie
+    if form.is_valid() and not mesajEroare:
+        data = form.cleaned_data
+        
+        if data["model"]:
+            produse = produse.filter(model__icontains=data["model"])
+        if data["pret_min"] is not None:
+            produse = produse.filter(pret__gte=data["pret_min"])
+        if data["pret_max"] is not None:
+            produse = produse.filter(pret__lte=data["pret_max"])
+        if data["stoc_min"] is not None:
+            produse = produse.filter(stoc__gte=data["stoc_min"])
+        if data["stoc_max"] is not None:
+            produse = produse.filter(stoc__lte=data["stoc_max"])
+        if data["data_lansare_min"]:
+            produse = produse.filter(data_lansare__gte=data["data_lansare_min"])
+        if data["data_lansare_max"]:
+            produse = produse.filter(data_lansare__lte=data["data_lansare_max"])
+        if data["disponibil_online"] is True:
+            produse = produse.filter(disponibil_online=True)
+        if data["brand"]:
+            produse = produse.filter(brand=data["brand"])
+        # Categoria e deja filtrată mai sus
+        if data["material"]:
+            produse = produse.filter(material=data["material"])
+        if data["depozit"]:
+            produse = produse.filter(depozit=data["depozit"])
+        if data["promotii"]:
+            produse = produse.filter(promotii=data["promotii"])
+            
+        elemente_pe_pagina = int(data.get("elemente_pe_pagina") or 5)
+        
+        if request.GET.get("elemente_pe_pagina") and int(request.GET.get("elemente_pe_pagina")) != 5:
+            mesaj_paginare = "In urma repaginarii e posibil sa fi sarit peste unele produse sau sa le vedeti din nou pe cele deja vizualizate."
+    
+    # Paginare
+    paginator = Paginator(produse, elemente_pe_pagina)
+    nrPagina = request.GET.get("pagina", 1)
 
     try:
         obPagina = paginator.page(nrPagina)
@@ -229,37 +385,182 @@ def afisare_ceasuri(request):
         obPagina = paginator.page(1)
     except EmptyPage:
         obPagina = paginator.page(paginator.num_pages)
-        mesajEroare = "Nu mai sunt produse"
+        if not mesajEroare:  # Nu suprascrie mesajul de eroare pentru categorie
+            mesajEroare = "Nu mai sunt produse"
 
-    return render(request, 'aplicatie/produse.html', {
+    return render(request, "aplicatie/produse.html", {
         "pagina": obPagina,
+        "object_list": obPagina.object_list,
         "eroare": mesajEroare,
-        "categorii": Categorie.objects.all(),
-        "ip": get_ip(request)
-    })
-
-    
-from django.shortcuts import get_object_or_404
-
-def detalii_ceas(request, ceas_id):
-    ceas = get_object_or_404(Ceas, pk=ceas_id)
-    return render(request, 'aplicatie/detalii_ceas.html',
-        {
-            "ceas": ceas,
-            "ip": get_ip(request)
-        }
-    )
-    
-from .models import Categorie
-
-def afisare_categorie(request, nume_categorie):
-    categorie = get_object_or_404(Categorie, stil_ceas=nume_categorie)
-    produse = Ceas.objects.filter(categorie=categorie)
-    
-    return render(request, 'aplicatie/produse.html', {
-        "pagina": produse,  # folosim același template ca la produse
-        "eroare": None,
         "categorie_selectata": categorie,
         "categorii": Categorie.objects.all(),
-        "ip": get_ip(request)
+        "ip": get_ip(request),
+        "form": form,
+        "mesaj_paginare": mesaj_paginare
     })
+    
+
+from .forms import FormularContact
+from .forms import calcul_varsta, curata_mesaj, capitalizeaza_dupa_terminatori, verifica_urgent_si_fisier
+
+def contact(request):
+    mesaj_trimite = None
+    
+    if request.method == "POST":
+        form = FormularContact(request.POST)
+        if form.is_valid():
+            data_nasterii = form.cleaned_data['data_nasterii']
+            tip_mesaj = form.cleaned_data['tip_mesaj']
+            zile = form.cleaned_data['minim_zile_asteptare']
+            mesaj = form.cleaned_data['mesaj']
+
+            varsta = calcul_varsta(data_nasterii)
+            mesaj_curat = curata_mesaj(mesaj)
+            mesaj_final = capitalizeaza_dupa_terminatori(mesaj_curat)
+            urgent, nume_fisier = verifica_urgent_si_fisier(tip_mesaj, zile)
+
+            mesaj_trimite = (
+                f"Mesajul a fost trimis cu succes!\n"
+                f"Varsta: {varsta}\n"
+                f"Nume fisier: {nume_fisier}\n"
+                f"Urgent: {urgent}\n"
+                f"Mesaj procesat: {mesaj_final}"
+            )
+
+            form = FormularContact()
+    else:
+        form = FormularContact()
+            
+    return render(request, "aplicatie/contact.html", {
+        "form" : form,
+        "mesaj_trimite" : mesaj_trimite
+    })
+    
+    
+from django.shortcuts import render, redirect
+from django.utils import timezone
+from .forms import CeasCuCalculForm
+from .models import Ceas
+
+def get_urmatorul_id_sugerat():
+    cel_mai_mare_ceas = Ceas.objects.order_by('-id_ceas').first()
+    
+    if cel_mai_mare_ceas is None:
+        return 1
+    
+    return cel_mai_mare_ceas.id_ceas + 1
+
+def adauga_ceas(request):
+    mesaj = None
+
+    id_sugerat_pentru_context = get_urmatorul_id_sugerat()
+    
+    if request.method == "POST":
+        form = CeasCuCalculForm(request.POST)
+        if form.is_valid():
+            ceas = form.save(commit=False)
+
+            pret_final_calculat = form.cleaned_data.get('pret')
+            
+            ceas.pret = pret_final_calculat
+            ceas.data_lansare = timezone.now().date()
+            ceas.disponibil_online = True
+
+            ceas.save()
+
+            mesaj = f"Ceasul '{ceas.model}' a fost adaugat cu succes! Pret final: {pret_final_calculat} RON"
+            
+            id_sugerat_pentru_context = get_urmatorul_id_sugerat()
+            form = CeasCuCalculForm()
+    else:
+        form = CeasCuCalculForm()
+
+    return render(request, "aplicatie/adauga_ceas.html", {
+        "form": form,
+        "mesaj": mesaj,
+        "id_sugerat": id_sugerat_pentru_context
+    })
+
+
+from django.contrib.auth import login
+from .forms import CustomAuthenticationForm
+
+def custom_login_view(request):
+    if request.method == 'POST':
+        form = CustomAuthenticationForm(data=request.POST, request=request)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+
+            if form.cleaned_data.get('ramane_logat'):
+                request.session.set_expiry(24*60*60)
+            else:
+                request.session.set_expiry(0)
+
+            request.session['username'] = user.username
+            request.session['email'] = user.email
+            request.session['tara'] = user.tara
+            request.session['oras'] = user.oras
+            request.session['adresa'] = user.adresa
+            request.session['puncte_loialitate'] = user.puncte_loialitate
+            request.session['cont_premium'] = user.cont_premium
+
+            return redirect('profil')
+    else:
+        form = CustomAuthenticationForm()
+
+    return render(request, 'aplicatie/login.html', {'form': form})
+
+
+from django.contrib.auth import logout
+
+def logout_view(request):
+    logout(request)
+    return redirect('index')
+
+def profile_view(request):
+    context = {
+        'username': request.session.get('username'),
+        'email': request.session.get('email'),
+        'tara': request.session.get('tara'),
+        'oras': request.session.get('oras'),
+        'adresa': request.session.get('adresa'),
+        'puncte_loialitate': request.session.get('puncte_loialitate'),
+        'cont_premium': request.session.get('cont_premium'),
+    }
+    return render(request, 'aplicatie/profile.html', context)
+
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth import update_session_auth_hash
+from django.contrib import messages
+
+def change_password_view(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, request.user)
+            messages.success(request, 'Parola a fost actualizată cu succes.')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Exista erori in formular.')
+    else:
+        form = PasswordChangeForm(user=request.user)
+    return render(request, 'aplicatie/change_password.html', {'form': form})
+
+
+from .forms import CustomUserCreationForm
+
+def register_view(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Contul a fost creat cu succes!")
+            return redirect('login')
+        else:
+            messages.error(request, "Există erori in formular.")
+    else:
+        form = CustomUserCreationForm()
+    
+    return render(request, 'aplicatie/signin.html', {'form': form})

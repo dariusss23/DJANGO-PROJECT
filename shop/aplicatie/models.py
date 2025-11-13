@@ -141,3 +141,55 @@ class Promotie(models.Model):
         return f"{self.denumire} ({self.tip_promotie})"
     
     
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+    tara = models.CharField(max_length=100, blank=True, null=True)
+    oras = models.CharField(max_length=100, blank=True, null=True)
+    adresa = models.CharField(max_length=255, blank=True, null=True)
+    puncte_loialitate = models.IntegerField(default=0)
+    cont_premium = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.username} ({self.email})"
+
+class Review(models.Model):
+    id_review = models.AutoField(primary_key=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='reviewuri')
+    ceas = models.ForeignKey(Ceas, on_delete=models.CASCADE, related_name='reviewuri')
+    rating = models.PositiveIntegerField()
+    comentariu = models.TextField()
+    data_adaugare = models.DateField(auto_now_add=True)
+    achizitie_verificata = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Review {self.id_review} - Rating: {self.rating} pentru {self.ceas.model}"
+    
+class Comanda(models.Model):
+    STATUS_CHOICES = [
+        ('in_tranzit', 'In tranzit'),
+        ('livrat', 'Livrat'),
+        ('anulat', 'Anulat'),
+        ('procesare', 'In procesare'),
+    ]
+    
+    id_comanda = models.AutoField(primary_key=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='procesare')
+    curier = models.CharField(max_length=100)
+    comanda_rapida = models.BooleanField(default=False)
+    useri = models.ManyToManyField(CustomUser, related_name='comenzi')
+    ceasuri = models.ManyToManyField(Ceas, related_name='comenzi')
+
+    def __str__(self):
+        return f"Comanda {self.id_comanda} - Status: {self.status}"
+
+class Voucher(models.Model):
+    id_voucher = models.AutoField(primary_key=True)
+    cod = models.CharField(max_length=50, unique=True)
+    procent_discont = models.IntegerField()
+    data_expirarii = models.DateField()
+    activ = models.BooleanField(default=True)
+    useri = models.ManyToManyField(CustomUser, related_name='vouchere')
+
+    def __str__(self):
+        return f"Voucher {self.cod} - {self.procent_discont}%"

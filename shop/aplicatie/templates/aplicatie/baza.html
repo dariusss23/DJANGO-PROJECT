@@ -32,15 +32,22 @@
                     <a href="#">Categorii</a>
                     <ul>
                         {% for cat in categorii %}
-                            <li><a href="{% url 'categorie' cat.stil_ceas %}">{{ cat.stil_ceas|title }}</a></li>
+                            <li>
+                                <a href="{% url 'categorie' cat.stil_ceas %}">{{ cat.stil_ceas }} &nbsp; <i class="{{ cat.icon }}"></i></a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </li>
-
+                
+                <li><a href="{% url 'adauga_ceas' %}">Adauga ceas</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'cos' %}">Cos Virtual</a></li>
                 <li><a href="{% url 'info' %}">Info</a></li>
                 <li><a href="{% url 'log' %}">Log</a></li>
+                <li><a href="{% url 'signin' %}">SignIn</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'profil' %}">Profil</a></li>
             </ul>
         </nav>
     </header>

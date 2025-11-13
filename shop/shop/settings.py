@@ -52,6 +52,14 @@ MIDDLEWARE = [
     'aplicatie.middlewareLog.LogAccesMiddleware',
 ]
 
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+AUTH_USER_MODEL = 'aplicatie.CustomUser'
+
+
 ROOT_URLCONF = 'shop.urls'
 
 TEMPLATES = [

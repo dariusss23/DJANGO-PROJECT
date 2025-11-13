@@ -2,8 +2,9 @@ from django.contrib import admin
 
 from .models import Locatie
 
-admin.site.register(Locatie)
 '''
+admin.site.register(Locatie)
+
 
 #admin.site.register(Organizator)
 
@@ -35,6 +36,11 @@ class LocatieAdmin(admin.ModelAdmin):
 
 # admin.site.register(Locatie, LocatieAdmin)
 
+
+from .models import Organizator
+
+admin.site.register(Organizator)
+
 '''
 
 ##########################################################
@@ -43,7 +49,7 @@ from .models import Ceas, Categorie, Material, Brand, Depozit, Promotie
 
 admin.site.site_title = "Panou Administrare Ceasuri"
 admin.site.site_header = "Magazin Ceasuri - Admin"
-admin.site.index_title = "Bine ati venit in panoul de administrare"
+admin.site.index_title = "Panou administrare"
 
 class CeasAdmin(admin.ModelAdmin):
     search_fields = ['model', 'colorCode']
@@ -51,32 +57,41 @@ class CeasAdmin(admin.ModelAdmin):
     list_filter = ['brand', 'material']
     
     list_per_page = 5
-    
+
     fieldsets = (
-        ('Informații principale', {
+        ('Informatii principale', {
             'fields': ('model', 'pret', 'data_lansare', 'brand', 'categorie', 'material')
         }),
-        ('Opțional', {
-            'classes': ('collapse',),  # face secțiunea colapsabilă
+        ('Optional', {
+            'classes': ('collapse',),
             'fields': ('stoc', 'disponibil_online', 'depozit', 'promotii', 'colorCode')
         }),
     )
-    
+
+
 class CategorieAdmin(admin.ModelAdmin):
-    search_fields = ['stil_ceas']
-    
+    search_fields = ['stil_ceas', 'gen']
+    list_display = ('stil_ceas', 'gen', 'tip_ceas')
+
+
 class MaterialAdmin(admin.ModelAdmin):
-    search_fields = ['tip_material']
-    
+    search_fields = ['tip_material', 'durabilitate']
+    list_display = ('tip_material', 'durabilitate', 'descriere')
+
+
 class BrandAdmin(admin.ModelAdmin):
     search_fields = ['nume', 'tara_origine']
-    
+    list_display = ('nume', 'tara_origine', 'categorie_brand', 'website')
+
+
 class DepozitAdmin(admin.ModelAdmin):
     search_fields = ['nume', 'locatie']
+    list_display = ('nume', 'locatie', 'numar_angajati', 'disponibilitate_stoc')
+
 
 class PromotieAdmin(admin.ModelAdmin):
     list_display = ('denumire', 'procent_reducere', 'data_inceput', 'data_sfarsit', 'activa', 'tip_promotie')
-    search_fields = ['denumire', 'tip_promotie']
+    search_fields = ['denumire', 'tip_promotie'] 
 
 
 
@@ -86,8 +101,4 @@ admin.site.register(Material, MaterialAdmin)
 admin.site.register(Brand, BrandAdmin)
 admin.site.register(Depozit, DepozitAdmin)
 admin.site.register(Promotie, PromotieAdmin)
-
-from .models import Organizator
-
-admin.site.register(Organizator)
 

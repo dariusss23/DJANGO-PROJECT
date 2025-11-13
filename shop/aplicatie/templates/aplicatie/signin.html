@@ -1,0 +1,30 @@
+{% extends "aplicatie/baza.html" %}
+
+{% block title %}Inregistrare{% endblock %}
+
+{% block content %}
+<h2>Inregistrare utilizator</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    {% for field in form %}
+        <div>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {{ field.errors }}
+        </div>
+    {% endfor %}
+
+    <button type="submit">Inregistrează-te</button>
+</form>
+
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

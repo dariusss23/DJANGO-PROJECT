@@ -8,13 +8,50 @@
 
 <h1>Lista Ceasuri</h1>
 
-
 {% if eroare %}
     <p class="mesaj-eroare">{{ eroare }}</p>
 {% endif %}
 
-{% if pagina %}
-    {% for ceas in pagina %}
+<form method="get">
+    {% for field in form %}
+        {% if field.name == 'categorie' and categorie_selectata %}
+            <input type="hidden" name="categorie" value="{{ categorie_selectata.id_categorie }}">
+        {% else %}
+            <div class="form-field">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <span class="error">{{ field.errors }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    
+    <button type="submit">Filtreaza</button>
+    <a href="{% if categorie_selectata %}{% url 'categorie' categorie_selectata.stil_ceas %}{% else %}{% url 'produse' %}{% endif %}">
+        <button type="button" id="resetBtn">Reseteaza filtrele</button>
+    </a>
+</form>
+
+{% if mesaj_paginare %}
+<script>
+    alert("{{ mesaj_paginare }}");
+</script>
+{% endif %}
+
+<script>
+    document.getElementById("resetBtn").addEventListener("click", function() {
+        const confirmare = confirm("Sunteti sigur ca doriti sa resetati filtrele? Veti pierde toate filtrele aplicate.");
+        if (confirmare) {
+            window.location.href = "{% url 'produse' %}";
+        }else {
+            event.preventDefault();
+        }
+    });
+</script>
+
+{% if object_list %}
+    {% for ceas in object_list %}
         <div class="ceas-card">
             <h3>
                 <a href="{% url 'detalii_ceas' ceas.id_ceas %}" class="link-produs">{{ ceas.model }}</a>
@@ -30,24 +67,25 @@
                     {% endif %}
                 </a>
             </p>
-
         </div>
     {% endfor %}
 
     <div class="paginare">
-        {% if pagina.has_previous %}
-            <a href="?pagina=1">&laquo; Prima</a>
-            <a href="?pagina={{ pagina.previous_page_number }}">Anterior</a>
-        {% endif %}
+    {% if pagina.has_previous %}
+        <a href="?pagina=1">Prima</a>
+        <a href="?pagina={{ pagina.previous_page_number }}">Anterior</a>
+    {% endif %}
 
-        <span>Pagina {{ pagina.number }} din {{ pagina.paginator.num_pages }}</span>
+    <span>Pagina {{ pagina.number }} din {{ pagina.paginator.num_pages }}</span>
 
-        {% if pagina.has_next %}
-            <a href="?pagina={{ pagina.next_page_number }}">Urmatoarea</a>
-            <a href="?pagina={{ pagina.paginator.num_pages }}">Ultima &raquo;</a>
-        {% endif %}
-    </div>
+    {% if pagina.has_next %}
+        <a href="?pagina={{ pagina.next_page_number }}">Urmatoarea</a>
+        <a href="?pagina={{ pagina.paginator.num_pages }}">Ultima</a>
+    {% endif %}
+</div>
 {% else %}
     <p class="empty">Nu exista produse disponibile.</p>
 {% endif %}
+
+
 {% endblock %}

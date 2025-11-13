@@ -1,0 +1,108 @@
+{% extends 'aplicatie/baza.html' %}
+
+{% block titlu %}Pagina de contact{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <h1>Contacteaza-ne</h1>
+
+    {% if mesaj_trimite %}
+        <div class="mesaj-trimis">
+            {{ mesaj_trimite }}
+        </div>
+    {% endif %}
+
+    <form method="post" class="contact-form">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <button type="submit" class="btn-submit">Trimite mesaj</button>
+    </form>
+</div>
+
+<style>
+
+.contact-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+
+.contact-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+
+.contact-form table {
+    width: 100%;
+}
+
+.contact-form td {
+    padding: 8px 5px;
+}
+
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+
+.btn-submit {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+
+.mesaj-trimis {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    white-space: pre-wrap; /* păstrează liniile noi */
+    font-family: monospace;
+}
+
+
+.contact-form .errorlist {
+    color: red;
+    margin: 5px 0 10px 0;
+    font-size: 13px;
+}
+</style>
+{% endblock %}
