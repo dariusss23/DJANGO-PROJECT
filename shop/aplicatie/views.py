@@ -5,6 +5,7 @@ from datetime import datetime
 from .models import Locatie
 
 def index(request):
+    trimite_email()
     return render(request, "aplicatie/index.html", 
         {
             "ip": get_ip(request),
@@ -37,7 +38,7 @@ def get_ip(request):
     else:
         return request.META.get('REMOTE_ADDR') 
 
-ZILE = ["Luni","Marți","Miercuri","Joi","Vineri","Sâmbătă","Duminică"]
+ZILE = ["Luni","Marti","Miercuri","Joi","Vineri","Sambata","Duminica"]
 LUNI = ["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August","Septembrie","Octombrie","Noiembrie","Decembrie"]
 
 def afis_data(param):
@@ -49,7 +50,7 @@ def afis_data(param):
     ora = acum.strftime("%H:%M:%S")
     
     if param == "zi":
-        continut = f"Data curentă este {zi} {LUNI[luna-1]} {an}."
+        continut = f"Data curenta este {zi} {LUNI[luna-1]} {an}."
     elif param == "timp":
         continut = f"Ora curenta este {ora}."
     else:
@@ -129,7 +130,7 @@ def log(request):
             "data": a.data('%Y-%m-%d %H:%M:%S')
         })
 
-    # filtrare după ID-uri - SIMPLIFICAT
+    # filtrare dupa ID-uri - SIMPLIFICAT
     id_list = []
     for elem in param_id:
         for x in elem.split(","):
@@ -217,7 +218,7 @@ def contact_view(request):
 
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from .models import Ceas, Categorie, Brand, Material
+from .models import Ceas, Categorie
 from .forms import CeasFilterForm
 
 def afisare_ceasuri(request):
@@ -325,22 +326,25 @@ def afisare_categorie(request, nume_categorie):
     mesaj_paginare = None
     
     categorie_din_form = request.GET.get("categorie")
-    if categorie_din_form:
-        try:
-            categorie_id_form = int(categorie_din_form)
-            if categorie_id_form != categorie.pk:
-                mesajEroare = "Categoria selectata nu corespunde cu pagina curenta. Filtrele au fost resetate."
-                # Resetează formularul fără categoria modificată
-                get_params = request.GET.copy()
-                get_params["categorie"] = categorie.pk
-                form = CeasFilterForm(get_params)
-        except (ValueError, TypeError):
-            mesajEroare = "Valoare invalida pentru categorie. Filtrele au fost resetate."
+    
+    if categorie_din_form and categorie_din_form.isdigit():
+        categorie_id_form = int(categorie_din_form)
+
+        if categorie_id_form != categorie.pk:
+            mesajEroare = "Categoria selectata nu corespunde cu pagina curenta. Filtrele au fost resetate."
+
             get_params = request.GET.copy()
             get_params["categorie"] = categorie.pk
             form = CeasFilterForm(get_params)
+
+    else:
+        if categorie_din_form:
+            mesajEroare = "Valoare invalida pentru categorie. Filtrele au fost resetate."
+
+        get_params = request.GET.copy()
+        get_params["categorie"] = categorie.pk
+        form = CeasFilterForm(get_params)
     
-    # Aplică filtrele din formular doar dacă nu a fost eroare de validare categorie
     if form.is_valid() and not mesajEroare:
         data = form.cleaned_data
         
@@ -362,7 +366,6 @@ def afisare_categorie(request, nume_categorie):
             produse = produse.filter(disponibil_online=True)
         if data["brand"]:
             produse = produse.filter(brand=data["brand"])
-        # Categoria e deja filtrată mai sus
         if data["material"]:
             produse = produse.filter(material=data["material"])
         if data["depozit"]:
@@ -375,7 +378,6 @@ def afisare_categorie(request, nume_categorie):
         if request.GET.get("elemente_pe_pagina") and int(request.GET.get("elemente_pe_pagina")) != 5:
             mesaj_paginare = "In urma repaginarii e posibil sa fi sarit peste unele produse sau sa le vedeti din nou pe cele deja vizualizate."
     
-    # Paginare
     paginator = Paginator(produse, elemente_pe_pagina)
     nrPagina = request.GET.get("pagina", 1)
 
@@ -385,7 +387,7 @@ def afisare_categorie(request, nume_categorie):
         obPagina = paginator.page(1)
     except EmptyPage:
         obPagina = paginator.page(paginator.num_pages)
-        if not mesajEroare:  # Nu suprascrie mesajul de eroare pentru categorie
+        if not mesajEroare:
             mesajEroare = "Nu mai sunt produse"
 
     return render(request, "aplicatie/produse.html", {
@@ -400,46 +402,78 @@ def afisare_categorie(request, nume_categorie):
     })
     
 
-from .forms import FormularContact
-from .forms import calcul_varsta, curata_mesaj, capitalizeaza_dupa_terminatori, verifica_urgent_si_fisier
+from .forms import FormularContact, verifica_urgent_si_fisier, calcul_varsta, curata_mesaj, CAPS_dupa_terminatori
+import os
+import json
+import time
+from django.conf import settings
+from datetime import datetime
 
 def contact(request):
-    mesaj_trimite = None
-    
-    if request.method == "POST":
-        form = FormularContact(request.POST)
-        if form.is_valid():
-            data_nasterii = form.cleaned_data['data_nasterii']
-            tip_mesaj = form.cleaned_data['tip_mesaj']
-            zile = form.cleaned_data['minim_zile_asteptare']
-            mesaj = form.cleaned_data['mesaj']
+    mesaj_trimite=None
+    urgent_flag=False
 
-            varsta = calcul_varsta(data_nasterii)
-            mesaj_curat = curata_mesaj(mesaj)
-            mesaj_final = capitalizeaza_dupa_terminatori(mesaj_curat)
-            urgent, nume_fisier = verifica_urgent_si_fisier(tip_mesaj, zile)
+    if request.method=="POST":
+        form=FormularContact(request.POST)
+
+        if form.is_valid():
+            data_nasterii=form.cleaned_data['data_nasterii']
+            tip_mesaj=form.cleaned_data['tip_mesaj']
+            zile=form.cleaned_data['minim_zile_asteptare']
+            mesaj=form.cleaned_data['mesaj']
+
+            varsta=calcul_varsta(data_nasterii)
+            mesaj_curat=curata_mesaj(mesaj)
+            mesaj_final=CAPS_dupa_terminatori(mesaj_curat)
+            urgent_flag, _ =verifica_urgent_si_fisier(tip_mesaj, zile)
+
+
+            folder=os.path.join(settings.BASE_DIR, "aplicatie", "Mesaje")
+            timestamp=int(time.time())
+            sufix="_urgent" if urgent_flag else ""
+            nume_fisier=f"mesaj_{timestamp}{sufix}.json"
+            cale_fisier=os.path.join(folder, nume_fisier)
+
+            data_mesaj = {
+                "nume": form.cleaned_data["nume"],
+                "prenume": form.cleaned_data.get("prenume"),
+                "cnp": form.cleaned_data.get("cnp"),
+                "data_nasterii": str(data_nasterii),
+                "email": form.cleaned_data["email"],
+                "tip_mesaj": tip_mesaj,
+                "subiect": form.cleaned_data["subiect"],
+                "minim_zile_asteptare": zile,
+                "mesaj": mesaj_final,
+                "urgent": urgent_flag,
+                "ip": get_ip(request),
+                "moment": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "timestamp": timestamp
+            }
+
+            with open(cale_fisier, "w", encoding="utf-8") as f:
+                json.dump(data_mesaj, f, ensure_ascii=False, indent=4)
 
             mesaj_trimite = (
                 f"Mesajul a fost trimis cu succes!\n"
                 f"Varsta: {varsta}\n"
                 f"Nume fisier: {nume_fisier}\n"
-                f"Urgent: {urgent}\n"
+                f"Urgent: {urgent_flag}\n"
                 f"Mesaj procesat: {mesaj_final}"
             )
 
             form = FormularContact()
     else:
         form = FormularContact()
-            
+
     return render(request, "aplicatie/contact.html", {
-        "form" : form,
-        "mesaj_trimite" : mesaj_trimite
+        "form": form,
+        "mesaj_trimite": mesaj_trimite
     })
     
     
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .forms import CeasCuCalculForm
+from .forms import AdaugareCeas
 from .models import Ceas
 
 def get_urmatorul_id_sugerat():
@@ -456,7 +490,7 @@ def adauga_ceas(request):
     id_sugerat_pentru_context = get_urmatorul_id_sugerat()
     
     if request.method == "POST":
-        form = CeasCuCalculForm(request.POST)
+        form = AdaugareCeas(request.POST)
         if form.is_valid():
             ceas = form.save(commit=False)
 
@@ -471,9 +505,9 @@ def adauga_ceas(request):
             mesaj = f"Ceasul '{ceas.model}' a fost adaugat cu succes! Pret final: {pret_final_calculat} RON"
             
             id_sugerat_pentru_context = get_urmatorul_id_sugerat()
-            form = CeasCuCalculForm()
+            form = AdaugareCeas()
     else:
-        form = CeasCuCalculForm()
+        form = AdaugareCeas()
 
     return render(request, "aplicatie/adauga_ceas.html", {
         "form": form,
@@ -540,7 +574,7 @@ def change_password_view(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request, request.user)
-            messages.success(request, 'Parola a fost actualizată cu succes.')
+            messages.success(request, 'Parola a fost actualizata cu succes.')
             return redirect('profile')
         else:
             messages.error(request, 'Exista erori in formular.')
@@ -556,11 +590,23 @@ def register_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Contul a fost creat cu succes!")
             return redirect('login')
-        else:
-            messages.error(request, "Există erori in formular.")
     else:
         form = CustomUserCreationForm()
     
     return render(request, 'aplicatie/signin.html', {'form': form})
+
+
+
+from django.core.mail import send_mail
+
+def trimite_email():
+    send_mail(
+        subject='Salutare Sava Darius-Stefan grupa 242!',
+        message='Salut. Ma numesc Sava Darius-Stefan, grupa 242?',
+        html_message='<h1>Salut</h1><p>Sava Darius Stefan grupa 242?</p>',
+        from_email='adresa_email@gmail.com',
+        recipient_list=['test.tweb.node@gmail.com'],
+        fail_silently=False,
+    )
+

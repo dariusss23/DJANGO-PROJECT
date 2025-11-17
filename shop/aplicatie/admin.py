@@ -102,3 +102,6 @@ admin.site.register(Brand, BrandAdmin)
 admin.site.register(Depozit, DepozitAdmin)
 admin.site.register(Promotie, PromotieAdmin)
 
+from .models import CustomUser
+admin.site.register(CustomUser)
+

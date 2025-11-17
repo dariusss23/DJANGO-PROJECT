@@ -149,6 +149,9 @@ class CustomUser(AbstractUser):
     adresa = models.CharField(max_length=255, blank=True, null=True)
     puncte_loialitate = models.IntegerField(default=0)
     cont_premium = models.BooleanField(default=False)
+    
+    # cod = models.CharField(max_length=100, blank=True, null=True)
+    # email_confirmat = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.username} ({self.email})"

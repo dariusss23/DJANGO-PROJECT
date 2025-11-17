@@ -8,7 +8,7 @@ class ContactForm(forms.Form):
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if not email.endswith('@domeniu.com'):
-            raise forms.ValidationError("Adresa de email trebuie să fie de la domeniu.com")
+            raise forms.ValidationError("Adresa de email trebuie sa fie de la domeniu.com")
         return email
 
     def clean(self):
@@ -27,7 +27,7 @@ class CeasFilterForm(forms.Form):
     stoc_min = forms.IntegerField(required=False, min_value=0, label="Stoc minim")
     stoc_max = forms.IntegerField(required=False, min_value=0, label="Stoc maxim")
     data_lansare_min = forms.DateField(required=False, label="Data lansare de la")
-    data_lansare_max = forms.DateField(required=False, label="Data lansare până la")
+    data_lansare_max = forms.DateField(required=False, label="Data lansare pana la")
     disponibil_online = forms.BooleanField(required=False, label="Disponibil online")
     brand = forms.ModelChoiceField(queryset=Brand.objects.all(), required=False)
     categorie = forms.ModelChoiceField(queryset=Categorie.objects.all(), required=False)
@@ -72,10 +72,9 @@ class CeasFilterForm(forms.Form):
 
 
 from django import forms
-import datetime
+from datetime import date, datetime
 from django.core.exceptions import ValidationError
 import re
-from datetime import date
 
 def validare_varsta(data_nasterii):
     azi=date.today()
@@ -83,7 +82,9 @@ def validare_varsta(data_nasterii):
     if varsta<18:
         raise ValidationError("Trebuie sa fiti major (minim 18 ani).")
 
-def validate_mesaj_word_count(value):
+# CURS 2 (EXPRESII REGULATE) 
+# /w - orice caracter alfanumeric (litere, cifre, underscore), echivalent cu [a-zA-Z0-9_]
+def contor_cuvinte_mesaj(value):
     cuvinte=re.findall(r'\w+', value)
     nr_cuvinte=len(cuvinte)
 
@@ -92,14 +93,14 @@ def validate_mesaj_word_count(value):
     
     for cuv in cuvinte:
         if len(cuv)>15:
-            raise ValidationError(f"Cuvântul „{cuv}” este prea lung (maxim 15 caractere permise).")
+            raise ValidationError(f"Cuvantul „{cuv}” este prea lung (maxim 15 caractere permise).")
         
 def validate_no_links(value):
     cuvinte=value.split()
 
     for cuv in cuvinte:
         if cuv.lower().startswith('http://') or cuv.lower().startswith('https://'):
-            raise ValidationError("Textul nu poate conține linkuri (http:// sau https://).")
+            raise ValidationError("Textul nu poate contine linkuri (http:// sau https://).")
         
 
 def validate_cnp(value):
@@ -107,10 +108,10 @@ def validate_cnp(value):
         return
     
     if not value.isdigit():
-        raise ValidationError("CNP-ul trebuie să conțină doar cifre.")
+        raise ValidationError("CNP-ul trebuie sa contina doar cifre.")
     
     if value[0] not in ('1', '2'):
-        raise ValidationError("CNP-ul trebuie să înceapă cu 1 sau 2.")
+        raise ValidationError("CNP-ul trebuie sa inceapa cu 1 sau 2.")
     
     yy = int(value[1:3])
     mm = int(value[3:5])
@@ -125,24 +126,31 @@ def validate_cnp(value):
     
 TEMP_EMAIL_DOMAINS = ['guerillamail.com', 'yopmail.com']
 
-def validate_email_not_temporary(value):
+def validare_email_temporar(value):
     try:
         email_split=value.split('@')
         domain=email_split[1].lower()
     except IndexError:
-        raise ValidationError("E-mailul trebuie să fie valid.")
+        raise ValidationError("E-mailul trebuie sa fie valid.")
 
     if domain in TEMP_EMAIL_DOMAINS:
         raise ValidationError(f"E-mailul cu domeniul '{domain}' nu este permis.")
     
-def validate_start_upper_letters_only(value):
+# CURS 2 (EXPRESII REGULATE) 
+# $ - sfarsitul sirului
+# * - zero sau mai multe aparitii ale unui caracter sau grup
+# ^ - inceputul sirului
+
+#([ -][a-z]) → combina cele doua: cauta un spatiu sau liniuta urmat de litera mica
+
+def incepe_cu_majuscula(value):
     if not value:
         return
     
     if not re.match(r'^[A-Z][a-zA-Z -]*$', value):
         raise ValidationError("Trebuie sa inceapa cu litera mare si sa contina doar litere, spatii si cratime.")
     
-def validate_capital_after_space_hyphen(value):
+def majuscula_dupa_spatiu_liniuta(value):
     if not value:
         return
 
@@ -153,18 +161,22 @@ def calcul_varsta(data_nasterii):
     azi=date.today()
     ani=azi.year - data_nasterii.year
     luni=azi.month - data_nasterii.month
-    if azi.day<data_nasterii.day:luni-=1
+    if azi.day<data_nasterii.day:
+        luni-=1
+        
     if luni<0:
         ani-=1
         luni+=12
-    return f"{ani} ani și {luni} luni"
+    return f"{ani} ani si {luni} luni"
+
+# CURS 2 (EXPRESII REGULATE)
+# \s - orice spatiu alb (inclusiv spatiu, tab, newline)
+#  + - una sau mai multe aparitii ale unui caracter sau grup
 
 def curata_mesaj(mesaj):
-    mesaj=mesaj.replace("\n", " ").replace("\r", " ")
-    mesaj=re.sub(r'\s+', ' ', mesaj)
-    return mesaj.strip()
+    return re.sub(r'\s+', ' ', mesaj).strip()
 
-def capitalizeaza_dupa_terminatori(text):
+def CAPS_dupa_terminatori(text):
     rezultat=""
     urmatoarea_mare=True
     
@@ -216,16 +228,16 @@ class FormularContact(forms.Form):
         ('programare', 'Programare'),
     ]
 
-    nume = forms.CharField(label="Nume", max_length=10, required=True,validators=[validate_start_upper_letters_only, validate_capital_after_space_hyphen])
-    prenume = forms.CharField(label="Prenume", max_length=10, required=False,validators=[validate_start_upper_letters_only, validate_capital_after_space_hyphen])
+    nume = forms.CharField(label="Nume", max_length=10, required=True,validators=[incepe_cu_majuscula, majuscula_dupa_spatiu_liniuta])
+    prenume = forms.CharField(label="Prenume", max_length=10, required=False,validators=[incepe_cu_majuscula, majuscula_dupa_spatiu_liniuta])
     cnp = forms.CharField(label="CNP", max_length=13, min_length=13, required=False, validators=[validate_cnp])
-    data_nasterii = forms.DateField(label="Data nasterii", required=True, validators=[validare_varsta])
-    email = forms.EmailField(label="E-mail", required=True, validators=[validate_email_not_temporary])
+    data_nasterii = forms.DateField(label="Data nasterii", required=True, validators=[validare_varsta], input_formats=['%d/%m/%Y', '%Y-%m-%d'])
+    email = forms.EmailField(label="E-mail", required=True, validators=[validare_email_temporar])
     confirmare_email = forms.EmailField(label="Confirmare E-mail", required=True)
     tip_mesaj = forms.ChoiceField(label="Tip mesaj", choices=TIPURI_MESAJ, required=True, initial='neselectat')
-    subiect = forms.CharField(label="Subiect", max_length=100, required=True, validators=[validate_start_upper_letters_only])
+    subiect = forms.CharField(label="Subiect", max_length=100, required=True, validators=[incepe_cu_majuscula])
     minim_zile_asteptare = forms.IntegerField(label="Minim zile asteptare", required=True, min_value=1, max_value=30, help_text="Pentru review-uri/cereri minimul de zile de asteptare trebuie setat de la 4 incolo iar pentru cereri/intrebari de la 2 incolo. Maximul e 30.")
-    mesaj = forms.CharField(label="Mesaj (va rugam sa va semnati la final)",widget=forms.Textarea, required=True, validators=[validate_mesaj_word_count, validate_no_links])
+    mesaj = forms.CharField(label="Mesaj (va rugam sa va semnati la final)",widget=forms.Textarea, required=True, validators=[contor_cuvinte_mesaj])
 
 
     def clean(self):
@@ -240,20 +252,30 @@ class FormularContact(forms.Form):
         data_nasterii = cleaned_data.get("data_nasterii")
             
         if tip_mesaj=="neselectat":
-            self.add_error('tip_mesaj', "Trebuie selectat un tip de mesaj valid.")
+            raise ValidationError({
+                'tip_mesaj': "Trebuie selectat un tip de mesaj valid."
+            })
 
         if email and confirmare_email and email != confirmare_email:
-            self.add_error("confirmare_email", "Emailurile nu coincid.")
+            raise ValidationError({
+                "confirmare_email": "Emailurile nu coincid."
+            })
             
         if mesaj and nume:
-            ultimul_cuv=mesaj.strip().split()[-1]
-            if ultimul_cuv!=nume:
-                self.add_error("mesaj", "Mesajul trebuie sa se incheie cu numele dvs. (semnatura).")
+            ultimul_cuv = mesaj.strip().split()[-1]
+            if ultimul_cuv != nume:
+                raise ValidationError({
+                    "mesaj": "Mesajul trebuie sa se incheie cu numele dvs. (semnatura)."
+                })
 
-        if tip_mesaj in ["review", "cerere"] and zile is not None and zile<4:
-            self.add_error("minim_zile_asteptare", "Pentru review-uri/cereri trebuie minim 4 zile.")
-        elif tip_mesaj in ["intrebare", "cerere"] and zile is not None and zile<2:
-            self.add_error("minim_zile_asteptare", "Pentru intrebari/cereri trebuie minim 2 zile.")
+        if tip_mesaj in ["review", "cerere"] and zile is not None and zile < 4:
+            raise ValidationError({
+                "minim_zile_asteptare": "Pentru review-uri/cereri trebuie minim 4 zile."
+            })
+        elif tip_mesaj in ["intrebare", "cerere"] and zile is not None and zile < 2:
+            raise ValidationError({
+                "minim_zile_asteptare": "Pentru intrebari/cereri trebuie minim 2 zile."
+            })
             
         if cnp and data_nasterii:
             yy_cnp=int(cnp[1:3])
@@ -261,7 +283,9 @@ class FormularContact(forms.Form):
             dd_cnp=int(cnp[5:7])
             an_cnp=1900+yy_cnp
             if (data_nasterii.year!=an_cnp or data_nasterii.month!=mm_cnp or data_nasterii.day!=dd_cnp):
-                self.add_error("cnp", "CNP-ul nu corespunde cu data nasterii.")
+                raise ValidationError({
+                    "cnp": "CNP-ul nu corespunde cu data nasterii."
+                })
             
         
 from .models import Ceas
@@ -276,8 +300,7 @@ def validator_stoc_max(value):
         raise ValidationError("Stocul nu poate depasi 500 de bucati in sistem.")
 
 
-class CeasCuCalculForm(forms.ModelForm):
-
+class AdaugareCeas(forms.ModelForm):
     pret_baza = forms.DecimalField(
         label="Pret de achizitie (lei)",
         max_digits=10,
@@ -320,7 +343,7 @@ class CeasCuCalculForm(forms.ModelForm):
         labels = {
             'id_ceas': 'ID Ceas',
             'model': 'Modelul ceasului',
-            'stoc': 'Număr produse in stoc',
+            'stoc': 'Numar produse in stoc',
             'brand': 'Selecteaza Brandul',
             'categorie': 'Selecteaza Categoria',
             'material': 'Selecteaza Materialul',
@@ -329,7 +352,7 @@ class CeasCuCalculForm(forms.ModelForm):
         error_messages = {
             'id_ceas': {
                 'required': "ID-ul ceasului este obligatoriu.",
-                'invalid': "Introduceți un ID valid (de obicei, un număr)."
+                'invalid': "Introduceti un ID valid (de obicei, un numar)."
             },
             'model': {
                 'required': "Numele modelului este obligatoriu.",
@@ -382,7 +405,7 @@ class CeasCuCalculForm(forms.ModelForm):
                 raise ValidationError("Adaosul comercial nu poate depasi 200%.")
             if pret_baza < 50 and adaos_procent > 100:
                 raise ValidationError(
-                    "Produsele cu preț mic nu pot avea adaos mai mare de 100%."
+                    "Produsele cu pret mic nu pot avea adaos mai mare de 100%."
                 )
 
             cleaned_data['pret'] = round(pret_baza + pret_baza * adaos_procent / 100, 2)
@@ -413,9 +436,13 @@ class CustomUserCreationForm(UserCreationForm):
         return telefon
 
     def clean_oras(self):
-        oras = self.cleaned_data.get("oras")
-        if len(oras.strip()) < 3 or any(char.isdigit() for char in oras):
-            raise forms.ValidationError("Orasul trebuie sa aiba minim 3 litere si sa nu contina cifre.")
+        oras = self.cleaned_data.get("oras", "").strip()
+        if len(oras) < 3:
+            raise forms.ValidationError("Orasul trebuie sa aiba cel putin 3 litere.")
+        for char in oras:
+            if char.isdigit():
+                raise forms.ValidationError("Orasul nu trebuie sa contina cifre.")
+
         return oras
 
     def clean_puncte_loialitate(self):
@@ -445,3 +472,8 @@ class CustomAuthenticationForm(AuthenticationForm):
         initial=False,
         label='Ramaneti logat'
     )
+    
+    def clean(self):        
+        cleaned_data = super().clean()
+        ramane_logat = self.cleaned_data.get('ramane_logat')
+        return cleaned_data

@@ -1,0 +1,15 @@
+{
+    "nume": "Stan",
+    "prenume": "Adrian",
+    "cnp": "1950315123123",
+    "data_nasterii": "1995-03-15",
+    "email": "stan.adrian@gmail.com",
+    "tip_mesaj": "intrebare",
+    "subiect": "CEAS",
+    "minim_zile_asteptare": 20,
+    "mesaj": "CEASURI APPLE WATCH NU AVETI ? Stan",
+    "urgent": false,
+    "ip": "127.0.0.1",
+    "moment": "2025-11-16 17:37:46",
+    "timestamp": 1763307466
+}

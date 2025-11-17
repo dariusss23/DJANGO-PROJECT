@@ -40,12 +40,18 @@
         <div class="form-group">
             {{ form.pret_baza.label_tag }}
             {{ form.pret_baza }}
+            {% if form.pret_baza.help_text %}
+                <small style="color: #6c757d;">{{ form.pret_baza.help_text }}</small>
+            {% endif %}
             {{ form.pret_baza.errors }}
         </div>
 
         <div class="form-group">
             {{ form.adaos_procent.label_tag }}
             {{ form.adaos_procent }}
+            {% if form.adaos_procent.help_text %}
+                <small style="color: #6c757d;">{{ form.adaos_procent.help_text }}</small>
+            {% endif %}
             {{ form.adaos_procent.errors }}
         </div>
 

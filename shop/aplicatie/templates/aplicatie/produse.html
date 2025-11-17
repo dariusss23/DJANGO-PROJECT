@@ -28,9 +28,8 @@
     {% endfor %}
     
     <button type="submit">Filtreaza</button>
-    <a href="{% if categorie_selectata %}{% url 'categorie' categorie_selectata.stil_ceas %}{% else %}{% url 'produse' %}{% endif %}">
-        <button type="button" id="resetBtn">Reseteaza filtrele</button>
-    </a>
+    <button type="button" id="resetBtn">Reseteaza filtrele</button>
+
 </form>
 
 {% if mesaj_paginare %}
@@ -40,7 +39,7 @@
 {% endif %}
 
 <script>
-    document.getElementById("resetBtn").addEventListener("click", function() {
+    document.getElementById("resetBtn").addEventListener("click", function(event) {
         const confirmare = confirm("Sunteti sigur ca doriti sa resetati filtrele? Veti pierde toate filtrele aplicate.");
         if (confirmare) {
             window.location.href = "{% url 'produse' %}";

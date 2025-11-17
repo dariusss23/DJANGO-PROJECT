@@ -6,20 +6,32 @@
 <div class="contact-container">
     <h1>Contacteaza-ne</h1>
 
-    {% if mesaj_trimite %}
+    {% if mesaj_salvat %}
         <div class="mesaj-trimis">
-            {{ mesaj_trimite }}
+            Mesajul a fost salvat în fisierul: <strong>{{ mesaj_salvat }}</strong>
+            {% if urgent %}
+                <span style="color: red; font-weight: bold;">(URGENT)</span>
+            {% endif %}
         </div>
     {% endif %}
 
     <form method="post" class="contact-form">
         {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
+
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: #6c757d;">{{ field.help_text }}</small>
+                {% endif %}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
 
         <button type="submit" class="btn-submit">Trimite mesaj</button>
     </form>
+
 </div>
 
 <style>
@@ -34,13 +46,11 @@
     font-family: 'Arial', sans-serif;
 }
 
-
 .contact-container h1 {
     text-align: center;
     color: #333;
     margin-bottom: 25px;
 }
-
 
 .contact-form table {
     width: 100%;
@@ -68,7 +78,6 @@
     outline: none;
 }
 
-
 .btn-submit {
     margin-top: 15px;
     width: 100%;
@@ -86,7 +95,6 @@
     background-color: #0056b3;
 }
 
-
 .mesaj-trimis {
     margin-bottom: 20px;
     padding: 15px;
@@ -94,15 +102,15 @@
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
     color: #155724;
-    white-space: pre-wrap; /* păstrează liniile noi */
+    white-space: pre-wrap;
     font-family: monospace;
 }
-
 
 .contact-form .errorlist {
     color: red;
     margin: 5px 0 10px 0;
     font-size: 13px;
 }
+
 </style>
 {% endblock %}
