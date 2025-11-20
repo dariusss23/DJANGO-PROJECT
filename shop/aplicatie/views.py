@@ -210,7 +210,7 @@ def contact_view(request):
             nume = form.cleaned_data['nume']
             email = form.cleaned_data['email']
             mesaj = form.cleaned_data['mesaj']
-            # procesarea datelor
+            
             return redirect('mesaj_trimis')
     else:
         form = ContactForm()
@@ -293,11 +293,21 @@ def afisare_ceasuri(request):
         "mesaj_paginare": mesaj_paginare
     })
 
-    
+
+from .models import Vizualizare    
 
 def detalii_ceas(request, ceas_id):
     try:
         ceas = Ceas.objects.get(pk=ceas_id)
+
+        if request.user.is_authenticated:
+            Vizualizare.objects.create(user=request.user, ceas=ceas)
+            
+            vizualizari = Vizualizare.objects.filter(user=request.user).order_by('-data')
+            if len(vizualizari) > 5:
+                for v in vizualizari[5:]:
+                    v.delete()
+
         return render(request, "aplicatie/detalii_ceas.html", {
             "ceas": ceas,
             "ip": get_ip(request)
@@ -427,7 +437,7 @@ def contact(request):
             mesaj_final=CAPS_dupa_terminatori(mesaj_curat)
             urgent_flag, _ =verifica_urgent_si_fisier(tip_mesaj, zile)
 
-
+            # https://www.geeksforgeeks.org/python/python-os-path-join-method/
             folder=os.path.join(settings.BASE_DIR, "aplicatie", "Mesaje")
             timestamp=int(time.time())
             sufix="_urgent" if urgent_flag else ""
@@ -486,26 +496,40 @@ def get_urmatorul_id_sugerat():
 
 def adauga_ceas(request):
     mesaj = None
-
     id_sugerat_pentru_context = get_urmatorul_id_sugerat()
-    
+
     if request.method == "POST":
         form = AdaugareCeas(request.POST)
         if form.is_valid():
-            ceas = form.save(commit=False)
+            try:
+                ceas = form.save(commit=False)
 
-            pret_final_calculat = form.cleaned_data.get('pret')
-            
-            ceas.pret = pret_final_calculat
-            ceas.data_lansare = timezone.now().date()
-            ceas.disponibil_online = True
+                pret_final_calculat = form.cleaned_data.get('pret')
+                ceas.pret = pret_final_calculat
+                ceas.data_lansare = timezone.now().date()
+                ceas.disponibil_online = True
 
-            ceas.save()
+                ceas.save()
 
-            mesaj = f"Ceasul '{ceas.model}' a fost adaugat cu succes! Pret final: {pret_final_calculat} RON"
-            
-            id_sugerat_pentru_context = get_urmatorul_id_sugerat()
-            form = AdaugareCeas()
+                mesaj = f"Ceasul '{ceas.model}' a fost adaugat cu succes! Pret final: {pret_final_calculat} RON"
+                
+                id_sugerat_pentru_context = get_urmatorul_id_sugerat()
+                
+                form = AdaugareCeas()
+
+            except Exception as e:
+                subject = "Eroare la adaugarea unui ceas"
+                message_text = f"A aparut o eroare:\n{str(e)}"
+                message_html = f"""
+                    <div style="background-color:red; padding:10px;">
+                        <h2>Eroare!</h2>
+                        <p>{str(e)}</p>
+                    </div>
+                """
+                mail_admins(subject, message_text, html_message=message_html)
+
+                mesaj = "A aparut o eroare neasteptata. Administratorii au fost notificati."
+
     else:
         form = AdaugareCeas()
 
@@ -519,15 +543,33 @@ def adauga_ceas(request):
 from django.contrib.auth import login
 from .forms import CustomAuthenticationForm
 
+import time
+from django.core.mail import mail_admins
+from django.contrib.auth import login
+from .forms import CustomAuthenticationForm
+
+
 def custom_login_view(request):
+    ip = get_ip(request)
+    now = time.time()
+
+    if "login_attempts" not in request.session:
+        request.session["login_attempts"] = []
+
+    recent_attempts = [t for t in request.session["login_attempts"] if now - t < 120]
+    request.session["login_attempts"] = recent_attempts
+
     if request.method == 'POST':
         form = CustomAuthenticationForm(data=request.POST, request=request)
+
         if form.is_valid():
             user = form.get_user()
             login(request, user)
 
+            request.session["login_attempts"] = []
+
             if form.cleaned_data.get('ramane_logat'):
-                request.session.set_expiry(24*60*60)
+                request.session.set_expiry(24 * 60 * 60)
             else:
                 request.session.set_expiry(0)
 
@@ -540,10 +582,38 @@ def custom_login_view(request):
             request.session['cont_premium'] = user.cont_premium
 
             return redirect('profil')
+
+        else:
+            recent_attempts.append(now)
+            request.session["login_attempts"] = recent_attempts
+
+            username_incercat = request.POST.get("username")
+
+            if len(recent_attempts) >= 3:
+                subject = "Logari suspecte"
+                text_message = (
+                    "Au fost detectate 3 incercari esuate de logare.\n"
+                    f"Username incercat: {username_incercat}\n"
+                    f"IP: {ip}\n"
+                )
+
+                html_message = f"""
+                    <h1 style="color:red;">{subject}</h1>
+                    <p><b>Username incercat:</b> {username_incercat}</p>
+                    <p><b>IP:</b> {ip}</p>
+                """
+
+                mail_admins(
+                    subject=subject,
+                    message=text_message,
+                    html_message=html_message
+                )
+
     else:
         form = CustomAuthenticationForm()
 
-    return render(request, 'aplicatie/login.html', {'form': form})
+    return render(request, 'aplicatie/login.html', {'form': form, "ip": get_ip(request)})
+
 
 
 from django.contrib.auth import logout
@@ -584,12 +654,51 @@ def change_password_view(request):
 
 
 from .forms import CustomUserCreationForm
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
 
 def register_view(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
+            username = form.cleaned_data.get("username")
+            email = form.cleaned_data.get("email")
+            
+            if username.lower()=="admin":
+                subject_alert = "cineva incearca sa ne preia site-ul"
+                message_text = f"Cineva a încercat să se înregistreze cu username-ul 'admin'.\nEmail: {email}"
+                message_html = f"""
+                    <h1 style="color:red;">{subject_alert}</h1>
+                    <p>Email introdus: {email}</p>
+                """
+                mail_admins(
+                    subject=subject_alert,
+                    message=message_text,
+                    html_message=message_html
+                )
+                
+                return render(request, 'aplicatie/signin.html', {
+                    'form': form,
+                    'eroare': "Username-ul 'admin' nu este permis!"
+                })
+            
+            
+            user = form.save() 
+            
+            subject = 'Confirmare Inregistrare pe Site'
+            
+            html_message = render_to_string('aplicatie/confirmare_mail.html', {'user': user})
+            
+            send_mail(
+                subject=subject,
+                message="Verificare cont",
+                from_email='django14008@gmail.com',
+                recipient_list=[user.email],
+                html_message=html_message,
+                fail_silently=False,
+            )
+            
+            
             return redirect('login')
     else:
         form = CustomUserCreationForm()
@@ -609,4 +718,86 @@ def trimite_email():
         recipient_list=['test.tweb.node@gmail.com'],
         fail_silently=False,
     )
+    
+    
+from .models import CustomUser 
+
+def confirma_mail_view(request, cod_activare):
+    try:
+        user = CustomUser.objects.get(cod=cod_activare)
+    except CustomUser.DoesNotExist:
+        mesaj = "Linkul de activare este invalid sau a expirat. Te rugam sa verifici adresa URL."
+        return render(request, 'aplicatie/mesaj_simplu.html', {'mesaj': mesaj})
+    
+    if user.email_confirmat:
+        mesaj = f"Adresa de e-mail pentru utilizatorul **{user.username}** a fost deja confirmata. Te poti autentifica."
+    else:
+        user.email_confirmat = True
+        user.cod = None
+        user.save()
+        
+        mesaj = f"Felicitari, {user.username}! Adresa ta de e-mail a fost confirmata cu succes. Poti sa te autentifici acum."
+
+    return render(request, 'aplicatie/mesaj_simplu.html', {'mesaj': mesaj})
+
+
+from .forms import OfertaForm
+
+from django.core.mail import send_mass_mail
+
+def promotii_view(request):
+    K=3
+
+    if request.method == 'POST':
+        form = OfertaForm(request.POST)
+        if form.is_valid():
+            oferta = form.save()
+
+            categorii_selectate = oferta.categorii.all()
+
+            emailuri_de_trimis = []
+
+            for categorie in categorii_selectate:
+                ceasuri = Ceas.objects.filter(categorie=categorie)
+
+                vizualizari = []
+                for ceas in ceasuri:
+                    vizualizari.extend(Vizualizare.objects.filter(ceas=ceas))
+
+                contor = {}
+
+                for v in vizualizari:
+                    user = v.user
+                    if user not in contor:
+                        contor[user] = 0
+                    contor[user] += 1
+
+                useri_eligibili = []
+                for user, nr in contor.items():
+                    if nr >= K:
+                        useri_eligibili.append(user.email)
+
+                if not useri_eligibili:
+                    continue
+
+                subiect = oferta.subiect_email
+                mesaj = f"Avem o promotie speciala pentru categoria {categorie.nume}! Reducere {oferta.procent_reducere}%!"
+
+                email_expeditor = "django14008@gmail.com"
+
+                emailuri_de_trimis.append(
+                    (subiect, mesaj, email_expeditor, useri_eligibili)
+                )
+
+            if emailuri_de_trimis:
+                send_mass_mail(emailuri_de_trimis)
+
+            return redirect('promotii_view')
+
+    else:
+        form = OfertaForm()
+
+    return render(request, 'aplicatie/promotii.html', {'form': form})
+
+
 

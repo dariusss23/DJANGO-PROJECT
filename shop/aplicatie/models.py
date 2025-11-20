@@ -139,6 +139,7 @@ class Promotie(models.Model):
 
     def __str__(self):
         return f"{self.denumire} ({self.tip_promotie})"
+
     
     
 from django.contrib.auth.models import AbstractUser
@@ -149,9 +150,8 @@ class CustomUser(AbstractUser):
     adresa = models.CharField(max_length=255, blank=True, null=True)
     puncte_loialitate = models.IntegerField(default=0)
     cont_premium = models.BooleanField(default=False)
-    
-    # cod = models.CharField(max_length=100, blank=True, null=True)
-    # email_confirmat = models.BooleanField(default=False)
+    cod = models.CharField(max_length=100, null=True, blank=True)
+    email_confirmat = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.username} ({self.email})"
@@ -196,3 +196,35 @@ class Voucher(models.Model):
 
     def __str__(self):
         return f"Voucher {self.cod} - {self.procent_discont}%"
+    
+
+class Vizualizare(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    ceas = models.ForeignKey(Ceas, on_delete=models.CASCADE)
+    data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.ceas.model} - {self.data}"
+    
+
+
+class Oferta(models.Model):
+    TEMPLATE_CHOICES = [
+        ('oferta_standard.txt', 'Standard'),
+        ('oferta_urgenta.txt', 'Urgent'),
+    ]
+
+    nume = models.CharField(max_length=100)
+    data_creare = models.DateTimeField(auto_now_add=True)
+    data_expirare = models.DateField()
+
+    categorii = models.ManyToManyField('Categorie', related_name='oferte')
+
+    subiect_email = models.CharField(max_length=100, default="Nu rata oferta!")
+    fisier_template = models.CharField(max_length=50, choices=TEMPLATE_CHOICES, default='oferta_standard.txt')
+
+    procent_reducere = models.IntegerField(default=10)
+    activa = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.nume} (Expira: {self.data_expirare})"

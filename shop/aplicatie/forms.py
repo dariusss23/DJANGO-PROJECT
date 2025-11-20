@@ -26,8 +26,8 @@ class CeasFilterForm(forms.Form):
     pret_max = forms.DecimalField(required=False, min_value=0, label="Pret maxim")
     stoc_min = forms.IntegerField(required=False, min_value=0, label="Stoc minim")
     stoc_max = forms.IntegerField(required=False, min_value=0, label="Stoc maxim")
-    data_lansare_min = forms.DateField(required=False, label="Data lansare de la")
-    data_lansare_max = forms.DateField(required=False, label="Data lansare pana la")
+    data_lansare_min = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False, label="Data lansare de la")
+    data_lansare_max = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False, label="Data lansare pana la")
     disponibil_online = forms.BooleanField(required=False, label="Disponibil online")
     brand = forms.ModelChoiceField(queryset=Brand.objects.all(), required=False)
     categorie = forms.ModelChoiceField(queryset=Categorie.objects.all(), required=False)
@@ -58,15 +58,21 @@ class CeasFilterForm(forms.Form):
 
         if pret_min is not None and pret_max is not None:
             if pret_min > pret_max:
-                self.add_error("pret_max", "Pretul maxim trebuie sa fie mai mare sau egal cu pretul minim.")
+                raise ValidationError({
+                    "pret_max": "Pretul maxim trebuie sa fie mai mare sau egal cu pretul minim."
+                })
 
         if stoc_min is not None and stoc_max is not None:
             if stoc_min > stoc_max:
-                self.add_error("stoc_max", "Stocul maxim trebuie sa fie mai mare sau egal cu stocul minim.")
+                raise ValidationError({
+                    "stoc_max": "Stocul maxim trebuie sa fie mai mare sau egal cu stocul minim."
+                })
 
         if data_min and data_max:
             if data_min > data_max:
-                self.add_error("data_lansare_max", "Data lansarii trebuie sa fie dupa sau egala cu data de inceput.")
+                raise ValidationError({
+                    "data_lansare_max": "Data lansarii trebuie sa fie dupa sau egala cu data de inceput."
+                })
 
         return cleaned_data
 
@@ -81,6 +87,12 @@ def validare_varsta(data_nasterii):
     varsta=azi.year - data_nasterii.year - ((azi.month, azi.day) < (data_nasterii.month, data_nasterii.day))
     if varsta<18:
         raise ValidationError("Trebuie sa fiti major (minim 18 ani).")
+    
+
+
+#re.search(pattern, string) - Scaneaza intregul sir de caractere de la inceput pana la sfarsit si se opreste la prima potrivire gasita.
+#re.match(pattern, string) - Verifica daca tiparul se potriveste strict la inceputul sirului de caractere. Nu cauta dincolo de inceput.
+#re.findall(pattern, string) - Gaseste toate potrivirile din intregul sir, returnandu-le ca o lista de siruri de caractere (string-uri).
 
 # CURS 2 (EXPRESII REGULATE) 
 # /w - orice caracter alfanumeric (litere, cifre, underscore), echivalent cu [a-zA-Z0-9_]
@@ -416,6 +428,13 @@ class AdaugareCeas(forms.ModelForm):
 from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUser
 
+import string
+import random
+
+def genereaza_cod_random(lungime=20):
+    caractere = string.ascii_letters + string.digits
+    return ''.join(random.choices(caractere, k=lungime))
+
 class CustomUserCreationForm(UserCreationForm):
     telefon = forms.CharField(required=True)
     oras = forms.CharField(required=True)
@@ -426,7 +445,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ("username", "email", "telefon", "tara", "oras", "adresa", "puncte_loialitate", "cont_premium", "password1", "password2")
+        fields = ("username", "first_name", "last_name", "email", "telefon", "tara", "oras", "adresa", "puncte_loialitate", "cont_premium", "password1", "password2")
 
 
     def clean_telefon(self):
@@ -453,12 +472,18 @@ class CustomUserCreationForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super().save(commit=False)
+        user.first_name = self.cleaned_data["first_name"]
+        user.last_name = self.cleaned_data["last_name"]
         user.telefon = self.cleaned_data["telefon"]
         user.oras = self.cleaned_data["oras"]
         user.puncte_loialitate = self.cleaned_data.get("puncte_loialitate", 0)
         user.tara = self.cleaned_data.get("tara", "")
         user.adresa = self.cleaned_data.get("adresa", "")
         user.cont_premium = self.cleaned_data.get("cont_premium", False)
+        
+        user.cod = genereaza_cod_random(16) 
+        user.email_confirmat = False
+        
         if commit:
             user.save()
         return user
@@ -476,4 +501,23 @@ class CustomAuthenticationForm(AuthenticationForm):
     def clean(self):        
         cleaned_data = super().clean()
         ramane_logat = self.cleaned_data.get('ramane_logat')
+        
+        if self.user_cache is not None:
+            user = self.user_cache
+            
+            if not user.email_confirmat:
+                self.user_cache = None 
+                
+                raise forms.ValidationError(
+                    "Contul nu este activ. Te rugam sa iti confirmi adresa de e-mail accesand linkul trimis."
+                )
         return cleaned_data
+
+
+
+from .models import Oferta
+
+class OfertaForm(forms.ModelForm):
+    class Meta:
+        model = Oferta
+        fields = ['subiect_email', 'fisier_template', 'nume', 'data_expirare', 'categorii', 'procent_reducere', 'activa']

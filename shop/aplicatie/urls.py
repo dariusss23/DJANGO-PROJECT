@@ -19,4 +19,6 @@ urlpatterns = [
     path('profil/', views.profile_view, name='profil'),
     path('change-password/', views.change_password_view, name='change_password'),
     path('signin/', views.register_view, name='signin'),
+    path('confirma_mail/<str:cod_activare>/', views.confirma_mail_view, name='confirma_mail'),
+    path('promotii/', views.promotii_view, name='promotii_view'),
 ]

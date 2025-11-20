@@ -17,8 +17,13 @@
         </div>
     {% endfor %}
 
-    <button type="submit">Inregistrează-te</button>
+    <button type="submit">Inregistreaza-te</button>
+    <p style="color: red;">Vei primi pe mail un link de confirmare !!!</p>
 </form>
+
+{% if eroare %}
+    <p style="color: red; font-weight: bold;">{{ eroare }}</p>
+{% endif %}
 
 {% if messages %}
     <ul>

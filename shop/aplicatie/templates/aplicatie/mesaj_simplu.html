@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Status Actiune</title>
+    <style>
+        /* Stiluri globale */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Fundal exterior deschis */
+            display: flex; /* Folosim flexbox pentru centrare verticală/orizontală */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Centrare pe toată înălțimea */
+            margin: 0;
+        }
+
+        /* Containerul mesajului */
+        .container {
+            max-width: 450px; /* Am redus lățimea pentru a fi mai compact */
+            padding: 30px;
+            border-radius: 8px;
+            background-color: #ffffff; /* Fundal alb */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Umbră mai subtilă */
+            text-align: center;
+        }
+
+        /* Titlu */
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        /* Paragrafe */
+        p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 20px;
+            /* Păstrăm white-space pentru mesajele formatate, dar îl simplificăm */
+            white-space: pre-line;
+        }
+        
+        /* Link/Buton */
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1a73e8; /* Am schimbat culoarea la un albastru mai modern (Google Blue) */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s; /* Adăugăm o tranziție pentru hover */
+        }
+        
+        a:hover {
+            background-color: #0b5fb3; /* Culoare mai închisă la hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Status Actiune</h1>
+        
+        <p>
+            {{ mesaj }}
+        </p>
+        
+        <div>
+            <a href="{% url 'login' %}">
+                Mergi la pagina de Login
+            </a>
+        </div>
+    </div>
+</body>
+</html>

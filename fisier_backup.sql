@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict fHoFqafqzcSsc04uZNzIbm1Mi3TeGQ92GlKjcnTJl2u8G48sJhHbZNxkUOfvwb0
+\restrict gKqh9IXs01ikj8HZng01z7e7OAoSjx6Xc8jyzr5CSPbknvDUxLgrwf0bDKrInBy
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -39,13 +39,13 @@ SELECT pg_catalog.setval('django.aplicatie_brand_id_brand_seq', 3, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict fHoFqafqzcSsc04uZNzIbm1Mi3TeGQ92GlKjcnTJl2u8G48sJhHbZNxkUOfvwb0
+\unrestrict gKqh9IXs01ikj8HZng01z7e7OAoSjx6Xc8jyzr5CSPbknvDUxLgrwf0bDKrInBy
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict Kv4DMCfX33MKqG7ZPLBG9e2IgCZ46kzxetCZeRplp8ykz1ZQDg7sLYWWtEux5Fa
+\restrict i95hh1O8YL7rIwPFdgCykx7WHDdrzXZ4euV3r25lSr1NYHTBMMHFaFi4aSMRDVp
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -82,13 +82,13 @@ SELECT pg_catalog.setval('django.aplicatie_categorie_id_categorie_seq', 3, true)
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Kv4DMCfX33MKqG7ZPLBG9e2IgCZ46kzxetCZeRplp8ykz1ZQDg7sLYWWtEux5Fa
+\unrestrict i95hh1O8YL7rIwPFdgCykx7WHDdrzXZ4euV3r25lSr1NYHTBMMHFaFi4aSMRDVp
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict JxxsFcxsqoo4g43aVtzdGNuLzAxQUWFyVxMgLGG65NNmIb9EtvVUUjDhHYMN1Ak
+\restrict oCofIEdws2KVGCqq2KQIK9kfDJcCUqetN9gUHJB6PmFHJ6ZYhz2taJLR3wVMWDP
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -126,13 +126,13 @@ INSERT INTO django.aplicatie_ceas (id_ceas, model, pret, stoc, data_lansare, dis
 -- PostgreSQL database dump complete
 --
 
-\unrestrict JxxsFcxsqoo4g43aVtzdGNuLzAxQUWFyVxMgLGG65NNmIb9EtvVUUjDhHYMN1Ak
+\unrestrict oCofIEdws2KVGCqq2KQIK9kfDJcCUqetN9gUHJB6PmFHJ6ZYhz2taJLR3wVMWDP
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict yJAWe66uP8kwZKmfgKeSPck4C3SsVXLnaaUO0eXxrb0bnGh51qlLEad5rLy7jUK
+\restrict qNyPGPg2ihNCBguyc9bf3zWyHXq9rnbp39dC0p7odQgzbCdV8zocCzyU8mn7SZo
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -176,13 +176,13 @@ SELECT pg_catalog.setval('django.aplicatie_ceas_depozit_id_seq', 10, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict yJAWe66uP8kwZKmfgKeSPck4C3SsVXLnaaUO0eXxrb0bnGh51qlLEad5rLy7jUK
+\unrestrict qNyPGPg2ihNCBguyc9bf3zWyHXq9rnbp39dC0p7odQgzbCdV8zocCzyU8mn7SZo
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict dbarpdJcz5KBO2Cn6uOnVvubnK8nM9TbA3GmU45zjMF5ufY7eedXiXycBbnNAw0
+\restrict ymgnuA3i2oqeXUJYie6tGEspyiN1nWtsOBWOOIQufmRZ66tVoWLUHQDduIjhT0l
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -222,13 +222,13 @@ SELECT pg_catalog.setval('django.aplicatie_ceas_promotii_id_seq', 6, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict dbarpdJcz5KBO2Cn6uOnVvubnK8nM9TbA3GmU45zjMF5ufY7eedXiXycBbnNAw0
+\unrestrict ymgnuA3i2oqeXUJYie6tGEspyiN1nWtsOBWOOIQufmRZ66tVoWLUHQDduIjhT0l
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict jVeMRiJqh4UaqTbGStUWLUoRIL6bpl1fMVYFMgEUXkgPoenagboB4Qtbr2mX7mp
+\restrict n6NO0KoncAdkes73j7oEzplk9iDjkKnkZgjLHsLt7ybC7fT8jw1f7Uey6kc99Lx
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -264,13 +264,13 @@ SELECT pg_catalog.setval('django.aplicatie_depozit_id_depozit_seq', 2, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict jVeMRiJqh4UaqTbGStUWLUoRIL6bpl1fMVYFMgEUXkgPoenagboB4Qtbr2mX7mp
+\unrestrict n6NO0KoncAdkes73j7oEzplk9iDjkKnkZgjLHsLt7ybC7fT8jw1f7Uey6kc99Lx
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict oyZwdCncsbI7l820FvbNYvsDflf2jyrC1LXwxFVAIEZK7UhaE9Tmm8WGQ7Lbspf
+\restrict jVM3QZS2ch9rd1k0f9yMeqKX3MkG7Cz88TpQR0TzjNITjAEc0D7GdcgIIElsrCM
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -307,13 +307,13 @@ SELECT pg_catalog.setval('django.aplicatie_material_id_material_seq', 3, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict oyZwdCncsbI7l820FvbNYvsDflf2jyrC1LXwxFVAIEZK7UhaE9Tmm8WGQ7Lbspf
+\unrestrict jVM3QZS2ch9rd1k0f9yMeqKX3MkG7Cz88TpQR0TzjNITjAEc0D7GdcgIIElsrCM
 
 --
 -- PostgreSQL database dump
 --
 
-\restrict WLRqEvfvob98cyW7cmvdc7SQyvjZSnD9wLDWqu7nNzp0gkT9me8UZktFieoXGMh
+\restrict YNZaG2ePaet0TGS2O4J7XBC04DMicibaSyHhIxKJNxIH87gH4PKsBqW1M9OWwGO
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.0
@@ -349,5 +349,5 @@ SELECT pg_catalog.setval('django.aplicatie_promotie_id_promotie_seq', 2, true);
 -- PostgreSQL database dump complete
 --
 
-\unrestrict WLRqEvfvob98cyW7cmvdc7SQyvjZSnD9wLDWqu7nNzp0gkT9me8UZktFieoXGMh
+\unrestrict YNZaG2ePaet0TGS2O4J7XBC04DMicibaSyHhIxKJNxIH87gH4PKsBqW1M9OWwGO
 

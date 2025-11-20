@@ -145,7 +145,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587 
 EMAIL_USE_TLS = True 
-EMAIL_HOST_USER = 'test.tweb.node@gmail.com'  # user
-EMAIL_HOST_PASSWORD = 'xdqswyrleddghrgm'    # parola
-DEFAULT_FROM_EMAIL = 'Da-Boss <test.tweb.node@gmail.com>'
+EMAIL_HOST_USER = 'django14008@gmail.com'  # user
+EMAIL_HOST_PASSWORD = 'bmvholnluuweelxm'    # parola
+DEFAULT_FROM_EMAIL = 'YO <django14008@gmail.com>'
 
+
+
+ADMINS = [
+    ("Admin1", "savadarius01@gmail.com"),
+    ("Admin2", "s.darius14008@gmail.com"),
+]
