@@ -1,0 +1,6 @@
+WARNING 2025-11-27 01:35:30,478 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-27 01:35:30,481 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7279
+WARNING 2025-11-27 01:38:12,626 views Autentificare esuata pentru info_fmi
+WARNING 2025-11-27 01:38:19,959 views Autentificare esuata pentru info_fmi
+WARNING 2025-11-27 01:38:26,242 views Autentificare esuata pentru info_fmi
+ERROR 2025-11-27 01:38:26,243 views 3 incercari esuate consecutive pentru info_fmi de la IP 127.0.0.1

@@ -45,7 +45,6 @@ class CeasFilterForm(forms.Form):
     
     elemente_pe_pagina = forms.ChoiceField(choices=NUMAR_ELEMENTE_PAGINA,label="Produse per pagina",required=False)
 
-
     def clean(self):
         cleaned_data = super().clean()
 
@@ -88,14 +87,14 @@ def validare_varsta(data_nasterii):
     if varsta<18:
         raise ValidationError("Trebuie sa fiti major (minim 18 ani).")
     
-
-
 #re.search(pattern, string) - Scaneaza intregul sir de caractere de la inceput pana la sfarsit si se opreste la prima potrivire gasita.
 #re.match(pattern, string) - Verifica daca tiparul se potriveste strict la inceputul sirului de caractere. Nu cauta dincolo de inceput.
 #re.findall(pattern, string) - Gaseste toate potrivirile din intregul sir, returnandu-le ca o lista de siruri de caractere (string-uri).
 
 # CURS 2 (EXPRESII REGULATE) 
 # /w - orice caracter alfanumeric (litere, cifre, underscore), echivalent cu [a-zA-Z0-9_]
+# + - una sau mai multe aparitii ale unui caracter sau grup
+
 def contor_cuvinte_mesaj(value):
     cuvinte=re.findall(r'\w+', value)
     nr_cuvinte=len(cuvinte)
@@ -262,7 +261,7 @@ class FormularContact(forms.Form):
         nume = cleaned_data.get("nume")
         cnp = cleaned_data.get("cnp")
         data_nasterii = cleaned_data.get("data_nasterii")
-            
+        
         if tip_mesaj=="neselectat":
             raise ValidationError({
                 'tip_mesaj': "Trebuie selectat un tip de mesaj valid."
@@ -501,23 +500,14 @@ class CustomAuthenticationForm(AuthenticationForm):
     def clean(self):        
         cleaned_data = super().clean()
         ramane_logat = self.cleaned_data.get('ramane_logat')
-        
-        if self.user_cache is not None:
-            user = self.user_cache
-            
-            if not user.email_confirmat:
-                self.user_cache = None 
-                
-                raise forms.ValidationError(
-                    "Contul nu este activ. Te rugam sa iti confirmi adresa de e-mail accesand linkul trimis."
-                )
-        return cleaned_data
 
 
 
 from .models import Oferta
 
 class OfertaForm(forms.ModelForm):
+    categorii = forms.ModelMultipleChoiceField(queryset=Categorie.objects.all(), initial=Categorie.objects.all(), required=True)
+
     class Meta:
         model = Oferta
         fields = ['subiect_email', 'fisier_template', 'nume', 'data_expirare', 'categorii', 'procent_reducere', 'activa']

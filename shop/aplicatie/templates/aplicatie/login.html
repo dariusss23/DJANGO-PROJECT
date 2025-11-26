@@ -7,6 +7,13 @@
 
 <form method="post">
     {% csrf_token %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
     {{ form.non_field_errors }}
 
     <div>
@@ -27,5 +34,6 @@
     </div>
 
     <button type="submit">Login</button>
+
 </form>
 {% endblock %}

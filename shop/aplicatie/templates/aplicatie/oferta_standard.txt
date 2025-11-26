@@ -1,0 +1,9 @@
+Subiect: {{ subiect }}
+Oferta valabila pana la: {{ data_expirare }}
+
+Salut!
+
+Avem o oferta speciala pentru categoria: {{ categorie }}
+Reducere: {{ procent }}%
+
+Nu rata!

@@ -2,10 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 
+import logging
+
+logger = logging.getLogger('django')
+
 from .models import Locatie
 
 def index(request):
-    trimite_email()
+    logger.debug("Accesare pagina index")
+    logger.info("Se afiseaza pagina index pentru utilizator")
+    
     return render(request, "aplicatie/index.html", 
         {
             "ip": get_ip(request),
@@ -214,7 +220,11 @@ def contact_view(request):
             return redirect('mesaj_trimis')
     else:
         form = ContactForm()
-    return render(request, 'aplicatie_exemplu/contact.html', {'form': form})
+    return render(request, 'aplicatie_exemplu/contact.html', 
+        {
+            'form': form,
+            "categorii": Categorie.objects.all(),
+        })
 
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -297,24 +307,31 @@ def afisare_ceasuri(request):
 from .models import Vizualizare    
 
 def detalii_ceas(request, ceas_id):
+    logger.debug(f"Intra in detalii_ceas cu ceas_id={ceas_id}")
+    
     try:
         ceas = Ceas.objects.get(pk=ceas_id)
+        logger.info(f"Ceas gasit: {ceas.model}")
 
-        if request.user.is_authenticated:
+        if request.user.id is not None:
             Vizualizare.objects.create(user=request.user, ceas=ceas)
+            logger.debug(f"Vizualizare adaugata pentru user {request.user.username}")
             
             vizualizari = Vizualizare.objects.filter(user=request.user).order_by('-data')
             if len(vizualizari) > 5:
                 for v in vizualizari[5:]:
                     v.delete()
+                logger.warning(f"S-au sters vizualizari vechi pentru user {request.user.username}")
 
         return render(request, "aplicatie/detalii_ceas.html", {
             "ceas": ceas,
             "ip": get_ip(request)
         })
     except Ceas.DoesNotExist:
+        logger.error(f"Ceasul cu ID-ul {ceas_id} nu exista")
         return HttpResponse(f"Produsul cu ID-ul {ceas_id} nu exista.")
     except Ceas.MultipleObjectsReturned:
+        logger.critical(f"Mai multe ceasuri cu ID-ul {ceas_id} in baza de date")
         return HttpResponse(f"Eroare: mai multe ceasuri cu ID-ul {ceas_id} in baza de date!")
     except Exception as e:
         return HttpResponse(f"Eroare neasteptata: {e}")
@@ -536,7 +553,8 @@ def adauga_ceas(request):
     return render(request, "aplicatie/adauga_ceas.html", {
         "form": form,
         "mesaj": mesaj,
-        "id_sugerat": id_sugerat_pentru_context
+        "id_sugerat": id_sugerat_pentru_context,
+        "categorii": Categorie.objects.all(),
     })
 
 
@@ -552,6 +570,8 @@ from .forms import CustomAuthenticationForm
 def custom_login_view(request):
     ip = get_ip(request)
     now = time.time()
+    
+    logger.debug("Accesare pagina login")
 
     if "login_attempts" not in request.session:
         request.session["login_attempts"] = []
@@ -561,10 +581,19 @@ def custom_login_view(request):
 
     if request.method == 'POST':
         form = CustomAuthenticationForm(data=request.POST, request=request)
+        
+        username=request.POST.get("username")
+        logger.info(f"Se incearca autentificarea pentru user {username}")
 
         if form.is_valid():
             user = form.get_user()
+            
+            if not user.email_confirmat:
+                messages.error(request, "Trebuie sa iti confirmi mai intai adresa de email!")
+                return render(request, 'aplicatie/login.html', {'form': form, "ip": ip})
+            
             login(request, user)
+            logger.info(f"User {username} s-a logat cu succes")
 
             request.session["login_attempts"] = []
 
@@ -588,8 +617,13 @@ def custom_login_view(request):
             request.session["login_attempts"] = recent_attempts
 
             username_incercat = request.POST.get("username")
+            
+            logger.warning(f"Autentificare esuata pentru {username_incercat}")
 
             if len(recent_attempts) >= 3:
+                
+                logger.error(f"3 incercari esuate consecutive pentru {username_incercat} de la IP {get_ip(request)}")
+                
                 subject = "Logari suspecte"
                 text_message = (
                     "Au fost detectate 3 incercari esuate de logare.\n"
@@ -709,6 +743,7 @@ def register_view(request):
 
 from django.core.mail import send_mail
 
+'''
 def trimite_email():
     send_mail(
         subject='Salutare Sava Darius-Stefan grupa 242!',
@@ -718,14 +753,17 @@ def trimite_email():
         recipient_list=['test.tweb.node@gmail.com'],
         fail_silently=False,
     )
-    
-    
+''' 
+
 from .models import CustomUser 
 
 def confirma_mail_view(request, cod_activare):
     try:
         user = CustomUser.objects.get(cod=cod_activare)
     except CustomUser.DoesNotExist:
+        
+        logger.critical(f"Cod de activare invalid: {cod_activare}")
+        
         mesaj = "Linkul de activare este invalid sau a expirat. Te rugam sa verifici adresa URL."
         return render(request, 'aplicatie/mesaj_simplu.html', {'mesaj': mesaj})
     
@@ -781,7 +819,17 @@ def promotii_view(request):
                     continue
 
                 subiect = oferta.subiect_email
-                mesaj = f"Avem o promotie speciala pentru categoria {categorie.nume}! Reducere {oferta.procent_reducere}%!"
+                
+                if oferta.fisier_template == 'oferta_standard.txt':
+                    template_fisier = 'email/oferta_standard.txt'
+                elif oferta.fisier_template == 'oferta_urgenta.txt':
+                    template_fisier = 'email/oferta_urgenta.txt'
+                
+                mesaj = render_to_string(template_fisier, {
+                    'categorie': categorie.nume,
+                    'procent': oferta.procent_reducere,
+                    'data_expirare': oferta.data_expirare,
+                })
 
                 email_expeditor = "django14008@gmail.com"
 

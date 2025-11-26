@@ -1,0 +1,22 @@
+INFO 2025-11-27 01:35:04,155 autoreload Watching for file changes with StatReloader
+INFO 2025-11-27 01:35:11,196 views Se afiseaza pagina index pentru utilizator
+INFO 2025-11-27 01:35:11,769 basehttp "GET / HTTP/1.1" 200 3793
+WARNING 2025-11-27 01:35:30,478 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-27 01:35:30,481 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7279
+INFO 2025-11-27 01:37:51,995 basehttp - Broken pipe from ('127.0.0.1', 57821)
+INFO 2025-11-27 01:37:51,999 basehttp "GET /login/ HTTP/1.1" 200 2747
+INFO 2025-11-27 01:37:56,352 basehttp "GET /profil/ HTTP/1.1" 200 2384
+INFO 2025-11-27 01:37:57,860 basehttp "GET /logout/ HTTP/1.1" 302 0
+INFO 2025-11-27 01:37:57,873 views Se afiseaza pagina index pentru utilizator
+INFO 2025-11-27 01:37:58,063 basehttp "GET / HTTP/1.1" 200 3793
+INFO 2025-11-27 01:37:59,361 basehttp "GET /login/ HTTP/1.1" 200 2747
+INFO 2025-11-27 01:38:08,749 views Se incearca autentificarea pentru user info_fmi
+WARNING 2025-11-27 01:38:12,626 views Autentificare esuata pentru info_fmi
+INFO 2025-11-27 01:38:12,656 basehttp "POST /login/ HTTP/1.1" 200 2899
+INFO 2025-11-27 01:38:16,205 views Se incearca autentificarea pentru user info_fmi
+WARNING 2025-11-27 01:38:19,959 views Autentificare esuata pentru info_fmi
+INFO 2025-11-27 01:38:19,992 basehttp "POST /login/ HTTP/1.1" 200 2899
+INFO 2025-11-27 01:38:22,470 views Se incearca autentificarea pentru user info_fmi
+WARNING 2025-11-27 01:38:26,242 views Autentificare esuata pentru info_fmi
+ERROR 2025-11-27 01:38:26,243 views 3 incercari esuate consecutive pentru info_fmi de la IP 127.0.0.1
+INFO 2025-11-27 01:38:30,801 basehttp "POST /login/ HTTP/1.1" 200 2899

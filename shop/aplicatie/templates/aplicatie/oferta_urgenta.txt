@@ -1,0 +1,8 @@
+URGENT — OFERTA LIMITATA!
+
+Categorie: {{ categorie }}
+Expira la: {{ data_expirare }}
+
+Reducere aplicata: {{ procent }}%
+
+Profita acum!

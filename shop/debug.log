@@ -1,0 +1,1105 @@
+INFO 2025-11-27 01:35:04,155 autoreload Watching for file changes with StatReloader
+DEBUG 2025-11-27 01:35:04,178 autoreload Waiting for apps ready_event.
+DEBUG 2025-11-27 01:35:04,308 autoreload Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2025-11-27 01:35:04,400 autoreload Watching dir C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates with glob **/*.
+DEBUG 2025-11-27 01:35:04,400 autoreload Watching dir C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\locale with glob **/*.mo.
+DEBUG 2025-11-27 01:35:04,401 autoreload Watching dir C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\locale with glob **/*.mo.
+DEBUG 2025-11-27 01:35:05,181 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sites\requests.py first seen with mtime 1759786933.0320897
+DEBUG 2025-11-27 01:35:05,183 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\__init__.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,183 autoreload File D:\PYTHON INSTALL\Lib\concurrent\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,184 autoreload File D:\PYTHON INSTALL\Lib\email\policy.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,185 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\sql.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,185 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\generic\__init__.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,186 autoreload File D:\PYTHON INSTALL\Lib\random.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,186 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\translation\trans_real.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,187 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\deletion.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,188 autoreload File D:\PYTHON INSTALL\Lib\asyncio\subprocess.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,188 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\asyncio.py first seen with mtime 1759786933.4258919
+DEBUG 2025-11-27 01:35:05,189 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\utils.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,189 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\engine\filter_stack.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,190 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\_os.py first seen with mtime 1759786933.4248939
+DEBUG 2025-11-27 01:35:05,190 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\__init__.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,190 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\apps.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,191 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\signals.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,192 autoreload File D:\PYTHON INSTALL\Lib\re\_parser.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,193 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\renderers.py first seen with mtime 1759786933.3482885
+DEBUG 2025-11-27 01:35:05,194 autoreload File D:\PYTHON INSTALL\Lib\ctypes\_endian.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,195 autoreload File D:\PYTHON INSTALL\Lib\asyncio\streams.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,196 autoreload File D:\PYTHON INSTALL\Lib\logging\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,197 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\__init__.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,198 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\shortcuts.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,199 autoreload File D:\PYTHON INSTALL\DLLs\_decimal.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,199 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\wsgi.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,200 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\__init__.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:05,201 autoreload File D:\PYTHON INSTALL\Lib\decimal.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,202 autoreload File D:\PYTHON INSTALL\Lib\zoneinfo\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,203 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\http\cookie.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,203 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\files.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,204 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\asgiref\__init__.py first seen with mtime 1759786930.6609983
+DEBUG 2025-11-27 01:35:05,205 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\__init__.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,206 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\csrf.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,207 autoreload File D:\PYTHON INSTALL\Lib\nturl2path.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,207 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\query.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,208 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\compatibility\__init__.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,209 autoreload File D:\PYTHON INSTALL\Lib\gzip.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,209 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\__init__.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,210 autoreload File D:\PYTHON INSTALL\Lib\glob.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,210 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\signing.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,211 autoreload File D:\PYTHON INSTALL\Lib\email\errors.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,212 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,212 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\management\__init__.py first seen with mtime 1759786931.918625
+DEBUG 2025-11-27 01:35:05,213 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\utils.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,213 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\backends\base.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,214 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\deprecation.py first seen with mtime 1759786933.4308774
+DEBUG 2025-11-27 01:35:05,215 autoreload File D:\PYTHON INSTALL\Lib\encodings\aliases.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,216 autoreload File D:\PYTHON INSTALL\Lib\copy.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,216 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\generated.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,217 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\cache\utils.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,217 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\temp.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,218 autoreload File D:\PYTHON INSTALL\Lib\dataclasses.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,219 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\asgiref\local.py first seen with mtime 1759786930.6774879
+DEBUG 2025-11-27 01:35:05,219 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\files.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,220 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\model_checks.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,220 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\exceptions.py first seen with mtime 1759786933.4228983
+DEBUG 2025-11-27 01:35:05,221 autoreload File D:\PYTHON INSTALL\Lib\_compression.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,221 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\cli.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,222 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\caches.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,222 autoreload File D:\PYTHON INSTALL\Lib\http\client.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,223 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\forms.py first seen with mtime 1759786931.9336076
+DEBUG 2025-11-27 01:35:05,223 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\security\sessions.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,224 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\asgi.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,224 autoreload File D:\PYTHON INSTALL\DLLs\_overlapped.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,225 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\mixins.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,225 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\storage\memory.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,226 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loaders\__init__.py first seen with mtime 1759786933.4108932
+DEBUG 2025-11-27 01:35:05,227 autoreload File D:\PYTHON INSTALL\Lib\_colorize.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,227 autoreload File D:\PYTHON INSTALL\Lib\http\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,228 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\generic\list.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,228 autoreload File D:\PYTHON INSTALL\Lib\operator.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,229 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\transaction.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,230 autoreload File D:\PYTHON INSTALL\Lib\logging\handlers.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,230 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\security\csrf.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,231 autoreload File D:\PYTHON INSTALL\Lib\platform.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,232 autoreload File D:\PYTHON INSTALL\Lib\queue.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,232 autoreload File D:\PYTHON INSTALL\DLLs\_ctypes.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,233 autoreload File D:\PYTHON INSTALL\Lib\asyncio\sslproto.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,234 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\dispatch\__init__.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,234 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\migration.py first seen with mtime 1759786933.2953277
+DEBUG 2025-11-27 01:35:05,235 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\schema.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,236 autoreload File D:\PYTHON INSTALL\Lib\copyreg.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,236 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\templatetags\static.py first seen with mtime 1759786933.4158795
+DEBUG 2025-11-27 01:35:05,237 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\sql.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,237 autoreload File D:\PYTHON INSTALL\Lib\reprlib.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,238 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\utils.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,238 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\templatetags\__init__.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,239 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\__init__.py first seen with mtime 1759786933.4239
+DEBUG 2025-11-27 01:35:05,239 autoreload File D:\PYTHON INSTALL\Lib\asyncio\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,240 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\templates.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,241 autoreload File D:\PYTHON INSTALL\DLLs\select.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,241 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\fields.py first seen with mtime 1759786931.9325874
+DEBUG 2025-11-27 01:35:05,242 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\debug.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,242 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\wsgi.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,243 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\base.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,244 autoreload File D:\PYTHON INSTALL\Lib\pathlib\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,244 autoreload File D:\PYTHON INSTALL\DLLs\_wmi.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,245 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\__init__.py first seen with mtime 1759786933.306298
+DEBUG 2025-11-27 01:35:05,245 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\manage.py first seen with mtime 1759785636.7545602
+DEBUG 2025-11-27 01:35:05,246 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\__init__.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,246 autoreload File D:\PYTHON INSTALL\Lib\tokenize.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,247 autoreload File D:\PYTHON INSTALL\Lib\encodings\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,248 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\helpers.py first seen with mtime 1759786931.2371764
+DEBUG 2025-11-27 01:35:05,248 autoreload File D:\PYTHON INSTALL\Lib\graphlib.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,249 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\base.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,250 autoreload File D:\PYTHON INSTALL\Lib\encodings\cp1252.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,250 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py first seen with mtime 1759786931.2371764
+DEBUG 2025-11-27 01:35:05,251 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\base.py first seen with mtime 1759786933.2818305
+DEBUG 2025-11-27 01:35:05,251 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\__init__.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,251 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\checks.py first seen with mtime 1759786931.9325874
+DEBUG 2025-11-27 01:35:05,252 autoreload File D:\PYTHON INSTALL\Lib\string.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,253 autoreload File D:\PYTHON INSTALL\Lib\asyncio\staggered.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,254 autoreload File D:\PYTHON INSTALL\Lib\asyncio\log.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,254 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\apps.py first seen with mtime 1759786931.9315906
+DEBUG 2025-11-27 01:35:05,255 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\keywords.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,255 autoreload File D:\PYTHON INSTALL\Lib\zoneinfo\_tzpath.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,256 autoreload File D:\PYTHON INSTALL\Lib\keyword.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,256 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\conf\global_settings.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,257 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\translation.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,257 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\locks.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,258 autoreload File D:\PYTHON INSTALL\Lib\email\base64mime.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,259 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\admin.py first seen with mtime 1759786931.9315906
+DEBUG 2025-11-27 01:35:05,259 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\models.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:05,260 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\base.py first seen with mtime 1759786933.4219012
+DEBUG 2025-11-27 01:35:05,260 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\boundfield.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,261 autoreload File D:\PYTHON INSTALL\Lib\email\mime\nonmultipart.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,262 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\engine\grouping.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,262 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\commands.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,262 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\safestring.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,263 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\tree.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,263 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\proxy.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,264 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\autoreload.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,264 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_urls.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,265 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\__init__.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,265 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\related_descriptors.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,266 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\apps.py first seen with mtime 1759785830.8208163
+DEBUG 2025-11-27 01:35:05,266 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\smartif.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,266 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\extras.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,267 autoreload File D:\PYTHON INSTALL\Lib\linecache.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,268 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\duration.py first seen with mtime 1759786933.4308774
+DEBUG 2025-11-27 01:35:05,268 autoreload File D:\PYTHON INSTALL\DLLs\_socket.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,269 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\storage\base.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,269 autoreload File D:\PYTHON INSTALL\Lib\opcode.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,270 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\backends\django.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,270 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\formsets.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,271 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\constants.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,271 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\__init__.py first seen with mtime 1759786931.7478416
+DEBUG 2025-11-27 01:35:05,271 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\http\request.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,272 autoreload File D:\PYTHON INSTALL\Lib\pickle.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,273 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\cache\backends\__init__.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,273 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\messages.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,274 autoreload File D:\PYTHON INSTALL\Lib\email\message.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,274 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\database.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,275 autoreload File D:\PYTHON INSTALL\Lib\quopri.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,276 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\tuple_lookups.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,276 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\operations\__init__.py first seen with mtime 1759786933.3023098
+DEBUG 2025-11-27 01:35:05,277 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\exceptions.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,277 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\forms.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,278 autoreload File D:\PYTHON INSTALL\Lib\wsgiref\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,278 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\views.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,279 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\urls.py first seen with mtime 1763506946.8879251
+DEBUG 2025-11-27 01:35:05,279 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\finders.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,280 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\operations.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,280 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\sites.py first seen with mtime 1759786931.2371764
+DEBUG 2025-11-27 01:35:05,281 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\commands\__init__.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,281 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\validators.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,282 autoreload File D:\PYTHON INSTALL\Lib\asyncio\queues.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,282 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\dateparse.py first seen with mtime 1759786933.4288826
+DEBUG 2025-11-27 01:35:05,283 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\color.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,283 autoreload File D:\PYTHON INSTALL\Lib\email\mime\message.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,284 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\decorators.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,284 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\math.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,285 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\csrf.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,285 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\regex_helper.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,286 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\asgiref\current_thread_executor.py first seen with mtime 1759786930.676859
+DEBUG 2025-11-27 01:35:05,286 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\cache.py first seen with mtime 1759786933.4268882
+DEBUG 2025-11-27 01:35:05,286 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\__init__.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,288 autoreload File D:\PYTHON INSTALL\Lib\weakref.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,289 autoreload File D:\PYTHON INSTALL\Lib\socketserver.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,290 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\features.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,290 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\conf\locale\__init__.py first seen with mtime 1759786930.8366804
+DEBUG 2025-11-27 01:35:05,291 autoreload File D:\PYTHON INSTALL\Lib\heapq.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,292 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\storage\handler.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,293 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\widgets.py first seen with mtime 1759786931.2371764
+DEBUG 2025-11-27 01:35:05,293 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\converters.py first seen with mtime 1759786933.4219012
+DEBUG 2025-11-27 01:35:05,294 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\move.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,295 autoreload File D:\PYTHON INSTALL\Lib\json\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,295 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\api.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,296 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\signals.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,296 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\models.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,297 autoreload File D:\PYTHON INSTALL\Lib\pathlib\_local.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,298 autoreload File D:\PYTHON INSTALL\Lib\typing.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,299 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\numberformat.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,299 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\utils.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,300 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,301 autoreload File D:\PYTHON INSTALL\Lib\email\_parseaddr.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,301 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\tokens.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,302 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\uploadedfile.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,302 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\__init__.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,302 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\utils.py first seen with mtime 1759786931.2371764
+DEBUG 2025-11-27 01:35:05,303 autoreload File D:\PYTHON INSTALL\Lib\email\parser.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,304 autoreload File D:\PYTHON INSTALL\Lib\urllib\request.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,304 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\generic\dates.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,305 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\aggregates.py first seen with mtime 1759786933.3072956
+DEBUG 2025-11-27 01:35:05,305 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\storage\base.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,306 autoreload File D:\PYTHON INSTALL\Lib\pathlib\_abc.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,307 autoreload File D:\PYTHON INSTALL\Lib\asyncio\selector_events.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,307 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\compatibility\django_4_0.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,308 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\html.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,308 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\templatetags\i18n.py first seen with mtime 1759786933.4148822
+DEBUG 2025-11-27 01:35:05,309 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\json.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,309 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\datetime.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,310 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\__init__.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,311 autoreload File D:\PYTHON INSTALL\Lib\numbers.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,311 autoreload File D:\PYTHON INSTALL\Lib\email\generator.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,312 autoreload File D:\PYTHON INSTALL\Lib\difflib.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,313 autoreload File D:\PYTHON INSTALL\Lib\hashlib.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,314 autoreload File D:\PYTHON INSTALL\Lib\email\charset.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,314 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\forms.py first seen with mtime 1764197807.9863353
+DEBUG 2025-11-27 01:35:05,315 autoreload File D:\PYTHON INSTALL\Lib\concurrent\futures\_base.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,315 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\validation.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,316 autoreload File D:\PYTHON INSTALL\Lib\email\_policybase.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,316 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\manager.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,317 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\checks.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,318 autoreload File D:\PYTHON INSTALL\Lib\lzma.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,318 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\templatetags\__init__.py first seen with mtime 1759786933.4138849
+DEBUG 2025-11-27 01:35:05,319 autoreload File D:\PYTHON INSTALL\Lib\secrets.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,319 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\exceptions.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,320 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\templatetags\base.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,320 autoreload File D:\PYTHON INSTALL\Lib\selectors.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,321 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\response.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,321 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\features.py first seen with mtime 1759786933.2838259
+DEBUG 2025-11-27 01:35:05,322 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\serializers\base.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,322 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\ipv6.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,323 autoreload File D:\PYTHON INSTALL\Lib\dis.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,324 autoreload File D:\PYTHON INSTALL\Lib\asyncio\base_tasks.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,324 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\cache\backends\filebased.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,325 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\json.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,326 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\mixins.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,326 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\apps\__init__.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,327 autoreload File D:\PYTHON INSTALL\Lib\hmac.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,327 autoreload File D:\PYTHON INSTALL\Lib\pprint.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,328 autoreload File D:\PYTHON INSTALL\DLLs\_asyncio.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,329 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\urls.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,329 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\decorators.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,330 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\constants.py first seen with mtime 1759786933.308293
+DEBUG 2025-11-27 01:35:05,330 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\handlers.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,331 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\cache.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,331 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\http\__init__.py first seen with mtime 1759786933.3795302
+DEBUG 2025-11-27 01:35:05,332 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\__init__.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,332 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\psycopg_any.py first seen with mtime 1759786933.284473
+DEBUG 2025-11-27 01:35:05,332 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\forms.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,333 autoreload File D:\PYTHON INSTALL\Lib\_weakrefset.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,334 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\comparison.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,334 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\password_validation.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,335 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sites\shortcuts.py first seen with mtime 1759786933.0320897
+DEBUG 2025-11-27 01:35:05,335 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\others.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,336 autoreload File D:\PYTHON INSTALL\Lib\subprocess.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,336 autoreload File D:\PYTHON INSTALL\Lib\urllib\response.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,337 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\apps.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,338 autoreload File D:\PYTHON INSTALL\Lib\re\_constants.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,338 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\__init__.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,339 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\resolvers.py first seen with mtime 1759786933.4228983
+DEBUG 2025-11-27 01:35:05,339 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\composite.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,340 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\client.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,340 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\version.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,341 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\models.py first seen with mtime 1763505780.0556376
+DEBUG 2025-11-27 01:35:05,341 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,342 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\tokens.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,342 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\utils.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,343 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\datastructures.py first seen with mtime 1759786933.4278855
+DEBUG 2025-11-27 01:35:05,343 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\generic\edit.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,343 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\shop\__init__.py first seen with mtime 1759785636.8149388
+DEBUG 2025-11-27 01:35:05,344 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\related.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,344 autoreload File D:\PYTHON INSTALL\Lib\ipaddress.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,345 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\security\__init__.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,346 autoreload File D:\PYTHON INSTALL\DLLs\_hashlib.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,346 autoreload File D:\PYTHON INSTALL\Lib\logging\config.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,347 autoreload File D:\PYTHON INSTALL\Lib\concurrent\futures\thread.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,348 autoreload File D:\PYTHON INSTALL\Lib\email\utils.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,348 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\creation.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,349 autoreload File D:\PYTHON INSTALL\Lib\re\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,349 autoreload File D:\PYTHON INSTALL\Lib\email\contentmanager.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,350 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\operations\models.py first seen with mtime 1759786933.304303
+DEBUG 2025-11-27 01:35:05,350 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\operations.py first seen with mtime 1759786933.284473
+DEBUG 2025-11-27 01:35:05,351 autoreload File D:\PYTHON INSTALL\Lib\_markupbase.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,352 autoreload File D:\PYTHON INSTALL\Lib\json\encoder.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,352 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\checks.py first seen with mtime 1759786933.1635735
+DEBUG 2025-11-27 01:35:05,353 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\asgiref\sync.py first seen with mtime 1759786930.6774879
+DEBUG 2025-11-27 01:35:05,353 autoreload File D:\PYTHON INSTALL\Lib\importlib\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,354 autoreload File D:\PYTHON INSTALL\Lib\socket.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,355 autoreload File D:\PYTHON INSTALL\DLLs\_uuid.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,355 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\compiler.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,355 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\middleware\__init__.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,356 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\errors.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,356 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\views\main.py first seen with mtime 1759786931.5843182
+DEBUG 2025-11-27 01:35:05,357 autoreload File D:\PYTHON INSTALL\Lib\getpass.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,357 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\utils.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,358 autoreload File D:\PYTHON INSTALL\Lib\concurrent\futures\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,359 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\log.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,359 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\admin.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,359 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\conf\__init__.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,360 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\actions.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,360 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\storage\mixins.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,361 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\_psycopg.cp313-win_amd64.pyd first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,361 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\__init__.py first seen with mtime 1759785830.9208167
+DEBUG 2025-11-27 01:35:05,362 autoreload File D:\PYTHON INSTALL\Lib\traceback.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,362 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\query.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,363 autoreload File D:\PYTHON INSTALL\Lib\asyncio\exceptions.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,363 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\_json.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,364 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\connection.py first seen with mtime 1759786933.4278855
+DEBUG 2025-11-27 01:35:05,364 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\termcolors.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,365 autoreload File D:\PYTHON INSTALL\Lib\email\encoders.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,366 autoreload File D:\PYTHON INSTALL\Lib\types.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,366 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\datastructures.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,367 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,367 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\lexer.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,367 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\__init__.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,368 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\common.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,368 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py first seen with mtime 1764200084.8344548
+DEBUG 2025-11-27 01:35:05,369 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\views\autocomplete.py first seen with mtime 1759786931.5843182
+DEBUG 2025-11-27 01:35:05,369 autoreload File D:\PYTHON INSTALL\Lib\warnings.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,370 autoreload File D:\PYTHON INSTALL\Lib\re\_compiler.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,371 autoreload File D:\PYTHON INSTALL\Lib\ctypes\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,371 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\serializers\python.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,372 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\_range.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,372 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\apps.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:05,372 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\utils.py first seen with mtime 1759786933.4239
+DEBUG 2025-11-27 01:35:05,373 autoreload File D:\PYTHON INSTALL\DLLs\unicodedata.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,374 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\http.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,374 autoreload File D:\PYTHON INSTALL\Lib\asyncio\proactor_events.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,375 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\utils.py first seen with mtime 1759786933.300314
+DEBUG 2025-11-27 01:35:05,375 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\related_lookups.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,376 autoreload File D:\PYTHON INSTALL\Lib\email\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,377 autoreload File D:\PYTHON INSTALL\Lib\html\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,377 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\operations\base.py first seen with mtime 1759786933.3033059
+DEBUG 2025-11-27 01:35:05,378 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\formatter.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,378 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\hashable.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,379 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\views\__init__.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,379 autoreload File D:\PYTHON INSTALL\Lib\wsgiref\handlers.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,380 autoreload File D:\PYTHON INSTALL\Lib\calendar.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,381 autoreload File D:\PYTHON INSTALL\Lib\email\mime\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,382 autoreload File D:\PYTHON INSTALL\Lib\ast.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,382 autoreload File D:\PYTHON INSTALL\Lib\importlib\_abc.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,383 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\security\base.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,383 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\i18n.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,384 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\fields\reverse_related.py first seen with mtime 1759786933.326647
+DEBUG 2025-11-27 01:35:05,384 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\operations\fields.py first seen with mtime 1759786933.304303
+DEBUG 2025-11-27 01:35:05,385 autoreload File D:\PYTHON INSTALL\Lib\_opcode_metadata.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,386 autoreload File D:\PYTHON INSTALL\Lib\asyncio\events.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,386 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\text.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,387 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,387 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\exceptions.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,387 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\views.py first seen with mtime 1759786931.9336076
+DEBUG 2025-11-27 01:35:05,388 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\lorem_ipsum.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,389 autoreload File D:\PYTHON INSTALL\Lib\wsgiref\util.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,389 autoreload File D:\PYTHON INSTALL\Lib\functools.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,390 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sites\__init__.py first seen with mtime 1759786933.0320897
+DEBUG 2025-11-27 01:35:05,390 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\filters.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,391 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\__init__.py first seen with mtime 1759786931.9305933
+DEBUG 2025-11-27 01:35:05,391 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loader_tags.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,392 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\http\multipartparser.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,392 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\apps\registry.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,393 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\schema.py first seen with mtime 1759786933.284473
+DEBUG 2025-11-27 01:35:05,394 autoreload File D:\PYTHON INSTALL\Lib\email\feedparser.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,394 autoreload File D:\PYTHON INSTALL\Lib\textwrap.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,395 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\storage\__init__.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,395 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\exceptions.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,396 autoreload File D:\PYTHON INSTALL\Lib\contextvars.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,396 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\dateformat.py first seen with mtime 1759786933.4288826
+DEBUG 2025-11-27 01:35:05,397 autoreload File D:\PYTHON INSTALL\Lib\json\decoder.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,398 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\middleware.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:05,399 autoreload File D:\PYTHON INSTALL\Lib\struct.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,399 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\_ipaddress.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,400 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\__init__.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,400 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\middleware.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,401 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\autoreload.py first seen with mtime 1759786933.4258919
+DEBUG 2025-11-27 01:35:05,402 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\constants.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,402 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\extensions.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,403 autoreload File D:\PYTHON INSTALL\Lib\asyncio\mixins.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,403 autoreload File D:\PYTHON INSTALL\Lib\collections\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,404 autoreload File D:\PYTHON INSTALL\Lib\signal.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,405 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\aligned_indent.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,405 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\__init__.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,406 autoreload File D:\PYTHON INSTALL\Lib\fnmatch.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,406 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\engine.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,407 autoreload File D:\PYTHON INSTALL\Lib\asyncio\runners.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,408 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\functional.py first seen with mtime 1759786933.4328723
+DEBUG 2025-11-27 01:35:05,408 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\defaultfilters.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,409 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\signals.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,409 autoreload File D:\PYTHON INSTALL\Lib\ctypes\wintypes.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,410 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\lookups.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,410 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,411 autoreload File D:\PYTHON INSTALL\Lib\urllib\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,411 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\__init__.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,412 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\base.py first seen with mtime 1759786933.308293
+DEBUG 2025-11-27 01:35:05,412 autoreload File D:\PYTHON INSTALL\Lib\email\mime\text.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,413 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\choices.py first seen with mtime 1759786933.4268882
+DEBUG 2025-11-27 01:35:05,414 autoreload File D:\PYTHON INSTALL\Lib\_compat_pickle.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,414 autoreload File D:\PYTHON INSTALL\Lib\email\mime\base.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,415 autoreload File D:\PYTHON INSTALL\Lib\http\cookies.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,415 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\expressions.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,416 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\creation.py first seen with mtime 1759786933.282828
+DEBUG 2025-11-27 01:35:05,416 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\utils.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,417 autoreload File D:\PYTHON INSTALL\DLLs\_ssl.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,417 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\fields.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,418 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\base_session.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:05,418 autoreload File D:\PYTHON INSTALL\Lib\encodings\utf_8.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,419 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\ddl_references.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,419 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\templatetags\tz.py first seen with mtime 1759786933.4158795
+DEBUG 2025-11-27 01:35:05,420 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\checks.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,420 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\base.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,421 autoreload File D:\PYTHON INSTALL\Lib\json\scanner.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,421 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\validators.py first seen with mtime 1759786931.7578797
+DEBUG 2025-11-27 01:35:05,422 autoreload File D:\PYTHON INSTALL\Lib\uuid.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,422 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\admin.py first seen with mtime 1763504706.0146732
+DEBUG 2025-11-27 01:35:05,423 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\middleware\cache.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,423 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\models.py first seen with mtime 1759786931.9336076
+DEBUG 2025-11-27 01:35:05,424 autoreload File D:\PYTHON INSTALL\Lib\email\headerregistry.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,425 autoreload File D:\PYTHON INSTALL\Lib\asyncio\trsock.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,425 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\base\introspection.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,425 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\window.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,426 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loader.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,426 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\templatetags\cache.py first seen with mtime 1759786933.4138849
+DEBUG 2025-11-27 01:35:05,427 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\apps\config.py first seen with mtime 1759786930.827173
+DEBUG 2025-11-27 01:35:05,427 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\__init__.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,427 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py first seen with mtime 1759786933.4298804
+DEBUG 2025-11-27 01:35:05,428 autoreload File D:\PYTHON INSTALL\Lib\asyncio\transports.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,429 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\management\commands\__init__.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,429 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\debug.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,430 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\cache\__init__.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,430 autoreload File D:\PYTHON INSTALL\Lib\enum.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,431 autoreload File D:\PYTHON INSTALL\Lib\re\_casefix.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,431 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\__init__.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,432 autoreload File D:\PYTHON INSTALL\Lib\asyncio\timeouts.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,432 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\operations\special.py first seen with mtime 1759786933.3053005
+DEBUG 2025-11-27 01:35:05,433 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\apps.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:05,433 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\models.py first seen with mtime 1759786931.2371764
+DEBUG 2025-11-27 01:35:05,434 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\inspect.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,434 autoreload File D:\PYTHON INSTALL\Lib\html\parser.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,435 autoreload File D:\PYTHON INSTALL\Lib\shutil.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,435 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loaders\app_directories.py first seen with mtime 1759786933.4118912
+DEBUG 2025-11-27 01:35:05,436 autoreload File D:\PYTHON INSTALL\Lib\asyncio\format_helpers.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,436 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\widgets.py first seen with mtime 1759786933.3482885
+DEBUG 2025-11-27 01:35:05,437 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\hashers.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,437 autoreload File D:\PYTHON INSTALL\Lib\html\entities.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,438 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\translation\__init__.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,438 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\shop\settings.py first seen with mtime 1764199189.431263
+DEBUG 2025-11-27 01:35:05,439 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\base_user.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,439 autoreload File D:\PYTHON INSTALL\Lib\asyncio\windows_events.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,440 autoreload File D:\PYTHON INSTALL\Lib\http\server.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,441 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\views.py first seen with mtime 1759786931.7578797
+DEBUG 2025-11-27 01:35:05,441 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\crypto.py first seen with mtime 1759786933.4278855
+DEBUG 2025-11-27 01:35:05,441 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\management\commands\runserver.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,442 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\encoding.py first seen with mtime 1759786933.4318745
+DEBUG 2025-11-27 01:35:05,442 autoreload File D:\PYTHON INSTALL\Lib\email\header.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,443 autoreload File D:\PYTHON INSTALL\DLLs\_bz2.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,444 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\defaulttags.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,444 autoreload File D:\PYTHON INSTALL\Lib\gettext.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,445 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\enums.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,445 autoreload File D:\PYTHON INSTALL\Lib\asyncio\base_subprocess.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,446 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\serializers\__init__.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,446 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\generic\base.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,447 autoreload File D:\PYTHON INSTALL\Lib\asyncio\windows_utils.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,447 autoreload File D:\PYTHON INSTALL\Lib\sysconfig\__init__.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,448 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\__init__.py first seen with mtime 1759786933.284473
+DEBUG 2025-11-27 01:35:05,448 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\psycopg2\__init__.py first seen with mtime 1760597206.0325172
+DEBUG 2025-11-27 01:35:05,449 autoreload File D:\PYTHON INSTALL\Lib\email\_header_value_parser.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,449 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\management\__init__.py first seen with mtime 1759786932.085803
+DEBUG 2025-11-27 01:35:05,450 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\__init__.py first seen with mtime 1759786933.2808342
+DEBUG 2025-11-27 01:35:05,451 autoreload File D:\PYTHON INSTALL\Lib\bz2.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,451 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\http\response.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,451 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\static.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,452 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\compiler.py first seen with mtime 1759786933.2818305
+DEBUG 2025-11-27 01:35:05,452 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\subqueries.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,453 autoreload File D:\PYTHON INSTALL\DLLs\_zoneinfo.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,453 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\deconstruct.py first seen with mtime 1759786933.4298804
+DEBUG 2025-11-27 01:35:05,454 autoreload File D:\PYTHON INSTALL\Lib\token.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,454 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\introspection.py first seen with mtime 1759786933.284247
+DEBUG 2025-11-27 01:35:05,455 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\engine\__init__.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,455 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\options.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,456 autoreload File D:\PYTHON INSTALL\Lib\locale.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,457 autoreload File D:\PYTHON INSTALL\Lib\tempfile.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,457 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\servers\basehttp.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,458 autoreload File D:\PYTHON INSTALL\Lib\asyncio\constants.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,458 autoreload File D:\PYTHON INSTALL\Lib\datetime.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,459 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\formats.py first seen with mtime 1759786933.4328723
+DEBUG 2025-11-27 01:35:05,459 autoreload File D:\PYTHON INSTALL\Lib\asyncio\base_futures.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,460 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\utils.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,461 autoreload File D:\PYTHON INSTALL\Lib\urllib\error.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,461 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\shop\urls.py first seen with mtime 1759788248.88662
+DEBUG 2025-11-27 01:35:05,461 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\paginator.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,462 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\generic\detail.py first seen with mtime 1759786933.4495115
+DEBUG 2025-11-27 01:35:05,462 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\state.py first seen with mtime 1759786933.299317
+DEBUG 2025-11-27 01:35:05,463 autoreload File D:\PYTHON INSTALL\Lib\mimetypes.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,463 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\backends\postgresql\client.py first seen with mtime 1759786933.2818305
+DEBUG 2025-11-27 01:35:05,464 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\storage\__init__.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:05,464 autoreload File D:\PYTHON INSTALL\Lib\inspect.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,465 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\uploadhandler.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,465 autoreload File D:\PYTHON INSTALL\Lib\zoneinfo\_common.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,466 autoreload File D:\PYTHON INSTALL\Lib\urllib\parse.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,467 autoreload File D:\PYTHON INSTALL\Lib\asyncio\taskgroups.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,467 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\reindent.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,468 autoreload File D:\PYTHON INSTALL\Lib\email\mime\multipart.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,468 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\commands\runserver.py first seen with mtime 1759786933.2260582
+DEBUG 2025-11-27 01:35:05,469 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loaders\filesystem.py first seen with mtime 1759786933.4128869
+DEBUG 2025-11-27 01:35:05,469 autoreload File D:\PYTHON INSTALL\Lib\pkgutil.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,470 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\templatetags\l10n.py first seen with mtime 1759786933.4148822
+DEBUG 2025-11-27 01:35:05,470 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\management\__init__.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,471 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\exceptions.py first seen with mtime 1759786933.284473
+DEBUG 2025-11-27 01:35:05,471 autoreload File D:\PYTHON INSTALL\Lib\asyncio\base_events.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,472 autoreload File D:\PYTHON INSTALL\DLLs\_lzma.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,472 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loaders\base.py first seen with mtime 1759786933.4118912
+DEBUG 2025-11-27 01:35:05,473 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\async_checks.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,473 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\cache\backends\base.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,474 autoreload File D:\PYTHON INSTALL\Lib\wsgiref\simple_server.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,474 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\output.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,475 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\filters\right_margin.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,476 autoreload File D:\PYTHON INSTALL\Lib\argparse.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,476 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\templatetags\log.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,477 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\__init__.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,477 autoreload File D:\PYTHON INSTALL\Lib\wsgiref\headers.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,478 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\indexes.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,478 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\sqlparse\engine\statement_splitter.py first seen with mtime 1759786930.3834946
+DEBUG 2025-11-27 01:35:05,479 autoreload File D:\PYTHON INSTALL\Lib\asyncio\locks.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,479 autoreload File D:\PYTHON INSTALL\Lib\asyncio\coroutines.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,480 autoreload File D:\PYTHON INSTALL\Lib\base64.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,481 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\module_loading.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,481 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\__init__.py first seen with mtime 1759786933.1635735
+DEBUG 2025-11-27 01:35:05,481 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\signals.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,482 autoreload File D:\PYTHON INSTALL\Lib\bisect.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,483 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\utils.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:05,483 autoreload File D:\PYTHON INSTALL\Lib\asyncio\threads.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,484 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\images.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,484 autoreload File D:\PYTHON INSTALL\Lib\email\iterators.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,485 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\__init__.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:05,485 autoreload File D:\PYTHON INSTALL\Lib\threading.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,486 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\utils.py first seen with mtime 1759786933.3482885
+DEBUG 2025-11-27 01:35:05,486 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\backends.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,487 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\middleware\security.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,487 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\dispatch\dispatcher.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,488 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\backends\__init__.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,488 autoreload File D:\PYTHON INSTALL\Lib\contextlib.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,489 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\checks\registry.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,489 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\templatetags\admin_modify.py first seen with mtime 1759786931.5686972
+DEBUG 2025-11-27 01:35:05,490 autoreload File D:\PYTHON INSTALL\Lib\ssl.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,490 autoreload File D:\PYTHON INSTALL\Lib\asyncio\protocols.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,491 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\constraints.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,491 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\sql\where.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,492 autoreload File D:\PYTHON INSTALL\Lib\email\_encoded_words.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,492 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\timezone.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,493 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\tokens.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:05,493 autoreload File D:\PYTHON INSTALL\Lib\asyncio\tasks.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,494 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\library.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,494 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\dates.py first seen with mtime 1759786933.4298804
+DEBUG 2025-11-27 01:35:05,495 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\functions\text.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,495 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\timesince.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,496 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\__init__.py first seen with mtime 1759786933.4209034
+DEBUG 2025-11-27 01:35:05,496 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\translation\reloader.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:05,496 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\conf.py first seen with mtime 1759786933.4219012
+DEBUG 2025-11-27 01:35:05,497 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\files\storage\filesystem.py first seen with mtime 1759786933.1948154
+DEBUG 2025-11-27 01:35:05,497 autoreload File D:\PYTHON INSTALL\DLLs\_queue.pyd first seen with mtime 1738676306.0
+DEBUG 2025-11-27 01:35:05,498 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\models\query_utils.py first seen with mtime 1759786933.3110254
+DEBUG 2025-11-27 01:35:05,498 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\middleware\csrf.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,499 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\serializers\json.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,499 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\loaders\cached.py first seen with mtime 1759786933.4118912
+DEBUG 2025-11-27 01:35:05,500 autoreload File D:\PYTHON INSTALL\Lib\asyncio\futures.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,500 autoreload File D:\PYTHON INSTALL\Lib\email\quoprimime.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:05,501 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\servers\__init__.py first seen with mtime 1759786933.2325637
+DEBUG 2025-11-27 01:35:05,501 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\apps.py first seen with mtime 1759786933.1635735
+DEBUG 2025-11-27 01:35:05,502 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:05,502 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\__init__.py first seen with mtime 1759786933.332661
+DEBUG 2025-11-27 01:35:05,503 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie first seen with mtime 1764194914.1813824
+DEBUG 2025-11-27 01:35:05,505 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\adauga_ceas.html first seen with mtime 1763417001.1700845
+DEBUG 2025-11-27 01:35:05,506 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\baza.html first seen with mtime 1762997936.8488152
+DEBUG 2025-11-27 01:35:05,507 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\change_password.html first seen with mtime 1762997614.9002445
+DEBUG 2025-11-27 01:35:05,508 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\confirmare_mail.html first seen with mtime 1764192678.1309438
+DEBUG 2025-11-27 01:35:05,509 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\contact.html first seen with mtime 1763627999.337904
+DEBUG 2025-11-27 01:35:05,510 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\despre.html first seen with mtime 1761254906.188056
+DEBUG 2025-11-27 01:35:05,511 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\detalii_ceas.html first seen with mtime 1762203473.988201
+DEBUG 2025-11-27 01:35:05,511 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\exemplu.html first seen with mtime 1760395100.8001416
+DEBUG 2025-11-27 01:35:05,512 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\index.html first seen with mtime 1761863718.0828424
+DEBUG 2025-11-27 01:35:05,513 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\info.html first seen with mtime 1761695265.4701898
+DEBUG 2025-11-27 01:35:05,514 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\in_lucru.html first seen with mtime 1761254915.903339
+DEBUG 2025-11-27 01:35:05,515 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\locatii.html first seen with mtime 1761583916.3524683
+DEBUG 2025-11-27 01:35:05,516 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\log.html first seen with mtime 1761695263.674322
+DEBUG 2025-11-27 01:35:05,516 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\login.html first seen with mtime 1764196945.253019
+DEBUG 2025-11-27 01:35:05,517 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\mesaj_simplu.html first seen with mtime 1763494383.5320606
+DEBUG 2025-11-27 01:35:05,518 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\oferta_standard.txt first seen with mtime 1764194274.2596967
+DEBUG 2025-11-27 01:35:05,518 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\oferta_urgenta.txt first seen with mtime 1764194290.5730908
+DEBUG 2025-11-27 01:35:05,519 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\produse.html first seen with mtime 1763629450.169153
+DEBUG 2025-11-27 01:35:05,520 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\profile.html first seen with mtime 1762997528.7796085
+DEBUG 2025-11-27 01:35:05,521 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\promotii.html first seen with mtime 1763507196.171369
+DEBUG 2025-11-27 01:35:05,521 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\templates\aplicatie\signin.html first seen with mtime 1763581155.3133633
+DEBUG 2025-11-27 01:35:05,619 utils (0.219) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+DEBUG 2025-11-27 01:35:05,631 utils (0.008) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+DEBUG 2025-11-27 01:35:07,314 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\serializer.py first seen with mtime 1759786933.2983203
+DEBUG 2025-11-27 01:35:07,318 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0001_initial.py first seen with mtime 1759786931.9206185
+DEBUG 2025-11-27 01:35:07,325 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0005_alter_user_last_login_null.py first seen with mtime 1759786931.9236116
+DEBUG 2025-11-27 01:35:07,326 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\migrations\0001_initial.py first seen with mtime 1759786931.4877944
+DEBUG 2025-11-27 01:35:07,339 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\executor.py first seen with mtime 1759786933.293334
+DEBUG 2025-11-27 01:35:07,341 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\conf\urls\__init__.py first seen with mtime 1759786931.227168
+DEBUG 2025-11-27 01:35:07,342 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\migrations\0001_initial.py first seen with mtime 1763506357.718205
+DEBUG 2025-11-27 01:35:07,352 autoreload File D:\PYTHON INSTALL\Lib\stringprep.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:07,354 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\utils.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:07,354 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\__init__.py first seen with mtime 1759786931.9285972
+DEBUG 2025-11-27 01:35:07,356 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\commands\makemigrations.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:07,361 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\migrations\__init__.py first seen with mtime 1759786933.0320897
+DEBUG 2025-11-27 01:35:07,362 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\migrations\0002_remove_content_type_name.py first seen with mtime 1759786932.087798
+DEBUG 2025-11-27 01:35:07,362 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\migrations\__init__.py first seen with mtime 1759786932.087798
+DEBUG 2025-11-27 01:35:07,365 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\graph.py first seen with mtime 1759786933.294332
+DEBUG 2025-11-27 01:35:07,367 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\recorder.py first seen with mtime 1759786933.2983203
+DEBUG 2025-11-27 01:35:07,372 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\backends\db.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:07,377 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\middleware.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:07,378 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0003_alter_user_email_max_length.py first seen with mtime 1759786931.9226143
+DEBUG 2025-11-27 01:35:07,382 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\backends\base.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:07,387 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\autodetector.py first seen with mtime 1759786933.284473
+DEBUG 2025-11-27 01:35:07,391 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0002_alter_permission_name_max_length.py first seen with mtime 1759786931.921616
+DEBUG 2025-11-27 01:35:07,392 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\migrations\__init__.py first seen with mtime 1759786931.4887915
+DEBUG 2025-11-27 01:35:07,403 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0009_alter_user_last_name_max_length.py first seen with mtime 1759786931.9266038
+DEBUG 2025-11-27 01:35:07,405 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\middleware.py first seen with mtime 1760395098.2805433
+DEBUG 2025-11-27 01:35:07,412 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0011_update_proxy_permissions.py first seen with mtime 1759786931.927601
+DEBUG 2025-11-27 01:35:07,414 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\commands\migrate.py first seen with mtime 1759786933.2260582
+DEBUG 2025-11-27 01:35:07,424 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\management\sql.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:35:07,430 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\migrations\__init__.py first seen with mtime 1759785830.9258301
+DEBUG 2025-11-27 01:35:07,432 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\middleware\common.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:07,432 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\optimizer.py first seen with mtime 1759786933.2963257
+DEBUG 2025-11-27 01:35:07,433 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\migrations\0001_initial.py first seen with mtime 1759786933.0320897
+DEBUG 2025-11-27 01:35:07,440 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0006_require_contenttypes_0002.py first seen with mtime 1759786931.9246087
+DEBUG 2025-11-27 01:35:07,441 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\middleware\clickjacking.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:07,444 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0008_alter_user_username_max_length.py first seen with mtime 1759786931.9256065
+DEBUG 2025-11-27 01:35:07,447 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\questioner.py first seen with mtime 1759786933.2973228
+DEBUG 2025-11-27 01:35:07,451 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\shop\wsgi.py first seen with mtime 1759785636.8149388
+DEBUG 2025-11-27 01:35:07,452 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\defaults.py first seen with mtime 1759786933.4338892
+DEBUG 2025-11-27 01:35:07,456 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\writer.py first seen with mtime 1759786933.301312
+DEBUG 2025-11-27 01:35:07,457 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\backends\__init__.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:07,458 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\db\migrations\loader.py first seen with mtime 1759786933.2953277
+DEBUG 2025-11-27 01:35:07,459 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0004_alter_user_username_opts.py first seen with mtime 1759786931.9236116
+DEBUG 2025-11-27 01:35:07,462 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\cache\backends\locmem.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:07,465 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0007_alter_validators_add_error_messages.py first seen with mtime 1759786931.9246087
+DEBUG 2025-11-27 01:35:07,466 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\migrations\0003_logentry_add_action_flag_choices.py first seen with mtime 1759786931.4887915
+DEBUG 2025-11-27 01:35:07,467 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0012_alter_user_first_name_max_length.py first seen with mtime 1759786931.9285972
+DEBUG 2025-11-27 01:35:07,467 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\migrations\0002_logentry_remove_auto_add.py first seen with mtime 1759786931.4887915
+DEBUG 2025-11-27 01:35:07,473 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\middlewareLog.py first seen with mtime 1760562908.8055913
+DEBUG 2025-11-27 01:35:07,476 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\migrations\0010_alter_group_name_max_length.py first seen with mtime 1759786931.9266038
+DEBUG 2025-11-27 01:35:07,478 autoreload File D:\PYTHON INSTALL\Lib\encodings\idna.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:35:07,480 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\exceptions.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:07,482 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\contenttypes\migrations\0001_initial.py first seen with mtime 1759786932.0868006
+DEBUG 2025-11-27 01:35:11,195 views Accesare pagina index
+INFO 2025-11-27 01:35:11,196 views Se afiseaza pagina index pentru utilizator
+DEBUG 2025-11-27 01:35:11,762 utils (0.042) SELECT "aplicatie_categorie"."id_categorie", "aplicatie_categorie"."stil_ceas", "aplicatie_categorie"."gen", "aplicatie_categorie"."rezistent_apa", "aplicatie_categorie"."tip_ceas", "aplicatie_categorie"."descriere", "aplicatie_categorie"."icon" FROM "aplicatie_categorie"; args=(); alias=default
+INFO 2025-11-27 01:35:11,769 basehttp "GET / HTTP/1.1" 200 3793
+DEBUG 2025-11-27 01:35:12,739 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\staticfiles\storage.py first seen with mtime 1759786933.1791947
+DEBUG 2025-11-27 01:35:12,768 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\storage\fallback.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:12,814 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\context_processors.py first seen with mtime 1759786931.7498622
+DEBUG 2025-11-27 01:35:12,815 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sessions\serializers.py first seen with mtime 1759786932.9097884
+DEBUG 2025-11-27 01:35:12,845 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context_processors.py first seen with mtime 1759786933.3951535
+DEBUG 2025-11-27 01:35:12,847 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\storage\session.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:12,863 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\storage\cookie.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:12,874 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\messages\context_processors.py first seen with mtime 1759786932.6624756
+DEBUG 2025-11-27 01:35:29,571 base Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern '' [name='index']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'info/' [name='info']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'log/' [name='log']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'exemplu/' [name='exemplu']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'despre/' [name='despre']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'contact/' [name='contact']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'cos/' [name='cos']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'lucruri/' [name='lucruri']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'produse/' [name='produse']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'produse/<int:ceas_id>/' [name='detalii_ceas']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'categorii/<str:nume_categorie>/' [name='categorie']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'adauga_ceas' [name='adauga_ceas']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'login/' [name='login']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'logout/' [name='logout']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'profil/' [name='profil']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'change-password/' [name='change_password']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'signin/' [name='signin']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'confirma_mail/<str:cod_activare>/' [name='confirma_mail']>], [<URLResolver <module 'aplicatie.urls' from 'C:\\Users\\admin\\OneDrive\\Desktop\\DJANGO PRACTICE\\shop\\aplicatie\\urls.py'> (None:None) ''>, <URLPattern 'promotii/' [name='promotii_view']>]], 'path': '.well-known/appspecific/com.chrome.devtools.json'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    raise TypeError
+TypeError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 901, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+WARNING 2025-11-27 01:35:30,478 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-11-27 01:35:30,481 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 7279
+DEBUG 2025-11-27 01:35:32,301 autoreload File D:\PYTHON INSTALL\Lib\encodings\unicode_escape.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:37:50,714 views Accesare pagina login
+DEBUG 2025-11-27 01:37:51,033 views Accesare pagina login
+DEBUG 2025-11-27 01:37:51,484 utils (0.201) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:37:51.034267+00:00'::timestamptz AND "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 37, 51, 34267, tzinfo=datetime.timezone.utc), 'egtn6bp0e8cpeikwq91juzh29q8rmgty'); alias=default
+DEBUG 2025-11-27 01:37:51,485 utils (0.187) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:37:50.714462+00:00'::timestamptz AND "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 37, 50, 714462, tzinfo=datetime.timezone.utc), 'egtn6bp0e8cpeikwq91juzh29q8rmgty'); alias=default
+DEBUG 2025-11-27 01:37:51,603 base Exception while resolving variable 'categorii' in template 'aplicatie/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F6A2E980>>, 'request': <WSGIRequest: GET '/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F69B9A80>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F69B9A80>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomAuthenticationForm bound=False, valid=Unknown, fields=(username;password;ramane_logat)>, 'ip': '127.0.0.1'}, {}]
+DEBUG 2025-11-27 01:37:51,608 base Exception while resolving variable 'categorii' in template 'aplicatie/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F6A2D120>>, 'request': <WSGIRequest: GET '/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F4E18EA0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F4E18EA0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomAuthenticationForm bound=False, valid=Unknown, fields=(username;password;ramane_logat)>, 'ip': '127.0.0.1'}, {}]
+DEBUG 2025-11-27 01:37:51,905 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2025-11-27 01:37:51,910 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2025-11-27 01:37:51,954 utils (0.043) UPDATE "django_session" SET "session_data" = '.eJxVkM1OxDAMhF9llXNVpelftie0nDhwgSNCkbdxdw1NUiUpAiHeHUfaA1y_Gc_Y_hYG9nw1e8JoyIpJ9KL6y84wv6Mvgn0Dfwn1HHyOdK6Lpb6pqX4MFtfTzfsv4ArpytO6H9uxtVrLVjZjo61SWnetkl1vFephhqPCXrdKDeo4N8exH-yg-raZpdRadRy6hgt5Azmj23IS08srFyVMiYI3-LlR_BKTHjopK1GqPTjkZvJLMIsjTkAHtDJK8AEWIu1JNneXAvksx4YMEVh_Cg48AYMQgZvEaU8ZfYkAGzEVz3OO9eEh-MN9RH4MVAfPoGHLtvs5o1kDwUoZMi_BG5W_mS2io92JaYE14c8v7Ld8jA:1vOP55:DK4WMT1LfDyAQIthrZkGRW2u_naxHV_Ec2FZIEACFY0', "expire_date" = '2025-11-27T23:37:51.910269+00:00'::timestamptz WHERE "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty'; args=('.eJxVkM1OxDAMhF9llXNVpelftie0nDhwgSNCkbdxdw1NUiUpAiHeHUfaA1y_Gc_Y_hYG9nw1e8JoyIpJ9KL6y84wv6Mvgn0Dfwn1HHyOdK6Lpb6pqX4MFtfTzfsv4ArpytO6H9uxtVrLVjZjo61SWnetkl1vFephhqPCXrdKDeo4N8exH-yg-raZpdRadRy6hgt5Azmj23IS08srFyVMiYI3-LlR_BKTHjopK1GqPTjkZvJLMIsjTkAHtDJK8AEWIu1JNneXAvksx4YMEVh_Cg48AYMQgZvEaU8ZfYkAGzEVz3OO9eEh-MN9RH4MVAfPoGHLtvs5o1kDwUoZMi_BG5W_mS2io92JaYE14c8v7Ld8jA:1vOP55:DK4WMT1LfDyAQIthrZkGRW2u_naxHV_Ec2FZIEACFY0', datetime.datetime(2025, 11, 27, 23, 37, 51, 910269, tzinfo=datetime.timezone.utc), 'egtn6bp0e8cpeikwq91juzh29q8rmgty'); alias=default
+DEBUG 2025-11-27 01:37:51,992 utils (0.037) COMMIT; args=None; alias=default
+DEBUG 2025-11-27 01:37:51,993 utils (0.086) UPDATE "django_session" SET "session_data" = '.eJxVkM1OxDAMhF9llXNVpelftie0nDhwgSNCkbdxdw1NUiUpAiHeHUfaA1y_Gc_Y_hYG9nw1e8JoyIpJ9KL6y84wv6Mvgn0Dfwn1HHyOdK6Lpb6pqX4MFtfTzfsv4ArpytO6H9uxtVrLVjZjo61SWnetkl1vFephhqPCXrdKDeo4N8exH-yg-raZpdRadRy6hgt5Azmj23IS08srFyVMiYI3-LlR_BKTHjopK1GqPTjkZvJLMIsjTkAHtDJK8AEWIu1JNneXAvksx4YMEVh_Cg48AYMQgZvEaU8ZfYkAGzEVz3OO9eEh-MN9RH4MVAfPoGHLtvs5o1kDwUoZMi_BG5W_mS2io92JaYE14c8v7Ld8jA:1vOP55:DK4WMT1LfDyAQIthrZkGRW2u_naxHV_Ec2FZIEACFY0', "expire_date" = '2025-11-27T23:37:51.905150+00:00'::timestamptz WHERE "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty'; args=('.eJxVkM1OxDAMhF9llXNVpelftie0nDhwgSNCkbdxdw1NUiUpAiHeHUfaA1y_Gc_Y_hYG9nw1e8JoyIpJ9KL6y84wv6Mvgn0Dfwn1HHyOdK6Lpb6pqX4MFtfTzfsv4ArpytO6H9uxtVrLVjZjo61SWnetkl1vFephhqPCXrdKDeo4N8exH-yg-raZpdRadRy6hgt5Azmj23IS08srFyVMiYI3-LlR_BKTHjopK1GqPTjkZvJLMIsjTkAHtDJK8AEWIu1JNneXAvksx4YMEVh_Cg48AYMQgZvEaU8ZfYkAGzEVz3OO9eEh-MN9RH4MVAfPoGHLtvs5o1kDwUoZMi_BG5W_mS2io92JaYE14c8v7Ld8jA:1vOP55:DK4WMT1LfDyAQIthrZkGRW2u_naxHV_Ec2FZIEACFY0', datetime.datetime(2025, 11, 27, 23, 37, 51, 905150, tzinfo=datetime.timezone.utc), 'egtn6bp0e8cpeikwq91juzh29q8rmgty'); alias=default
+INFO 2025-11-27 01:37:51,995 basehttp - Broken pipe from ('127.0.0.1', 57821)
+DEBUG 2025-11-27 01:37:51,997 utils (0.003) COMMIT; args=None; alias=default
+INFO 2025-11-27 01:37:51,999 basehttp "GET /login/ HTTP/1.1" 200 2747
+DEBUG 2025-11-27 01:37:56,209 utils (0.011) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:37:56.008847+00:00'::timestamptz AND "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 37, 56, 8847, tzinfo=datetime.timezone.utc), 'egtn6bp0e8cpeikwq91juzh29q8rmgty'); alias=default
+DEBUG 2025-11-27 01:37:56,219 base Exception while resolving variable 'categorii' in template 'aplicatie/profile.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F6A2E7A0>>, 'request': <WSGIRequest: GET '/profil/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F69DFB00>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F69DFB00>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/profil/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'username': 'info_fmi', 'email': 'savadarius01@gmail.com', 'tara': 'Romania', 'oras': 'Busteni', 'adresa': 'Str. Ion Creanga, nr. 1', 'puncte_loialitate': 0, 'cont_premium': False}, {}]
+DEBUG 2025-11-27 01:37:56,326 utils (0.093) SELECT "aplicatie_customuser"."id", "aplicatie_customuser"."password", "aplicatie_customuser"."last_login", "aplicatie_customuser"."is_superuser", "aplicatie_customuser"."username", "aplicatie_customuser"."first_name", "aplicatie_customuser"."last_name", "aplicatie_customuser"."email", "aplicatie_customuser"."is_staff", "aplicatie_customuser"."is_active", "aplicatie_customuser"."date_joined", "aplicatie_customuser"."tara", "aplicatie_customuser"."oras", "aplicatie_customuser"."adresa", "aplicatie_customuser"."puncte_loialitate", "aplicatie_customuser"."cont_premium", "aplicatie_customuser"."cod", "aplicatie_customuser"."email_confirmat" FROM "aplicatie_customuser" WHERE "aplicatie_customuser"."id" = 5 LIMIT 21; args=(5,); alias=default
+DEBUG 2025-11-27 01:37:56,342 base Exception while resolving variable 'ip' in template 'aplicatie/profile.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'ip'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'ip'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'ip'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [ip] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F6A2E7A0>>, 'request': <WSGIRequest: GET '/profil/'>, 'user': <SimpleLazyObject: <CustomUser: info_fmi (savadarius01@gmail.com)>>, 'perms': PermWrapper(<SimpleLazyObject: <CustomUser: info_fmi (savadarius01@gmail.com)>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/profil/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'username': 'info_fmi', 'email': 'savadarius01@gmail.com', 'tara': 'Romania', 'oras': 'Busteni', 'adresa': 'Str. Ion Creanga, nr. 1', 'puncte_loialitate': 0, 'cont_premium': False}]
+INFO 2025-11-27 01:37:56,352 basehttp "GET /profil/ HTTP/1.1" 200 2384
+DEBUG 2025-11-27 01:37:57,415 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\conf\locale\en\__init__.py first seen with mtime 1759786930.8927884
+DEBUG 2025-11-27 01:37:57,530 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\conf\locale\en\formats.py first seen with mtime 1759786930.8938768
+DEBUG 2025-11-27 01:37:57,789 utils (0.012) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:37:57.538629+00:00'::timestamptz AND "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 37, 57, 538629, tzinfo=datetime.timezone.utc), 'egtn6bp0e8cpeikwq91juzh29q8rmgty'); alias=default
+DEBUG 2025-11-27 01:37:57,799 utils (0.008) SELECT "aplicatie_customuser"."id", "aplicatie_customuser"."password", "aplicatie_customuser"."last_login", "aplicatie_customuser"."is_superuser", "aplicatie_customuser"."username", "aplicatie_customuser"."first_name", "aplicatie_customuser"."last_name", "aplicatie_customuser"."email", "aplicatie_customuser"."is_staff", "aplicatie_customuser"."is_active", "aplicatie_customuser"."date_joined", "aplicatie_customuser"."tara", "aplicatie_customuser"."oras", "aplicatie_customuser"."adresa", "aplicatie_customuser"."puncte_loialitate", "aplicatie_customuser"."cont_premium", "aplicatie_customuser"."cod", "aplicatie_customuser"."email_confirmat" FROM "aplicatie_customuser" WHERE "aplicatie_customuser"."id" = 5 LIMIT 21; args=(5,); alias=default
+DEBUG 2025-11-27 01:37:57,802 utils (0.001) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE "django_session"."session_key" = 'egtn6bp0e8cpeikwq91juzh29q8rmgty' LIMIT 21; args=('egtn6bp0e8cpeikwq91juzh29q8rmgty',); alias=default
+DEBUG 2025-11-27 01:37:57,858 utils (0.039) DELETE FROM "django_session" WHERE "django_session"."session_key" IN ('egtn6bp0e8cpeikwq91juzh29q8rmgty'); args=('egtn6bp0e8cpeikwq91juzh29q8rmgty',); alias=default
+INFO 2025-11-27 01:37:57,860 basehttp "GET /logout/ HTTP/1.1" 302 0
+DEBUG 2025-11-27 01:37:57,873 views Accesare pagina index
+INFO 2025-11-27 01:37:57,873 views Se afiseaza pagina index pentru utilizator
+DEBUG 2025-11-27 01:37:58,058 utils (0.005) SELECT "aplicatie_categorie"."id_categorie", "aplicatie_categorie"."stil_ceas", "aplicatie_categorie"."gen", "aplicatie_categorie"."rezistent_apa", "aplicatie_categorie"."tip_ceas", "aplicatie_categorie"."descriere", "aplicatie_categorie"."icon" FROM "aplicatie_categorie"; args=(); alias=default
+INFO 2025-11-27 01:37:58,063 basehttp "GET / HTTP/1.1" 200 3793
+DEBUG 2025-11-27 01:37:59,002 views Accesare pagina login
+DEBUG 2025-11-27 01:37:59,004 base Exception while resolving variable 'categorii' in template 'aplicatie/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F65E3380>>, 'request': <WSGIRequest: GET '/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F6AD3CE0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F6AD3CE0>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomAuthenticationForm bound=False, valid=Unknown, fields=(username;password;ramane_logat)>, 'ip': '127.0.0.1'}, {}]
+DEBUG 2025-11-27 01:37:59,324 utils (0.013) SELECT 1 AS "a" FROM "django_session" WHERE "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr' LIMIT 1; args=(1, 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+DEBUG 2025-11-27 01:37:59,325 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2025-11-27 01:37:59,356 utils (0.030) INSERT INTO "django_session" ("session_key", "session_data", "expire_date") VALUES ('rewve0eg808lurezl5eyi9c6iu4xkacr', 'eyJsb2dpbl9hdHRlbXB0cyI6W119:1vOP5D:0JaTJJIhMdOhPlgNOcW83mGXLoPoZHZ6O5VEu5tLtv4', '2025-12-10T23:37:59.325489+00:00'::timestamptz); args=('rewve0eg808lurezl5eyi9c6iu4xkacr', 'eyJsb2dpbl9hdHRlbXB0cyI6W119:1vOP5D:0JaTJJIhMdOhPlgNOcW83mGXLoPoZHZ6O5VEu5tLtv4', datetime.datetime(2025, 12, 10, 23, 37, 59, 325489, tzinfo=datetime.timezone.utc)); alias=default
+DEBUG 2025-11-27 01:37:59,359 utils (0.003) COMMIT; args=None; alias=default
+INFO 2025-11-27 01:37:59,361 basehttp "GET /login/ HTTP/1.1" 200 2747
+DEBUG 2025-11-27 01:38:08,488 views Accesare pagina login
+DEBUG 2025-11-27 01:38:08,748 utils (0.012) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:38:08.488881+00:00'::timestamptz AND "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 38, 8, 488881, tzinfo=datetime.timezone.utc), 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+INFO 2025-11-27 01:38:08,749 views Se incearca autentificarea pentru user info_fmi
+DEBUG 2025-11-27 01:38:08,784 utils (0.008) SELECT "aplicatie_customuser"."id", "aplicatie_customuser"."password", "aplicatie_customuser"."last_login", "aplicatie_customuser"."is_superuser", "aplicatie_customuser"."username", "aplicatie_customuser"."first_name", "aplicatie_customuser"."last_name", "aplicatie_customuser"."email", "aplicatie_customuser"."is_staff", "aplicatie_customuser"."is_active", "aplicatie_customuser"."date_joined", "aplicatie_customuser"."tara", "aplicatie_customuser"."oras", "aplicatie_customuser"."adresa", "aplicatie_customuser"."puncte_loialitate", "aplicatie_customuser"."cont_premium", "aplicatie_customuser"."cod", "aplicatie_customuser"."email_confirmat" FROM "aplicatie_customuser" WHERE "aplicatie_customuser"."username" = 'info_fmi' LIMIT 21; args=('info_fmi',); alias=default
+WARNING 2025-11-27 01:38:12,626 views Autentificare esuata pentru info_fmi
+DEBUG 2025-11-27 01:38:12,630 base Exception while resolving variable 'categorii' in template 'aplicatie/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F69B2DE0>>, 'request': <WSGIRequest: POST '/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F6A2F920>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F6A2F920>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomAuthenticationForm bound=True, valid=False, fields=(username;password;ramane_logat)>, 'ip': '127.0.0.1'}, {}]
+DEBUG 2025-11-27 01:38:12,647 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2025-11-27 01:38:12,651 utils (0.003) UPDATE "django_session" SET "session_data" = 'eyJsb2dpbl9hdHRlbXB0cyI6WzE3NjQyMDAyODguNDg4MzQwNF19:1vOP5Q:ouM_-5s2vFoVNLIWhr1GorSi2Uxo4vkUOdFl7tKwh5U', "expire_date" = '2025-12-10T23:38:12.647589+00:00'::timestamptz WHERE "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr'; args=('eyJsb2dpbl9hdHRlbXB0cyI6WzE3NjQyMDAyODguNDg4MzQwNF19:1vOP5Q:ouM_-5s2vFoVNLIWhr1GorSi2Uxo4vkUOdFl7tKwh5U', datetime.datetime(2025, 12, 10, 23, 38, 12, 647589, tzinfo=datetime.timezone.utc), 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+DEBUG 2025-11-27 01:38:12,655 utils (0.003) COMMIT; args=None; alias=default
+INFO 2025-11-27 01:38:12,656 basehttp "POST /login/ HTTP/1.1" 200 2899
+DEBUG 2025-11-27 01:38:15,922 views Accesare pagina login
+DEBUG 2025-11-27 01:38:16,204 utils (0.012) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:38:16.006751+00:00'::timestamptz AND "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 38, 16, 6751, tzinfo=datetime.timezone.utc), 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+INFO 2025-11-27 01:38:16,205 views Se incearca autentificarea pentru user info_fmi
+DEBUG 2025-11-27 01:38:16,216 utils (0.008) SELECT "aplicatie_customuser"."id", "aplicatie_customuser"."password", "aplicatie_customuser"."last_login", "aplicatie_customuser"."is_superuser", "aplicatie_customuser"."username", "aplicatie_customuser"."first_name", "aplicatie_customuser"."last_name", "aplicatie_customuser"."email", "aplicatie_customuser"."is_staff", "aplicatie_customuser"."is_active", "aplicatie_customuser"."date_joined", "aplicatie_customuser"."tara", "aplicatie_customuser"."oras", "aplicatie_customuser"."adresa", "aplicatie_customuser"."puncte_loialitate", "aplicatie_customuser"."cont_premium", "aplicatie_customuser"."cod", "aplicatie_customuser"."email_confirmat" FROM "aplicatie_customuser" WHERE "aplicatie_customuser"."username" = 'info_fmi' LIMIT 21; args=('info_fmi',); alias=default
+WARNING 2025-11-27 01:38:19,959 views Autentificare esuata pentru info_fmi
+DEBUG 2025-11-27 01:38:19,963 base Exception while resolving variable 'categorii' in template 'aplicatie/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F69B09A0>>, 'request': <WSGIRequest: POST '/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F65E34C0>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F65E34C0>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomAuthenticationForm bound=True, valid=False, fields=(username;password;ramane_logat)>, 'ip': '127.0.0.1'}, {}]
+DEBUG 2025-11-27 01:38:19,983 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2025-11-27 01:38:19,987 utils (0.003) UPDATE "django_session" SET "session_data" = 'eyJsb2dpbl9hdHRlbXB0cyI6WzE3NjQyMDAyODguNDg4MzQwNCwxNzY0MjAwMjk1LjkyMjMwM119:1vOP5X:5K_4MNjBF7uGHhwhqjDqmmAq461t-4fEFuOFKh3TpQs', "expire_date" = '2025-12-10T23:38:19.982913+00:00'::timestamptz WHERE "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr'; args=('eyJsb2dpbl9hdHRlbXB0cyI6WzE3NjQyMDAyODguNDg4MzQwNCwxNzY0MjAwMjk1LjkyMjMwM119:1vOP5X:5K_4MNjBF7uGHhwhqjDqmmAq461t-4fEFuOFKh3TpQs', datetime.datetime(2025, 12, 10, 23, 38, 19, 982913, tzinfo=datetime.timezone.utc), 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+DEBUG 2025-11-27 01:38:19,991 utils (0.003) COMMIT; args=None; alias=default
+INFO 2025-11-27 01:38:19,992 basehttp "POST /login/ HTTP/1.1" 200 2899
+DEBUG 2025-11-27 01:38:22,208 views Accesare pagina login
+DEBUG 2025-11-27 01:38:22,468 utils (0.011) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2025-11-26T23:38:22.209184+00:00'::timestamptz AND "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr') LIMIT 21; args=(datetime.datetime(2025, 11, 26, 23, 38, 22, 209184, tzinfo=datetime.timezone.utc), 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+INFO 2025-11-27 01:38:22,470 views Se incearca autentificarea pentru user info_fmi
+DEBUG 2025-11-27 01:38:22,479 utils (0.007) SELECT "aplicatie_customuser"."id", "aplicatie_customuser"."password", "aplicatie_customuser"."last_login", "aplicatie_customuser"."is_superuser", "aplicatie_customuser"."username", "aplicatie_customuser"."first_name", "aplicatie_customuser"."last_name", "aplicatie_customuser"."email", "aplicatie_customuser"."is_staff", "aplicatie_customuser"."is_active", "aplicatie_customuser"."date_joined", "aplicatie_customuser"."tara", "aplicatie_customuser"."oras", "aplicatie_customuser"."adresa", "aplicatie_customuser"."puncte_loialitate", "aplicatie_customuser"."cont_premium", "aplicatie_customuser"."cod", "aplicatie_customuser"."email_confirmat" FROM "aplicatie_customuser" WHERE "aplicatie_customuser"."username" = 'info_fmi' LIMIT 21; args=('info_fmi',); alias=default
+WARNING 2025-11-27 01:38:26,242 views Autentificare esuata pentru info_fmi
+ERROR 2025-11-27 01:38:26,243 views 3 incercari esuate consecutive pentru info_fmi de la IP 127.0.0.1
+DEBUG 2025-11-27 01:38:27,453 autoreload File D:\PYTHON INSTALL\Lib\smtplib.py first seen with mtime 1738676256.0
+DEBUG 2025-11-27 01:38:27,458 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\backends\__init__.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:38:27,539 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\backends\base.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:38:27,578 autoreload File C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\backends\smtp.py first seen with mtime 1759786933.2104378
+DEBUG 2025-11-27 01:38:30,773 base Exception while resolving variable 'categorii' in template 'aplicatie/login.html'.
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 891, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\context.py", line 88, in __getitem__
+    raise KeyError(key)
+KeyError: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 897, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'categorii'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [categorii] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x00000276F6B0B7E0>>, 'request': <WSGIRequest: POST '/login/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F65E2F20>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x00000276F65E2F20>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/login/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'form': <CustomAuthenticationForm bound=True, valid=False, fields=(username;password;ramane_logat)>, 'ip': '127.0.0.1'}, {}]
+DEBUG 2025-11-27 01:38:30,793 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2025-11-27 01:38:30,797 utils (0.003) UPDATE "django_session" SET "session_data" = '.eJyrVsrJT8_Mi08sKUnNLSgpVrKKNjQ3MzEyMDCysNAzsbAwNjEw0YEJWZrqWRoZGRsYw0SMDYz0jAwszA0MY2sBH64S0g:1vOP5i:spo1MZnQsBH5sIsPrUgS_fVBPBvSo9PuGbth1xFsDcY', "expire_date" = '2025-12-10T23:38:30.792972+00:00'::timestamptz WHERE "django_session"."session_key" = 'rewve0eg808lurezl5eyi9c6iu4xkacr'; args=('.eJyrVsrJT8_Mi08sKUnNLSgpVrKKNjQ3MzEyMDCysNAzsbAwNjEw0YEJWZrqWRoZGRsYw0SMDYz0jAwszA0MY2sBH64S0g:1vOP5i:spo1MZnQsBH5sIsPrUgS_fVBPBvSo9PuGbth1xFsDcY', datetime.datetime(2025, 12, 10, 23, 38, 30, 792972, tzinfo=datetime.timezone.utc), 'rewve0eg808lurezl5eyi9c6iu4xkacr'); alias=default
+DEBUG 2025-11-27 01:38:30,800 utils (0.002) COMMIT; args=None; alias=default
+INFO 2025-11-27 01:38:30,801 basehttp "POST /login/ HTTP/1.1" 200 2899
