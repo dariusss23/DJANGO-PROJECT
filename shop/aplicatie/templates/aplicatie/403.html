@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>403 - Acces interzis</title>
+    <style>
+        .warning { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    {% if user.is_authenticated %}
+        <p>Salut {{ user.username }}</p>
+    {% else %}
+        <p>Salut persoana anonim</p>
+    {% endif %}
+
+    <h1>
+        {% if titlu %}
+            {{ titlu }}
+        {% else %}
+            Eroare 403
+        {% endif %}
+    </h1>
+
+    <p>{{ mesaj_personalizat }}</p>
+
+    <p>Ai ajuns aici de {{ nr_403 }} ori in aceasta sesiune.</p>
+
+    {% if nr_403 > N_MAX_403 %}
+        <p class="warning">Atentie! Ai depasit limita de accesari 403!</p>
+    {% endif %}
+
+</body>
+</html>

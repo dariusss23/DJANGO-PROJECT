@@ -102,6 +102,52 @@ admin.site.register(Brand, BrandAdmin)
 admin.site.register(Depozit, DepozitAdmin)
 admin.site.register(Promotie, PromotieAdmin)
 
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
-admin.site.register(CustomUser)
 
+
+from django.contrib.auth.admin import UserAdmin
+from .models import CustomUser
+from .forms import CustomUserChangeForm, CustomUserCreationForm
+
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+    form = CustomUserChangeForm
+    add_form = CustomUserCreationForm
+    
+    list_display = ('username', 'email', 'email_confirmat', 'blocat', 'is_staff', 'is_active')
+    
+
+
+    def get_form(self, request, obj=None, **kwargs):
+        form_class = super().get_form(request, obj, **kwargs)
+
+        class Formular(form_class):
+            def __init__(self, *args, **form_kwargs):
+                current_user = form_kwargs.pop("current_user", None)  # POP obligatoriu!
+                super().__init__(*args, **form_kwargs)
+                self.current_user = current_user
+
+        return Formular
+
+
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'telefon', 'oras', 'tara', 'adresa',
+                    'puncte_loialitate', 'cont_premium', 'blocat', 'password1', 'password2'),
+        }),
+    )
+
+
+    fieldsets = UserAdmin.fieldsets + (
+        ('Extra Info', {'fields': ('telefon', 'oras', 'tara', 'adresa', 'cod', 'email_confirmat',
+                                'puncte_loialitate', 'cont_premium', 'blocat')}),
+    )
+
+
+
+
+
+admin.site.register(CustomUser, CustomUserAdmin)

@@ -21,4 +21,7 @@ urlpatterns = [
     path('signin/', views.register_view, name='signin'),
     path('confirma_mail/<str:cod_activare>/', views.confirma_mail_view, name='confirma_mail'),
     path('promotii/', views.promotii_view, name='promotii_view'),
+    path("interzis/", views.interzis, name="interzis"),
+    path('oferta/', views.oferta_view, name='oferta'),
+    path('acorda_permisiune_oferta/', views.acorda_permisiune_oferta, name='acorda_permisiune_oferta'),
 ]

@@ -145,6 +145,7 @@ class Promotie(models.Model):
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
+    telefon = models.CharField(max_length=15, blank=True, null=True)
     tara = models.CharField(max_length=100, blank=True, null=True)
     oras = models.CharField(max_length=100, blank=True, null=True)
     adresa = models.CharField(max_length=255, blank=True, null=True)
@@ -152,6 +153,7 @@ class CustomUser(AbstractUser):
     cont_premium = models.BooleanField(default=False)
     cod = models.CharField(max_length=100, null=True, blank=True)
     email_confirmat = models.BooleanField(default=False)
+    blocat = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.username} ({self.email})"
@@ -228,3 +230,8 @@ class Oferta(models.Model):
 
     def __str__(self):
         return f"{self.nume} (Expira: {self.data_expirare})"
+    
+    class Meta:
+        permissions = [
+            ("vizualizeaza_oferta", "Poate vizualiza ofertele speciale"),
+        ]

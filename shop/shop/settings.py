@@ -57,6 +57,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+
 AUTH_USER_MODEL = 'aplicatie.CustomUser'
 
 
@@ -218,3 +219,6 @@ LOGGING = {
         },
     },
 }
+
+
+N_MAX_403 = 5

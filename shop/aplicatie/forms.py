@@ -444,7 +444,7 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ("username", "first_name", "last_name", "email", "telefon", "tara", "oras", "adresa", "puncte_loialitate", "cont_premium", "password1", "password2")
+        fields = ("username", "first_name", "last_name", "email", "telefon", "tara", "oras", "adresa", "puncte_loialitate", "cont_premium")
 
 
     def clean_telefon(self):
@@ -471,10 +471,10 @@ class CustomUserCreationForm(UserCreationForm):
 
     def save(self, commit=True):
         user = super().save(commit=False)
-        user.first_name = self.cleaned_data["first_name"]
-        user.last_name = self.cleaned_data["last_name"]
-        user.telefon = self.cleaned_data["telefon"]
-        user.oras = self.cleaned_data["oras"]
+        user.first_name = self.cleaned_data.get("first_name", "")
+        user.last_name = self.cleaned_data.get("last_name", "")
+        user.telefon = self.cleaned_data.get("telefon", "")
+        user.oras = self.cleaned_data.get("oras", "")
         user.puncte_loialitate = self.cleaned_data.get("puncte_loialitate", 0)
         user.tara = self.cleaned_data.get("tara", "")
         user.adresa = self.cleaned_data.get("adresa", "")
@@ -511,3 +511,18 @@ class OfertaForm(forms.ModelForm):
     class Meta:
         model = Oferta
         fields = ['subiect_email', 'fisier_template', 'nume', 'data_expirare', 'categorii', 'procent_reducere', 'activa']
+    
+
+
+
+
+class CustomUserChangeForm(forms.ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = "__all__"
+    
+    def __init__(self, *args, current_user=None, **kwargs):
+        self.current_user = current_user
+        super().__init__(*args, **kwargs)
+
+

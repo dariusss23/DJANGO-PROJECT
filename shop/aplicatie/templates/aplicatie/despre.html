@@ -4,6 +4,7 @@
 {% block title %}Despre Noi{% endblock %}
 
 {% block content %}
+
 <section id="magazin">
     <h2>Despre Magazin</h2>
     <p>Magazinul nostru ofera o gama variata de ceasuri, de la cele elegante la cele sportive.</p>
@@ -14,4 +15,28 @@
     <p>Suntem o echipa pasionata de tehnologie si design.</p>
     <img src="{% static 'aplicatie/imagini/ECHIPA.png' %}" alt="Poza Echipa">
 </section>
+
+
+
+{% if user.is_authenticated %}
+    <div id="banner-oferta" style="display:none; background: gold; text-align:center; font-weight:bold; padding:10px; margin-top: 90px; cursor:pointer;">
+        Oferta reducere 50%!
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (Math.random() < 0.3) {
+                const banner = document.getElementById("banner-oferta");
+                if (banner) {
+                    banner.style.display = "block";
+                    banner.addEventListener("click", function() {
+                        window.location.href = "{% url 'acorda_permisiune_oferta' %}";
+                    });
+                }
+            }
+        });
+    </script>
+{% endif %}
+
+
 {% endblock %}

@@ -38,12 +38,23 @@
                         {% endfor %}
                     </ul>
                 </li>
-                
-                <li><a href="{% url 'adauga_ceas' %}">Adauga ceas</a></li>
+            
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 <li><a href="{% url 'cos' %}">Cos Virtual</a></li>
-                <li><a href="{% url 'info' %}">Info</a></li>
-                <li><a href="{% url 'log' %}">Log</a></li>
+
+                {% if request.user.is_authenticated %}
+
+                    {% if request.session.is_admin_site %}
+                        <li><a href="{% url 'info' %}">Info</a></li>
+                        <li><a href="{% url 'log' %}">Log</a></li>
+                    {% endif %}
+
+                    {% if request.session.is_admin_produse %}
+                        <li><a href="{% url 'adauga_ceas' %}">Adauga ceas</a></li>
+                    {% endif %}
+
+                {% endif %}
+
                 <li><a href="{% url 'signin' %}">SignIn</a></li>
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'logout' %}">Logout</a></li>

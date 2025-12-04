@@ -65,6 +65,19 @@ def afis_data(param):
     return continut
 
 def info(request):
+    
+    if not request.user.groups.filter(name='Administratori_site').exists():
+        nr_403 = request.session.get('nr_403', 0) + 1
+        request.session['nr_403'] = nr_403
+
+        context = {
+            "titlu": "Acces interzis - info",
+            "mesaj_personalizat": "Nu ai voie sa accesezi pagina de info",
+            "nr_403": nr_403,
+            "N_MAX_403": 5,
+        }
+        return HttpResponseForbidden(render(request, "aplicatie/403.html", context))
+    
     param_data = request.GET.get("data")
     continut_data = afis_data(param_data)
     parametri = request.GET
@@ -117,6 +130,19 @@ ACCESARI = []
 ######################################################################
 
 def log(request):
+    
+    if not request.user.groups.filter(name='Administratori_site').exists():
+        nr_403 = request.session.get('nr_403', 0) + 1
+        request.session['nr_403'] = nr_403
+
+        context = {
+            "titlu": "Acces interzis - log",
+            "mesaj_personalizat": "Nu ai voie sa accesezi pagina de log",
+            "nr_403": nr_403,
+            "N_MAX_403": 5,
+        }
+        return HttpResponseForbidden(render(request, "aplicatie/403.html", context))
+    
     ultimele = request.GET.get("ultimele")
     param_accesari = request.GET.get("accesari")
     param_dubluri = request.GET.get("dubluri", "false").lower()
@@ -220,10 +246,12 @@ def contact_view(request):
             return redirect('mesaj_trimis')
     else:
         form = ContactForm()
+        
     return render(request, 'aplicatie_exemplu/contact.html', 
         {
             'form': form,
             "categorii": Categorie.objects.all(),
+            "ip": get_ip(request),
         })
 
 
@@ -512,6 +540,19 @@ def get_urmatorul_id_sugerat():
     return cel_mai_mare_ceas.id_ceas + 1
 
 def adauga_ceas(request):
+    
+    if not request.user.has_perm('aplicatie.add_ceas'):
+        nr_403 = request.session.get('nr_403', 0) + 1
+        request.session['nr_403'] = nr_403
+
+        context = {
+            "titlu": "Eroare adaugare produse",
+            "mesaj_personalizat": "Nu ai voie sa adaugi ceasuri",
+            "nr_403": nr_403,
+            "N_MAX_403": 5,
+        }
+        return HttpResponseForbidden(render(request, "aplicatie/403.html", context))
+    
     mesaj = None
     id_sugerat_pentru_context = get_urmatorul_id_sugerat()
 
@@ -588,6 +629,10 @@ def custom_login_view(request):
         if form.is_valid():
             user = form.get_user()
             
+            if user.blocat:
+                messages.error(request, "Contul tau a fost blocat. Nu te poti autentifica.")
+                return render(request, 'aplicatie/login.html', {'form': form, "ip": ip})
+            
             if not user.email_confirmat:
                 messages.error(request, "Trebuie sa iti confirmi mai intai adresa de email!")
                 return render(request, 'aplicatie/login.html', {'form': form, "ip": ip})
@@ -609,6 +654,9 @@ def custom_login_view(request):
             request.session['adresa'] = user.adresa
             request.session['puncte_loialitate'] = user.puncte_loialitate
             request.session['cont_premium'] = user.cont_premium
+            
+            request.session['is_admin_site'] = user.groups.filter(name="Administratori_site").exists()
+            request.session['is_admin_produse'] = user.groups.filter(name="Administratori_produse").exists()
 
             return redirect('profil')
 
@@ -630,7 +678,6 @@ def custom_login_view(request):
                     f"Username incercat: {username_incercat}\n"
                     f"IP: {ip}\n"
                 )
-
                 html_message = f"""
                     <h1 style="color:red;">{subject}</h1>
                     <p><b>Username incercat:</b> {username_incercat}</p>
@@ -653,6 +700,14 @@ def custom_login_view(request):
 from django.contrib.auth import logout
 
 def logout_view(request):
+    
+    try:
+        perm = Permission.objects.get(codename='vizualizeaza_oferta')
+        request.user.user_permissions.remove(perm)
+    except Permission.DoesNotExist:
+        pass
+
+    
     logout(request)
     return redirect('index')
 
@@ -665,6 +720,7 @@ def profile_view(request):
         'adresa': request.session.get('adresa'),
         'puncte_loialitate': request.session.get('puncte_loialitate'),
         'cont_premium': request.session.get('cont_premium'),
+        'ip' : get_ip(request),
     }
     return render(request, 'aplicatie/profile.html', context)
 
@@ -768,7 +824,7 @@ def confirma_mail_view(request, cod_activare):
         return render(request, 'aplicatie/mesaj_simplu.html', {'mesaj': mesaj})
     
     if user.email_confirmat:
-        mesaj = f"Adresa de e-mail pentru utilizatorul **{user.username}** a fost deja confirmata. Te poti autentifica."
+        mesaj = f"Adresa de e-mail pentru utilizatorul {user.username} a fost deja confirmata. Te poti autentifica."
     else:
         user.email_confirmat = True
         user.cod = None
@@ -849,3 +905,108 @@ def promotii_view(request):
 
 
 
+from django.http import HttpResponse, HttpResponseForbidden
+from django.shortcuts import render
+from django.conf import settings
+
+def interzis(request):
+    nr = request.session.get("nr_403", 0) + 1
+    request.session["nr_403"] = nr
+
+    context = {
+        "titlu": "",
+        "mesaj_personalizat": "Nu ai permisiunea necesara pentru a accesa aceasta resursa.",
+        "nr_403": nr,
+        "N_MAX_403": settings.N_MAX_403,
+    }
+
+    return HttpResponseForbidden(render(request, '403.html'))
+
+'''
+from aplicatie.models import CustomUser
+from django.contrib.auth.models import Group, Permission
+
+grup = Group.objects.create(name='Administratori_produse')
+
+grup.permissions.add(
+    Permission.objects.get(codename='add_ceas'),
+    Permission.objects.get(codename='change_ceas'),
+    Permission.objects.get(codename='delete_ceas'),
+    Permission.objects.get(codename='view_ceas')
+)
+
+user = CustomUser.objects.get(username='USER_DJANGO')
+user.groups.add(grup)
+
+'''
+
+'''
+from aplicatie.models import CustomUser
+from django.contrib.auth.models import Group
+
+group = Group.objects.get(name='Administratori_site')
+
+user = CustomUser.objects.get(username="USER_TEST")
+
+user.groups.add(group)
+
+'''
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Permission
+
+
+def acorda_permisiune_oferta(request):
+    perm = Permission.objects.get(codename='vizualizeaza_oferta')
+    request.user.user_permissions.add(perm)
+    return redirect('oferta')
+
+def oferta_view(request):
+    if not request.user.has_perm('aplicatie.vizualizeaza_oferta'):
+        nr_403 = request.session.get('nr_403', 0) + 1
+        request.session['nr_403'] = nr_403
+
+        context = {
+            "titlu": "Eroare afisare oferta",
+            "mesaj_personalizat": "Nu ai voie să vizualizezi oferta",
+            "nr_403": nr_403,
+            "N_MAX_403": 5,
+        }
+        return HttpResponseForbidden(render(request, 'aplicatie/403.html', context))
+
+    return render(request, 'aplicatie/oferta.html', {
+        'mesaj': "Felicitari! Ai acces la oferta speciala de reducere 50%!",
+        'ip': get_ip(request)
+    })
+
+
+'''
+
+from django.contrib.auth.models import Group, Permission
+from django.contrib.contenttypes.models import ContentType
+from aplicatie.models import CustomUser
+
+
+moderatori = Group.objects.create(name='Moderatori')
+
+perm_vizualizare = Permission.objects.get(codename='view_customuser')
+perm_editare = Permission.objects.get(codename='change_customuser')
+
+moderatori.permissions.add(perm_vizualizare, perm_editare)
+
+
+------------------------------------------------------------------------------------
+
+
+from django.contrib.auth.models import Group
+from aplicatie.models import CustomUser
+
+
+moderatori = Group.objects.get(name='Moderatori')
+
+user = CustomUser.objects.get(username='MODERATOR_1')
+
+user.groups.add(moderatori)
+
+'''
