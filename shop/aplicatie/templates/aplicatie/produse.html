@@ -12,6 +12,14 @@
     <p class="mesaj-eroare">{{ eroare }}</p>
 {% endif %}
 
+{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+{% endif %}
+
 <form method="get">
     {% for field in form %}
         {% if field.name == 'categorie' and categorie_selectata %}
@@ -51,25 +59,45 @@
 
 {% if object_list %}
     {% for ceas in object_list %}
-        <div class="ceas-card">
-            <h3>
-                <a href="{% url 'detalii_ceas' ceas.id_ceas %}" class="link-produs">{{ ceas.model }}</a>
-            </h3>
-            <p><strong>Pret:</strong> {{ ceas.pret }} RON</p>
-            <p><strong>Brand:</strong> {{ ceas.brand.nume }}</p>
+        <div id="card-{{ ceas.id_ceas }}" data-id="{{ ceas.id_ceas }}" data-stoc="{{ ceas.stoc }}" class="ceas-card {% if ceas.stoc == 0 %}indisponibil{% endif %}">
+        
+        <h3>
+            <a href="{% url 'detalii_ceas' ceas.id_ceas %}" class="link-produs">{{ ceas.model }}</a>
+        </h3>
+        <p><strong>Pret:</strong> {{ ceas.pret }} RON</p>
+        <p><strong>Brand:</strong> {{ ceas.brand.nume }}</p>
+        <p><strong>Stoc disponibil:</strong> {{ ceas.stoc }}</p>
 
-            <p class="categorie-afisaj">
-                <strong>Categorie:</strong>
-                <a href="{% url 'categorie' ceas.categorie.stil_ceas %}" class="link-categorie">
-                    {% if ceas.categorie.icon %}
-                        <i class="{{ ceas.categorie.icon }}"></i>
-                    {% endif %}
-                </a>
-            </p>
-        </div>
-    {% endfor %}
+        {% if ceas.stoc == 0 %}
+            <span class="text-indisponibil">indisponibil</span>
+        {% else %}
+            <div class="controale-cantitate">
+                <button type="button" onclick="schimbaQty('{{ ceas.id_ceas }}', -1)">-</button>
+                <input type="number" id="qty-{{ ceas.id_ceas }}" class="input-qty" value="1" min="1" max="{{ ceas.stoc }}" onchange="valideazaQty('{{ ceas.id_ceas }}')">
+                <button type="button" onclick="schimbaQty('{{ ceas.id_ceas }}', 1)">+</button>
+            </div>
 
-    <div class="paginare">
+            <button id="btn-add-{{ ceas.id_ceas }}" data-id="{{ ceas.id_ceas }}" data-nume="{{ ceas.model }}" class="btn_cos_virtual" onclick="adaugaInCosVirtual('{{ ceas.id_ceas }}')">
+                Adauga in cos virtual
+            </button>
+            
+            <button id="btn-del-{{ ceas.id_ceas }}" type="button" onclick="stergeComplet('{{ ceas.id_ceas }}')" class="btn-sterge" style="display:none; color: darkred; margin-left: 10px;">
+                Sterge tot
+            </button>
+        {% endif %}
+
+        <p class="categorie-afisaj">
+            <strong>Categorie:</strong>
+            <a href="{% url 'categorie' ceas.categorie.stil_ceas %}" class="link-categorie">
+                {% if ceas.categorie.icon %}
+                    <i class="{{ ceas.categorie.icon }}"></i>
+                {% endif %}
+            </a>
+        </p>
+    </div>
+{% endfor %}
+
+    <div class="paginare">  
     {% if pagina.has_previous %}
         <a href="?pagina=1">Prima</a>
         <a href="?pagina={{ pagina.previous_page_number }}">Anterior</a>
@@ -86,5 +114,85 @@
     <p class="empty">Nu exista produse disponibile.</p>
 {% endif %}
 
+<script>
+    function getCosObiect() {
+        let cos = localStorage.getItem('cos_virtual_qty');
+        return cos ? JSON.parse(cos) : {};
+    }
+
+    window.onload = function() {
+        actualizeazaUI();
+    };
+
+    function schimbaQty(id, delta) {
+        let input = document.getElementById('qty-' + id);
+        let stocMax = parseInt(document.getElementById('card-' + id).getAttribute('data-stoc'));
+        let valoareNoua = parseInt(input.value) + delta;
+
+        if (valoareNoua >= 1 && valoareNoua <= stocMax) {
+            input.value = valoareNoua;
+        } else if (valoareNoua > stocMax) {
+            alert("Atentie! Nu putem depasi stocul disponibil.");
+        }
+    }
+
+    function valideazaQty(id) {
+        let input = document.getElementById('qty-' + id);
+        let stocMax = parseInt(document.getElementById('card-' + id).getAttribute('data-stoc'));
+        
+        if (parseInt(input.value) > stocMax) {
+            alert("Stoc insuficient! Maxim disponibil: " + stocMax);
+            input.value = stocMax;
+        }
+        if (parseInt(input.value) < 1 || isNaN(input.value)) {
+            input.value = 1;
+        }
+    }
+
+    function adaugaInCosVirtual(id) {
+        let cos = getCosObiect();
+        let qtyDeAdaugat = parseInt(document.getElementById('qty-' + id).value);
+        let stocMax = parseInt(document.getElementById('card-' + id).getAttribute('data-stoc'));
+        
+        let qtyExistenta = cos[id] || 0;
+
+        if (qtyExistenta + qtyDeAdaugat > stocMax) {
+            alert("Nu poti adauga mai multe produse! Ai deja " + qtyExistenta + " in cos din maximul de " + stocMax);
+        } else {
+            cos[id] = qtyExistenta + qtyDeAdaugat;
+            localStorage.setItem('cos_virtual_qty', JSON.stringify(cos));
+            localStorage.setItem('cos_virtual', Object.keys(cos).join(','));
+            
+            actualizeazaUI();
+            alert("Produsul a fost adaugat in cos.");
+        }
+    }
+
+    function stergeComplet(id) {
+        let cos = getCosObiect();
+        delete cos[id];
+        localStorage.setItem('cos_virtual_qty', JSON.stringify(cos));
+        localStorage.setItem('cos_virtual', Object.keys(cos).join(','));
+        actualizeazaUI();
+    }
+
+    function actualizeazaUI() {
+        let cos = getCosObiect();
+        let articole = document.getElementsByClassName('ceas-card'); // colectie
+        
+        for (let i = 0; i < articole.length; i++) {
+            let idProdus = articole[i].getAttribute('data-id');
+            let btnSterge = document.getElementById('btn-del-' + idProdus);
+
+            if (cos[idProdus]) {
+                articole[i].classList.add('in-cos-marcaj');
+                if (btnSterge) btnSterge.style.display = 'inline-block';
+            } else {
+                articole[i].classList.remove('in-cos-marcaj');
+                if (btnSterge) btnSterge.style.display = 'none';
+            }
+        }
+    }
+</script>
 
 {% endblock %}

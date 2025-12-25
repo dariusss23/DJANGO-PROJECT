@@ -4140,3 +4140,449 @@ Traceback (most recent call last):
 django.core.exceptions.FieldError: Unknown field(s) (usable_password) specified for CustomUser. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
 ERROR 2025-12-04 01:55:49,855 basehttp "GET /admin/aplicatie/customuser/add/ HTTP/1.1" 500 195927
 WARNING 2025-12-04 02:03:27,294 views Autentificare esuata pentru USER_DJANGO
+WARNING 2025-12-04 09:29:49,749 log Not Found: /favicon.ico
+WARNING 2025-12-04 09:29:49,751 basehttp "GET /favicon.ico HTTP/1.1" 404 7973
+ERROR 2025-12-04 09:29:55,815 log Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 706, in logout_view
+    request.user.user_permissions.remove(perm)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EmptyManager' object has no attribute 'remove'
+ERROR 2025-12-04 09:29:55,827 basehttp "GET /logout/ HTTP/1.1" 500 69470
+ERROR 2025-12-04 09:30:08,125 log Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 706, in logout_view
+    request.user.user_permissions.remove(perm)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EmptyManager' object has no attribute 'remove'
+ERROR 2025-12-04 09:30:08,133 basehttp "GET /logout/ HTTP/1.1" 500 69470
+ERROR 2025-12-04 10:36:44,295 log Internal Server Error: /admin/aplicatie/customuser/10/change/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\admin.py", line 134, in get_form
+    form_class = super().get_form(request, obj, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
+ERROR 2025-12-04 10:36:44,330 basehttp "GET /admin/aplicatie/customuser/10/change/ HTTP/1.1" 500 162367
+ERROR 2025-12-04 10:37:27,460 log Internal Server Error: /admin/aplicatie/customuser/10/change/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\admin.py", line 134, in get_form
+    form_class = super().get_form(request, obj, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
+ERROR 2025-12-04 10:37:27,485 basehttp "GET /admin/aplicatie/customuser/10/change/ HTTP/1.1" 500 162367
+WARNING 2025-12-08 23:11:15,622 log Not Found: /favicon.ico
+WARNING 2025-12-08 23:11:15,642 basehttp "GET /favicon.ico HTTP/1.1" 404 8821
+WARNING 2025-12-08 23:36:35,027 ruleaza_taskuri Stergere utilizator: DURIMELL (Email neconfirmat)
+WARNING 2025-12-10 23:07:59,323 log Not Found: /favicon.ico
+WARNING 2025-12-10 23:07:59,327 basehttp "GET /favicon.ico HTTP/1.1" 404 8821
+WARNING 2025-12-10 23:08:57,829 log Not Found: /sitemap.xxml
+WARNING 2025-12-10 23:08:57,830 basehttp "GET /sitemap.xxml HTTP/1.1" 404 8824
+WARNING 2025-12-11 02:25:25,476 sterge_email_neconfirmat Stergere utilizator: USER_EMAIL_NECONFIRMAT (Email neconfirmat)
+WARNING 2025-12-11 10:34:08,840 log Not Found: /favicon.ico
+WARNING 2025-12-11 10:34:08,867 basehttp "GET /favicon.ico HTTP/1.1" 404 8821
+ERROR 2025-12-11 10:43:28,495 log Internal Server Error: /sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 79, in location
+    return item.get_absolute_url()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\models.py", line 122, in get_absolute_url
+    return reverse("brand_detail", kwargs={"id_brand": self.id_brand})
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'brand_detail' not found. 'brand_detail' is not a valid view function or pattern name.
+ERROR 2025-12-11 10:43:28,535 basehttp "GET /sitemap.xml HTTP/1.1" 500 121365
+WARNING 2025-12-17 14:50:45,191 log Not Found: /favicon.ico
+WARNING 2025-12-17 14:50:45,217 basehttp "GET /favicon.ico HTTP/1.1" 404 8821
+WARNING 2025-12-25 18:09:15,674 log Not Found: /favicon.ico
+WARNING 2025-12-25 18:09:15,676 basehttp "GET /favicon.ico HTTP/1.1" 404 8821
+WARNING 2025-12-25 18:36:19,011 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:36:19,015 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:36:47,463 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:36:47,466 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:38:01,988 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:38:01,990 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:40:12,594 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:40:12,597 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:42:18,845 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:42:18,848 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:45:04,409 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:45:04,411 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:48:50,037 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:48:50,039 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:48:53,605 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:48:53,607 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:50:28,287 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:50:28,289 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8932
+WARNING 2025-12-25 18:58:20,280 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:58:20,284 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 18:59:43,040 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 18:59:43,043 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 18:59:50,650 log Not Found: /aplicatie/proceseaza_date/
+WARNING 2025-12-25 18:59:50,652 basehttp "POST /aplicatie/proceseaza_date/ HTTP/1.1" 404 9140
+WARNING 2025-12-25 19:01:24,551 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 19:01:24,554 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 19:01:26,174 log Not Found: /aplicatie/proceseaza_date/
+WARNING 2025-12-25 19:01:26,176 basehttp "POST /aplicatie/proceseaza_date/ HTTP/1.1" 404 9140
+WARNING 2025-12-25 19:02:36,285 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 19:02:36,287 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 19:02:42,004 log Not Found: /aplicatie/proceseaza_date
+WARNING 2025-12-25 19:02:42,006 basehttp "POST /aplicatie/proceseaza_date HTTP/1.1" 404 9137
+WARNING 2025-12-25 19:03:39,987 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 19:03:39,989 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 19:03:45,702 log Not Found: /aplicatie/proceseaza_date/
+WARNING 2025-12-25 19:03:45,704 basehttp "POST /aplicatie/proceseaza_date/ HTTP/1.1" 404 9140
+WARNING 2025-12-25 20:04:21,572 log Not Found: /favicon.ico
+WARNING 2025-12-25 20:04:21,576 basehttp "GET /favicon.ico HTTP/1.1" 404 9094
+WARNING 2025-12-25 20:04:40,157 log Not Found: /aplicatie/proceseaza_date/
+WARNING 2025-12-25 20:04:40,160 basehttp "POST /aplicatie/proceseaza_date/ HTTP/1.1" 404 9140
+WARNING 2025-12-25 20:04:47,370 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:04:47,373 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:04:53,489 log Not Found: /aplicatie/proceseaza_date/
+WARNING 2025-12-25 20:04:53,492 basehttp "GET /aplicatie/proceseaza_date/ HTTP/1.1" 404 9139
+WARNING 2025-12-25 20:05:34,881 log Not Found: /aplicatie/proceseaza_date/
+WARNING 2025-12-25 20:05:34,883 basehttp "GET /aplicatie/proceseaza_date/ HTTP/1.1" 404 9139
+WARNING 2025-12-25 20:05:44,403 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:05:44,405 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:05:49,043 log Not Found: /aplicatie/proceseaza_date
+WARNING 2025-12-25 20:05:49,045 basehttp "POST /aplicatie/proceseaza_date HTTP/1.1" 404 9137
+WARNING 2025-12-25 20:06:10,893 log Not Found: /aplicatie/proceseaza_date
+WARNING 2025-12-25 20:06:10,895 basehttp "POST /aplicatie/proceseaza_date HTTP/1.1" 404 9137
+WARNING 2025-12-25 20:06:16,619 log Not Found: /aplicatie/proceseaza_date
+WARNING 2025-12-25 20:06:16,621 basehttp "POST /aplicatie/proceseaza_date HTTP/1.1" 404 9137
+WARNING 2025-12-25 20:06:22,166 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:06:22,169 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:06:26,484 log Not Found: /aplicatie/proceseaza_date
+WARNING 2025-12-25 20:06:26,486 basehttp "GET /aplicatie/proceseaza_date HTTP/1.1" 404 9136
+WARNING 2025-12-25 20:10:12,856 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:10:12,858 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:10:15,897 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:10:15,911 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:10:32,712 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:10:32,714 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:10:35,886 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:10:35,897 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:16:09,778 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:16:09,780 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:16:15,205 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:16:15,218 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:16:48,860 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:16:48,864 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:16:53,567 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:16:53,571 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:16:55,309 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:16:55,311 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:17:05,357 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:17:05,368 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:17:44,049 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:17:44,052 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:17:49,952 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:17:49,967 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:29:39,332 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:29:39,335 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:29:44,261 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:29:44,276 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:30:38,944 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:30:38,946 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:30:43,457 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:30:43,469 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:32:43,284 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:32:43,286 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+ERROR 2025-12-25 20:32:49,244 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:32:49,257 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+WARNING 2025-12-25 20:33:35,648 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:33:35,651 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:33:35,704 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:33:35,709 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:33:52,621 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:33:52,623 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 20:35:49,181 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 20:35:49,184 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 23:08:33,099 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 23:08:33,102 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 23:19:53,942 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-25 23:19:53,944 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-25 23:46:03,613 views S-au sters vizualizari vechi pentru user curs
+WARNING 2025-12-25 23:46:22,347 views S-au sters vizualizari vechi pentru user curs
+WARNING 2025-12-25 23:46:41,289 views S-au sters vizualizari vechi pentru user curs
+WARNING 2025-12-26 00:06:17,434 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-26 00:06:17,437 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-26 00:07:27,000 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-26 00:07:27,003 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-26 00:07:29,412 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-26 00:07:29,414 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-26 00:08:18,921 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-26 00:08:18,924 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205
+WARNING 2025-12-26 00:08:23,258 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-12-26 00:08:23,260 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 9205

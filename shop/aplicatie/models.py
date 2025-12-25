@@ -21,7 +21,7 @@ class Locatie(models.Model):
 
 ############################################################################
 
-
+from django.urls import reverse
 
 class Ceas(models.Model):
     id_ceas = models.IntegerField(primary_key=True)
@@ -41,6 +41,9 @@ class Ceas(models.Model):
     
     def __str__(self):
         return f"{self.model} - {self.pret} RON"
+    
+    def get_absolute_url(self):
+        return reverse("detalii_ceas", kwargs={"ceas_id": self.id_ceas})
     
 class Categorie(models.Model):
     STIL_CEAS=[
@@ -74,6 +77,9 @@ class Categorie(models.Model):
     
     def __str__(self):
         return f"{self.stil_ceas}"
+    
+    def get_absolute_url(self):
+        return reverse("categorie", kwargs={"nume_categorie": self.stil_ceas})
 
 class Material(models.Model):
     TIP_MATERIAL = [
@@ -111,6 +117,9 @@ class Brand(models.Model):
 
     def __str__ (self):
         return f"{self.nume} - {self.categorie_brand}"
+    
+    def get_absolute_url(self):
+        return reverse("brand_detail", kwargs={"id_brand": self.id_brand})
     
 class Depozit(models.Model):
     id_depozit = models.AutoField(primary_key=True)
@@ -170,6 +179,9 @@ class Review(models.Model):
     def __str__(self):
         return f"Review {self.id_review} - Rating: {self.rating} pentru {self.ceas.model}"
     
+from django.db import models
+from django.utils import timezone
+
 class Comanda(models.Model):
     STATUS_CHOICES = [
         ('in_tranzit', 'In tranzit'),
@@ -182,11 +194,17 @@ class Comanda(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='procesare')
     curier = models.CharField(max_length=100)
     comanda_rapida = models.BooleanField(default=False)
-    useri = models.ManyToManyField(CustomUser, related_name='comenzi')
-    ceasuri = models.ManyToManyField(Ceas, related_name='comenzi')
+    data_plasare = models.DateTimeField(auto_now_add=True, null=True)
+    
+    user = models.ForeignKey('CustomUser', on_delete=models.CASCADE, related_name='comenzi_user', null=True)
 
     def __str__(self):
-        return f"Comanda {self.id_comanda} - Status: {self.status}"
+        return f"Comanda {self.id_comanda} - {self.user.username if self.user else 'Anonim'}"
+
+class ProdusComanda(models.Model):
+    comanda = models.ForeignKey(Comanda, on_delete=models.CASCADE, related_name='produse_comanda')
+    ceas = models.ForeignKey('Ceas', on_delete=models.CASCADE)
+    cantitate = models.IntegerField(default=1)
 
 class Voucher(models.Model):
     id_voucher = models.AutoField(primary_key=True)
@@ -235,3 +253,6 @@ class Oferta(models.Model):
         permissions = [
             ("vizualizeaza_oferta", "Poate vizualiza ofertele speciale"),
         ]
+    
+    def get_absolute_url(self):
+        return reverse("oferta_detail", kwargs={"id": self.id})

@@ -6,6 +6,14 @@
 <div class="contact-container">
     <h1>Contacteaza-ne</h1>
 
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
     {% if mesaj_salvat %}
         <div class="mesaj-trimis">
             Mesajul a fost salvat în fisierul: <strong>{{ mesaj_salvat }}</strong>

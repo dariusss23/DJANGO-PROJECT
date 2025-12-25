@@ -263,7 +263,7 @@ def afisare_ceasuri(request):
     nrPagina=request.GET.get("pagina")
     sortare=request.GET.get("sort", "a")
     
-    produse=Ceas.objects.all()
+    produse = Ceas.objects.all().order_by('id_ceas')
     form=CeasFilterForm(request.GET)
     
     elemente_pe_pagina=5
@@ -302,10 +302,16 @@ def afisare_ceasuri(request):
         mesaj_paginare=None
         if request.GET.get("elemente_pe_pagina") and int(request.GET.get("elemente_pe_pagina")) != 5:
             mesaj_paginare="In urma repaginarii e posibil sa fi sarit peste unele produse sau sa le vedeti din nou pe cele deja vizualizate."
+            
+            messages.info(request, "Numarul de produse pe pagina a fost modificat.")
 
 
-    produse=produse.order_by("-pret" if sortare=="d" else "pret")
+    criteriu = "-pret" if sortare == "d" else "pret"
     
+    disponibile = produse.filter(stoc__gt=0).order_by(criteriu)
+    indisponibile = produse.filter(stoc=0).order_by(criteriu)
+    
+    produse = list(disponibile) + list(indisponibile)
 
 
     paginator=Paginator(produse, elemente_pe_pagina)
@@ -349,6 +355,9 @@ def detalii_ceas(request, ceas_id):
             if len(vizualizari) > 5:
                 for v in vizualizari[5:]:
                     v.delete()
+                    
+                messages.warning(request, "Istoricul tau vechi de vizualizare a fost sters automat (pastram doar ultimele 5).")
+                
                 logger.warning(f"S-au sters vizualizari vechi pentru user {request.user.username}")
 
         return render(request, "aplicatie/detalii_ceas.html", {
@@ -444,6 +453,7 @@ def afisare_categorie(request, nume_categorie):
         obPagina = paginator.page(paginator.num_pages)
         if not mesajEroare:
             mesajEroare = "Nu mai sunt produse"
+            
 
     return render(request, "aplicatie/produse.html", {
         "pagina": obPagina,
@@ -507,6 +517,8 @@ def contact(request):
 
             with open(cale_fisier, "w", encoding="utf-8") as f:
                 json.dump(data_mesaj, f, ensure_ascii=False, indent=4)
+                
+            messages.success(request, "Mesajul tau a fost trimis si salvat cu succes!")
 
             mesaj_trimite = (
                 f"Mesajul a fost trimis cu succes!\n"
@@ -568,6 +580,8 @@ def adauga_ceas(request):
                 ceas.disponibil_online = True
 
                 ceas.save()
+                
+                messages.success(request, f"Ceasul '{ceas.model}' a fost adaugat cu SUCCES!")
 
                 mesaj = f"Ceasul '{ceas.model}' a fost adaugat cu succes! Pret final: {pret_final_calculat} RON"
                 
@@ -666,6 +680,8 @@ def custom_login_view(request):
 
             username_incercat = request.POST.get("username")
             
+            messages.warning(request, f"Date incorecte pentru userul {username_incercat}. Mai ai putine incercari!")
+            
             logger.warning(f"Autentificare esuata pentru {username_incercat}")
 
             if len(recent_attempts) >= 3:
@@ -702,6 +718,7 @@ from django.contrib.auth import logout
 def logout_view(request):
     
     try:
+        from django.contrib.auth.models import Permission
         perm = Permission.objects.get(codename='vizualizeaza_oferta')
         request.user.user_permissions.remove(perm)
     except Permission.DoesNotExist:
@@ -709,6 +726,9 @@ def logout_view(request):
 
     
     logout(request)
+    
+    messages.info(request, "Te-ai delogat cu succes. Te asteptam sa revii!")
+    
     return redirect('index')
 
 def profile_view(request):
@@ -755,8 +775,11 @@ def register_view(request):
             email = form.cleaned_data.get("email")
             
             if username.lower()=="admin":
+                
+                messages.error(request, "Nu ai voie sa folosesti numele de utilizator 'admin'!")
+                
                 subject_alert = "cineva incearca sa ne preia site-ul"
-                message_text = f"Cineva a încercat să se înregistreze cu username-ul 'admin'.\nEmail: {email}"
+                message_text = f"Cineva a încercat sa se înregistreze cu username-ul 'admin'.\nEmail: {email}"
                 message_html = f"""
                     <h1 style="color:red;">{subject_alert}</h1>
                     <p>Email introdus: {email}</p>
@@ -920,7 +943,7 @@ def interzis(request):
         "N_MAX_403": settings.N_MAX_403,
     }
 
-    return HttpResponseForbidden(render(request, '403.html'))
+    return HttpResponseForbidden(render(request, '403.html', context))
 
 '''
 from aplicatie.models import CustomUser
@@ -969,7 +992,7 @@ def oferta_view(request):
 
         context = {
             "titlu": "Eroare afisare oferta",
-            "mesaj_personalizat": "Nu ai voie să vizualizezi oferta",
+            "mesaj_personalizat": "Nu ai voie sa vizualizezi oferta",
             "nr_403": nr_403,
             "N_MAX_403": 5,
         }
@@ -1010,3 +1033,101 @@ user = CustomUser.objects.get(username='MODERATOR_1')
 user.groups.add(moderatori)
 
 '''
+
+from weasyprint import HTML
+
+from .models import Comanda, ProdusComanda
+
+def fisier_pdf(request, cos_date, user):
+    try:
+        produse_factura = []
+        total_final = 0
+        total_obiecte = 0
+
+        for id_ceas, cantitate in cos_date.items():
+            ceas = Ceas.objects.get(id_ceas=id_ceas)
+            pret_partial = ceas.pret * int(cantitate)
+            total_final += pret_partial
+            total_obiecte += int(cantitate)
+
+            produse_factura.append({
+                'model': ceas.model,
+                'brand': ceas.brand.nume,
+                'pret_unitar': ceas.pret,
+                'cantitate': cantitate,
+                'pret_partial': pret_partial,
+                'link': request.build_absolute_uri(f"/detalii_ceas/{ceas.id_ceas}/")
+            })
+            
+        cale_folder = os.path.join(settings.BASE_DIR, "temporar-facturi", user.username)
+        print(f"DEBUG: Incerc sa creez folderul la adresa: {cale_folder}")
+        if not os.path.exists(cale_folder):
+            os.makedirs(cale_folder)
+
+        timestamp = int(time.time())
+        nume_fisier = f"factura-{timestamp}.pdf"
+        cale_completa = os.path.join(cale_folder, nume_fisier)
+
+        cod_html = render_to_string('aplicatie/factura_pdf.html', {
+            'produse': produse_factura,
+            'total_final': total_final,
+            'total_obiecte': total_obiecte,
+            'data_comanda': timezone.now(),
+            'user': user,
+            'admin_email': 's.darius14008@gmail.com'
+        })
+
+        html_obj = HTML(string=cod_html)
+        html_obj.write_pdf(cale_completa)
+        return cale_completa
+    except Exception as e:
+        import traceback
+        print("--- EROARE GENERARE PDF ---")
+        print(traceback.format_exc())
+        return None
+
+def trimite_mail_pdf(request, cos_date):
+    user = request.user
+    cale_pdf = fisier_pdf(request, cos_date, user)
+    
+    if cale_pdf:
+        email = EmailMessage(
+            subject='Factura Comanda Ta',
+            body=f'Buna ziua {user.first_name}, factura este atasata.',
+            to=[user.email]
+        )
+        email.attach_file(cale_pdf)
+        email.send()
+
+def proceseaza_date(request):
+    if request.method == "POST":
+        date_primite = json.loads(request.body.decode('utf-8'))
+        cos_date = date_primite.get("comanda_data", {})
+
+        noua_comanda = Comanda.objects.create(
+            user=request.user,
+            curier="Curier Rapid",
+            comanda_rapida=False
+        )
+
+        for id_ceas, cantitate in cos_date.items():
+            ceas = Ceas.objects.get(id_ceas=id_ceas)
+            ProdusComanda.objects.create(
+                comanda=noua_comanda, 
+                ceas=ceas, 
+                cantitate=cantitate
+            )
+
+        # Generare PDF și trimitere
+        trimite_mail_pdf(request, cos_date)
+        return HttpResponse("OK")
+
+
+def pagina_cos(request):
+    toate_produsele = Ceas.objects.all()
+    
+    return render(request, "aplicatie/cos_final.html", {
+        "produse": toate_produsele,
+        "categorii": Categorie.objects.all(),
+        "ip": get_ip(request)
+    })

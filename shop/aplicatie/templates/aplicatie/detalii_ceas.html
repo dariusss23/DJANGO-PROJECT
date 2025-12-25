@@ -5,14 +5,134 @@
 
 {% block content %}
 
-<div class="ceas-detalii">
+<div id="container-detalii" 
+     class="ceas-detalii {% if ceas.stoc == 0 %}indisponibil{% endif %}"
+     data-stoc="{{ ceas.stoc }}">
+     
     <h1>{{ ceas.model }}</h1>
     <p><strong>Pret:</strong> {{ ceas.pret }} RON</p>
     <p><strong>Brand:</strong> {{ ceas.brand.nume }}</p>
+    
+    <p><strong>Stoc disponibil:</strong> {{ ceas.stoc }}</p>
+
     <p><strong>Categorie:</strong> {{ ceas.categorie.stil_ceas }} - {{ ceas.categorie.tip_ceas }}</p>
     <p><strong>Material:</strong> {{ ceas.material }}</p>
     <p><strong>Disponibil online:</strong> {{ ceas.disponibil_online }}</p>
+
+    {% if ceas.stoc == 0 %}
+        <p class="text-rosu">indisponibil</p>
+    {% else %}
+        <div class="controale-cantitate">
+            <button type="button" onclick="schimbaQty('{{ ceas.id_ceas }}', -1)">-</button>
+            
+            <input type="number" id="qty-{{ ceas.id_ceas }}" class="input-qty" 
+                   value="1" min="1" max="{{ ceas.stoc }}" 
+                   onchange="valideazaQty('{{ ceas.id_ceas }}')">
+                   
+            <button type="button" onclick="schimbaQty('{{ ceas.id_ceas }}', 1)">+</button>
+        </div>
+
+        <button class="btn_cos_virtual" onclick="adaugaInCosVirtual('{{ ceas.id_ceas }}')">
+            Adauga în cos virtual
+        </button>
+        
+        <button id="btn-del-{{ ceas.id_ceas }}" onclick="stergeComplet('{{ ceas.id_ceas }}')" 
+                style="display:none; color: darkred; margin-left: 15px;">
+            Sterge complet din cos
+        </button>
+    {% endif %}
+    
+    <p>
     <a href="{% url 'produse' %}" class="buton-inapoi">Inapoi la produse</a>
+    </p>
 </div>
+
+
+
+<script>
+
+    function getCosObiect() {
+        let cos = localStorage.getItem('cos_virtual_qty');
+        return cos ? JSON.parse(cos) : {};
+    }
+
+    window.onload = function() {
+        actualizeazaUI();
+    };
+
+    // 1. Funcție pentru butoanele +/-
+    function schimbaQty(id, delta) {
+        let input = document.getElementById('qty-' + id);
+        let stocMax = parseInt("{{ ceas.stoc }}"); // Luat direct din contextul Django
+        let valoareNoua = parseInt(input.value) + delta;
+
+        if (valoareNoua >= 1 && valoareNoua <= stocMax) {
+            input.value = valoareNoua;
+        } else if (valoareNoua > stocMax) {
+            alert("Atenție! Nu putem depăși stocul disponibil."); // Mesaj de atenționare
+        }
+    }
+
+    // 2. Validare câmp input manual (Task 1)
+    function valideazaQty(id) {
+        let input = document.getElementById('qty-' + id);
+        let stocMax = parseInt("{{ ceas.stoc }}");
+        
+        if (parseInt(input.value) > stocMax) {
+            alert("Stoc insuficient! Maxim disponibil: " + stocMax);
+            input.value = stocMax;
+        }
+        if (parseInt(input.value) < 1 || isNaN(input.value)) {
+            input.value = 1;
+        }
+    }
+
+    // 3. Adăugare în coș cu validare stoc total (Task 1)
+    function adaugaInCosVirtual(id) {
+        let cos = getCosObiect();
+        let qtyDeAdaugat = parseInt(document.getElementById('qty-' + id).value);
+        let stocMax = parseInt("{{ ceas.stoc }}");
+        
+        let qtyExistenta = cos[id] || 0;
+
+        // Verificăm să nu depășim stocul total (Existent + Nou)
+        if (qtyExistenta + qtyDeAdaugat > stocMax) {
+            alert("Stoc depășit! Ai deja " + qtyExistenta + " în coș din maximul de " + stocMax);
+        } else {
+            cos[id] = qtyExistenta + qtyDeAdaugat;
+            localStorage.setItem('cos_virtual_qty', JSON.stringify(cos));
+            localStorage.setItem('cos_virtual', Object.keys(cos).join(','));
+            
+            actualizeazaUI();
+            alert("Produsul a fost adăugat în coș.");
+        }
+    }
+
+    // 4. Ștergere completă produs din coș (Task 1)
+    function stergeComplet(id) {
+        let cos = getCosObiect();
+        delete cos[id];
+        localStorage.setItem('cos_virtual_qty', JSON.stringify(cos));
+        localStorage.setItem('cos_virtual', Object.keys(cos).join(','));
+        actualizeazaUI();
+    }
+
+    // 5. Marcaj special (Task 1)
+    function actualizeazaUI() {
+        let cos = getCosObiect();
+        let idProdus = "{{ ceas.id_ceas }}";
+        let container = document.getElementById('container-detalii');
+        let btnSterge = document.getElementById('btn-del-' + idProdus);
+
+        if (cos[idProdus]) {
+            // Marcaj special dacă produsul este deja în coș
+            container.classList.add('in-cos-marcaj');
+            if (btnSterge) btnSterge.style.display = 'inline-block';
+        } else {
+            container.classList.remove('in-cos-marcaj');
+            if (btnSterge) btnSterge.style.display = 'none';
+        }
+    }
+</script>
 
 {% endblock %}

@@ -4097,3 +4097,330 @@ Traceback (most recent call last):
     )
 django.core.exceptions.FieldError: Unknown field(s) (usable_password) specified for CustomUser. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
 ERROR 2025-12-04 01:55:49,855 basehttp "GET /admin/aplicatie/customuser/add/ HTTP/1.1" 500 195927
+ERROR 2025-12-04 09:29:55,815 log Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 706, in logout_view
+    request.user.user_permissions.remove(perm)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EmptyManager' object has no attribute 'remove'
+ERROR 2025-12-04 09:29:55,827 basehttp "GET /logout/ HTTP/1.1" 500 69470
+ERROR 2025-12-04 09:30:08,125 log Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 706, in logout_view
+    request.user.user_permissions.remove(perm)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'EmptyManager' object has no attribute 'remove'
+ERROR 2025-12-04 09:30:08,133 basehttp "GET /logout/ HTTP/1.1" 500 69470
+ERROR 2025-12-04 10:36:44,295 log Internal Server Error: /admin/aplicatie/customuser/10/change/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\admin.py", line 134, in get_form
+    form_class = super().get_form(request, obj, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
+ERROR 2025-12-04 10:36:44,330 basehttp "GET /admin/aplicatie/customuser/10/change/ HTTP/1.1" 500 162367
+ERROR 2025-12-04 10:37:27,460 log Internal Server Error: /admin/aplicatie/customuser/10/change/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 840, in get_form
+    return modelform_factory(self.model, **defaults)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 654, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\forms\models.py", line 334, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1987, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1840, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 1878, in _changeform_view
+    ModelForm = self.get_form(
+        request, obj, change=not add, fields=flatten_fieldsets(fieldsets)
+    )
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\admin.py", line 134, in get_form
+    form_class = super().get_form(request, obj, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\auth\admin.py", line 98, in get_form
+    return super().get_form(request, obj, **defaults)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\admin\options.py", line 842, in get_form
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unknown field(s) (blocate) specified for CustomUser. Check fields/fieldsets/exclude attributes of class CustomUserAdmin.
+ERROR 2025-12-04 10:37:27,485 basehttp "GET /admin/aplicatie/customuser/10/change/ HTTP/1.1" 500 162367
+ERROR 2025-12-11 10:43:28,495 log Internal Server Error: /sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\contrib\sitemaps\__init__.py", line 79, in location
+    return item.get_absolute_url()
+           ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\models.py", line 122, in get_absolute_url
+    return reverse("brand_detail", kwargs={"id_brand": self.id_brand})
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'brand_detail' not found. 'brand_detail' is not a valid view function or pattern name.
+ERROR 2025-12-11 10:43:28,535 basehttp "GET /sitemap.xml HTTP/1.1" 500 121365
+ERROR 2025-12-25 20:10:15,897 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:10:15,911 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:10:35,886 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:10:35,897 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:16:15,205 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:16:15,218 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:17:05,357 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:17:05,368 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:17:49,952 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:17:49,967 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:29:44,261 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:29:44,276 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:30:43,457 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:30:43,469 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951
+ERROR 2025-12-25 20:32:49,244 log Internal Server Error: /proceseaza_date/
+Traceback (most recent call last):
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1039, in proceseaza_date
+    trimite_mail_pdf(date["vector"].split(","))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\shop\aplicatie\views.py", line 1050, in trimite_mail_pdf
+    email.attach_file('temp.pdf')
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\admin\OneDrive\Desktop\DJANGO PRACTICE\venv\Lib\site-packages\django\core\mail\message.py", line 361, in attach_file
+    with path.open("rb") as file:
+         ~~~~~~~~~^^^^^^
+  File "D:\PYTHON INSTALL\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp.pdf'
+ERROR 2025-12-25 20:32:49,257 basehttp "POST /proceseaza_date/ HTTP/1.1" 500 82951

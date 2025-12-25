@@ -119,17 +119,30 @@ class CustomUserAdmin(UserAdmin):
     list_display = ('username', 'email', 'email_confirmat', 'blocat', 'is_staff', 'is_active')
     
 
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.groups.filter(name="Moderatori").exists():
+            return (
+                'username', 'is_staff', 'is_superuser', 'groups',
+                'user_permissions', 'email_confirmat', 'telefon', 'oras', 'tara',
+                'adresa', 'cod', 'puncte_loialitate', 'cont_premium',
+                'date_joined', 'last_login'
+            )
+        return super().get_readonly_fields(request, obj)
+
 
     def get_form(self, request, obj=None, **kwargs):
         form_class = super().get_form(request, obj, **kwargs)
 
         class Formular(form_class):
             def __init__(self, *args, **form_kwargs):
-                current_user = form_kwargs.pop("current_user", None)  # POP obligatoriu!
+                current_user = form_kwargs.pop("current_user", None)  
                 super().__init__(*args, **form_kwargs)
                 self.current_user = current_user
 
         return Formular
+    
+
+    
 
 
     add_fieldsets = (
@@ -151,3 +164,6 @@ class CustomUserAdmin(UserAdmin):
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
+from .models import Oferta
+admin.site.register(Oferta)

@@ -1,0 +1,194 @@
+{% extends 'aplicatie/baza.html' %}
+{% block content %}
+
+<h1>Coșul tău virtual</h1>
+
+<div class="sortare-cos">
+    <button onclick="sorteazaCos('nume')">Ordonează după Nume</button>
+    <button onclick="sorteazaCos('pret')">Ordonează după Preț</button>
+</div>
+
+<hr>
+
+<div id="container-cos">
+    <table border="1" width="100%" id="tabel-cos">
+        <thead>
+            <tr>
+                <th>Produs</th>
+                <th>Pret Unitar</th>
+                <th>Cantitate</th>
+                <th>Pret Partial</th>
+                <th>Actiuni</th>
+            </tr>
+        </thead>
+        <tbody id="lista-produse-cos"></tbody>
+    </table>
+</div>
+
+<div id="sumar-cos" style="margin-top: 20px; font-weight: bold;">
+    <p>Numar total obiecte: <span id="total-obiecte">0</span></p>
+    <p>Pret TOTAL: <span id="pret-total">0</span> RON</p>
+</div>
+
+<button id="cumpara"> Cumpara </button>
+
+<script>
+    let toateProduseleDB = [
+        {% for ceas in produse %}
+            {
+                id: "{{ ceas.id_ceas }}",
+                nume: "{{ ceas.model }}",
+                pret: {{ ceas.pret }},
+                stoc: {{ ceas.stoc }},
+                url: "{% url 'detalii_ceas' ceas.id_ceas %}"
+            },
+        {% endfor %}
+    ];
+
+    window.onload = function() {
+        rendereazaCos();
+    };
+
+    function getCos() {
+        let cos = localStorage.getItem('cos_virtual_qty');
+        return cos ? JSON.parse(cos) : {};
+    }
+
+    function salveazaCos(cos) {
+        localStorage.setItem('cos_virtual_qty', JSON.stringify(cos));
+        localStorage.setItem('cos_virtual', Object.keys(cos).join(','));
+        rendereazaCos();
+    }
+
+    function rendereazaCos(criteriuSortare = null) {
+        let cos = getCos();
+        let tbody = document.getElementById('lista-produse-cos');
+        tbody.innerHTML = "";
+
+        let produseDeAfisat = [];
+        let pretTotalGeneral = 0;
+        let nrTotalObiecte = 0;
+
+        for (let p of toateProduseleDB) {
+            if (cos[p.id]) {
+                let qty = cos[p.id];
+                let pretPartial = p.pret * qty;
+                
+                let copieProdus = {
+                    id: p.id,
+                    nume: p.nume,
+                    pret: p.pret,
+                    stoc: p.stoc,
+                    url: p.url,
+                    qty: qty,
+                    pretPartial: pretPartial
+                };
+                produseDeAfisat.push(copieProdus);
+
+                pretTotalGeneral += pretPartial;
+                nrTotalObiecte += qty;
+            }
+        }
+
+        function regulaPret(a, b) {
+            return a.pret - b.pret;
+        }
+
+        function regulaNume(a, b) {
+            if (a.nume < b.nume) return -1;
+            if (a.nume > b.nume) return 1;
+            return 0;
+        }
+
+        if (criteriuSortare === 'pret') {
+            produseDeAfisat.sort(regulaPret);
+        } else if (criteriuSortare === 'nume') {
+            produseDeAfisat.sort(regulaNume);
+        }
+
+        for (let prod of produseDeAfisat) {
+            let rand = document.createElement('tr');
+            rand.className = "rand-produs";
+
+            rand.innerHTML = `
+                <td><a href="${prod.url}">${prod.nume}</a></td>
+                <td>${prod.pret} RON</td>
+                <td>
+                    <button onclick="modificaQty('${prod.id}', -1)">-</button>
+                    <span>${prod.qty}</span>
+                    <button onclick="modificaQty('${prod.id}', 1)">+</button>
+                </td>
+                <td>${prod.pretPartial} RON</td>
+                <td>
+                    <button style="color:red" onclick="stergeComplet('${prod.id}')">Sterge complet</button>
+                </td>
+            `;
+            tbody.appendChild(rand);
+        }
+
+        document.getElementById('total-obiecte').innerText = nrTotalObiecte;
+        document.getElementById('pret-total').innerText = pretTotalGeneral;
+    }
+
+    function modificaQty(id, delta) {
+        let cos = getCos();
+        let produsDB = toateProduseleDB.find(p => p.id == id);
+        
+        let nouaQty = cos[id] + delta;
+
+        if (nouaQty <= 0) {
+            stergeComplet(id);
+            return;
+        }
+
+        if (nouaQty > produsDB.stoc) {
+            alert("Nu putem adauga mai mult. Stoc limitat la " + produsDB.stoc);
+            return;
+        }
+
+        cos[id] = nouaQty;
+        salveazaCos(cos);
+    }
+
+    function stergeComplet(id) {
+        if(confirm("Sigur stergi produsul din cos?")) {
+            let cos = getCos();
+            delete cos[id];
+            salveazaCos(cos);
+        }
+    }
+
+    function sorteazaCos(criteriu) {
+        rendereazaCos(criteriu);
+    }
+
+    document.getElementById("cumpara").onclick = function() {
+        let cos = JSON.parse(localStorage.getItem('cos_virtual_qty') || "{}");
+        
+        if (Object.keys(cos).length === 0) {
+            alert("Cosul este gol!");
+            return;
+        }
+
+        fetch("http://localhost:8000/proceseaza_date/", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFTOKEN': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({
+                comanda_data: cos // Trimitem obiectul { id: cantitate }
+            })
+        }).then(raspuns => {
+            if (raspuns.ok) {
+                localStorage.removeItem('cos_virtual_qty');
+                localStorage.removeItem('cos_virtual');
+                
+                alert("Comanda realizata! Factura a fost trimisa pe e-mail.");
+                location.reload(); 
+            }
+        });
+    };
+</script>
+
+{% endblock %}

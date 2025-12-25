@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Ceasuri</title>
+        <style>
+            article{
+                border: 1px solid grey;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Cos Virtual</h1>
+
+        {% for ceas in ceasuri %}
+            <article data-id="{{ ceas.id_ceas }}" class="ceas-card">
+                <h2>{{ ceas.model }}</h2>
+                <p>Pret: {{ ceas.pret }} RON</p>
+                <p>Categorie: {{ ceas.categorie.stil_ceas }}</p>
+            </article>
+        {% endfor %}
+    </body>
+</html>

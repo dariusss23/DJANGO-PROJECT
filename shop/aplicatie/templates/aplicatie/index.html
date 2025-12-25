@@ -7,6 +7,14 @@
 
 <link rel="stylesheet" href="{% static 'aplicatie/css/index.css' %}">
 
+{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+{% endif %}
+
 <section id="prezentare">
     <h2>Bine ati venit la WatchLux</h2>
     <p>Proiectul este un magazin online de ceasuri, construit in Django, ce permite vizualizarea unui catalog diversificat de produse. Fiecare ceas este prezentat cu imagini clare si detalii complete: pret, model, caracteristici tehnice si material.

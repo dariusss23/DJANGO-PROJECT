@@ -16,7 +16,13 @@
     <img src="{% static 'aplicatie/imagini/ECHIPA.png' %}" alt="Poza Echipa">
 </section>
 
-
+{% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+{% endif %}
 
 {% if user.is_authenticated %}
     <div id="banner-oferta" style="display:none; background: gold; text-align:center; font-weight:bold; padding:10px; margin-top: 90px; cursor:pointer;">

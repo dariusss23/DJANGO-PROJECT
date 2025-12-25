@@ -1,0 +1,55 @@
+<html>
+<head>
+    <style>
+        body { font-family: sans-serif; }
+        .header { background-color: #2c3e50; color: white; padding: 20px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th { background-color: #34495e; color: white; padding: 10px; border: 1px solid #ddd; }
+        td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        .total-box { margin-top: 30px; background-color: #f1f1f1; padding: 15px; text-align: right; border: 1px solid #ccc; }
+        .highlight { font-weight: bold; color: #c0392b; }
+        .footer { margin-top: 50px; font-size: 0.8em; border-top: 1px solid #eee; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>FACTURĂ FISCALĂ</h1>
+        <p>Data realizării: {{ data_comanda|date:"d-m-Y H:i" }}</p>
+    </div>
+
+    <div style="margin: 20px 0;">
+        <p><strong>Client:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+        <p><strong>E-mail:</strong> {{ user.email }}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produs</th>
+                <th>Preț Unitar</th>
+                <th>Cantitate</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in produse %}
+            <tr>
+                <td><a href="{{ p.link }}">{{ p.model }}</a></td>
+                <td>{{ p.pret_unitar }} RON</td>
+                <td>{{ p.cantitate }}</td>
+                <td>{{ p.pret_partial }} RON</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="total-box">
+        <p>Total produse: {{ nr_total_obiecte }}</p>
+        <p class="highlight">PREȚ FINAL DE PLATĂ: {{ total_final }} RON</p>
+    </div>
+
+    <div class="footer">
+        <p>Pentru suport, contactați administratorul la: {{ admin_email }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+{% extends 'aplicatie/baza.html' %}
+{% block content %}
+
+<h1>Coșul tău virtual</h1>
+
+<div class="sortare-cos">
+    <button onclick="sorteazaCos('nume')">Ordonează după Nume</button>
+    <button onclick="sorteazaCos('pret')">Ordonează după Preț</button>
+</div>
+
+<hr>
+
+<div id="container-cos">
+    <table border="1" width="100%" id="tabel-cos">
+        <thead>
+            <tr>
+                <th>Produs</th>
+                <th>Preț Unitar</th>
+                <th>Cantitate</th>
+                <th>Preț Parțial</th>
+                <th>Acțiuni</th>
+            </tr>
+        </thead>
+        <tbody id="lista-produse-cos">
+            </tbody>
+    </table>
+</div>
+
+<div id="sumar-cos" style="margin-top: 20px; font-weight: bold;">
+    <p>Număr total obiecte: <span id="total-obiecte">0</span></p>
+    <p>Preț TOTAL: <span id="pret-total">0</span> RON</p>
+</div>
+
+<script>
+    // 1. Preluăm datele de la Django și le transformăm în obiect JS
+    // Folosim o listă simplă pentru a putea sorta ușor
+    let toateProduseleDB = [
+        {% for ceas in produse %}
+        {
+            id: "{{ ceas.id_ceas }}",
+            nume: "{{ ceas.model }}",
+            pret: {{ ceas.pret }},
+            stoc: {{ ceas.stoc }},
+            url: "{% url 'detalii_ceas' ceas.id_ceas %}"
+        },
+        {% endfor %}
+    ];
+
+    window.onload = function() {
+        rendereazaCos();
+    };
+
+    function getCos() {
+        let cos = localStorage.getItem('cos_virtual_qty');
+        return cos ? JSON.parse(cos) : {};
+    }
+
+    function salveazaCos(cos) {
+        localStorage.setItem('cos_virtual_qty', JSON.stringify(cos));
+        // Sincronizăm și variabila legacy
+        localStorage.setItem('cos_virtual', Object.keys(cos).join(','));
+        rendereazaCos();
+    }
+
+    // 2. Funcția principală de afișare
+    function rendereazaCos(criteriuSortare = null) {
+        let cos = getCos();
+        let tbody = document.getElementById('lista-produse-cos');
+        tbody.innerHTML = ""; // Curățăm tabelul
+
+        let produseDeAfisat = [];
+        let pretTotalGeneral = 0;
+        let nrTotalObiecte = 0;
+
+        // Filtrăm produsele din baza de date care se află în coș
+        for (let p of toateProduseleDB) {
+            if (cos[p.id]) {
+                let qty = cos[p.id];
+                let pretPartial = p.pret * qty;
+                
+                produseDeAfisat.push({
+                    ...p,
+                    qty: qty,
+                    pretPartial: pretPartial
+                });
+
+                pretTotalGeneral += pretPartial;
+                nrTotalObiecte += qty;
+            }
+        }
+
+        // Sortare dacă este cerută
+        if (criteriuSortare === 'nume') {
+            produseDeAfisat.sort((a, b) => a.nume.localeCompare(b.nume));
+        } else if (criteriuSortare === 'pret') {
+            produseDeAfisat.sort((a, b) => a.pret - b.pret);
+        }
+
+        // Construim rândurile tabelului
+        for (let prod of produseDeAfisat) {
+            let rand = document.createElement('tr');
+            rand.className = "rand-produs";
+
+            rand.innerHTML = `
+                <td><a href="${prod.url}">${prod.nume}</a></td>
+                <td>${prod.pret} RON</td>
+                <td>
+                    <button onclick="modificaQty('${prod.id}', -1)">-</button>
+                    <span>${prod.qty}</span>
+                    <button onclick="modificaQty('${prod.id}', 1)">+</button>
+                </td>
+                <td>${prod.pretPartial} RON</td>
+                <td>
+                    <button style="color:red" onclick="stergeComplet('${prod.id}')">Șterge complet</button>
+                </td>
+            `;
+            tbody.appendChild(rand);
+        }
+
+        // Actualizăm totalurile
+        document.getElementById('total-obiecte').innerText = nrTotalObiecte;
+        document.getElementById('pret-total').innerText = pretTotalGeneral;
+    }
+
+    // 3. Modificare cantitate (+/-)
+    function modificaQty(id, delta) {
+        let cos = getCos();
+        let produsDB = toateProduseleDB.find(p => p.id == id);
+        
+        let nouaQty = cos[id] + delta;
+
+        if (nouaQty <= 0) {
+            stergeComplet(id);
+            return;
+        }
+
+        // Validare stoc
+        if (nouaQty > produsDB.stoc) {
+            alert("Nu putem adăuga mai mult. Stoc limitat la " + produsDB.stoc);
+            return;
+        }
+
+        cos[id] = nouaQty;
+        salveazaCos(cos);
+    }
+
+    // 4. Ștergere completă
+    function stergeComplet(id) {
+        if(confirm("Sigur ștergi produsul din coș?")) {
+            let cos = getCos();
+            delete cos[id];
+            salveazaCos(cos);
+        }
+    }
+
+    // 5. Sortare
+    function sorteazaCos(criteriu) {
+        rendereazaCos(criteriu);
+    }
+</script>
+
+{% endblock %}

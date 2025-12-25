@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'aplicatie.apps.AplicatieConfig',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -222,3 +223,22 @@ LOGGING = {
 
 
 N_MAX_403 = 5
+
+
+from django.contrib.messages import constants as message_constants
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'debug',
+    message_constants.INFO: 'info',
+    message_constants.SUCCESS: 'success',
+    message_constants.WARNING: 'warning',
+    message_constants.ERROR: 'error',
+}
+
+
+
+NEWSLETTER_DAY = "marti"
+NEWSLETTER_HOUR = 16
+NEWSLETTER_MINUTES_LIMIT = 60
